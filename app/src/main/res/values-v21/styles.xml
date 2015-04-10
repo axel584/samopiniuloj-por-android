@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Base application theme. -->
+    <style name="SamTheme" parent="android:Theme.Material.Light">
+        <!-- Customize your theme here. -->
+        <!-- fond app bar  -->
+        <item name="android:colorPrimary">@color/sam_principale</item>
+        <!-- UI controls -->
+        <item name="android:colorAccent">@color/sam_accentuation</item>
+        <!-- fond de la page -->
+        <item name="android:windowBackground">@color/sam_fond</item>
+        <!-- titre de la page -->
+        <item name="android:textColorPrimary">@color/sam_accentuation</item>
+
+    </style>
+
+</resources>

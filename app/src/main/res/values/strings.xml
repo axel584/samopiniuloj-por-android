@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">Samopiniuloj</string>
+
+    <!-- Strings related to login -->
+    <string name="prompt_enirnomo">enirnomo</string>
+    <string name="prompt_pasvorto">pasvorto</string>
+    <string name="prompt_retadreso">retadreso</string>
+    <string name="action_eniru">eniru</string>
+    <string name="action_aligxu">aliĝu</string>
+    <string name="action_sendu">sendu</string>
+    <string name="action_nuligu">nuligu</string>
+
+    <string name="error_enirnomo">Enirnomo ne konata</string>
+    <string name="error_pasvorto">Malĝusta pasvorto</string>
+    <string name="error_deviga">Tiu informo estas deviga</string>
+</resources>

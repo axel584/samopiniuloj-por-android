@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="sam_fond">#FFF8E1</color>
+    <color name="sam_principale">#FFC107</color>
+    <color name="sam_accentuation">#FF5722</color>
+    <color name="sam_texte">#795548</color>
+    <color name="sam_bouton_bg">#795548</color>
+    <color name="sam_bouton_txt">#FFFFFF</color>
+</resources>
