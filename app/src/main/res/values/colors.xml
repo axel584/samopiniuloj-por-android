@@ -4,6 +4,7 @@
     <color name="sam_principale">#FFC107</color>
     <color name="sam_accentuation">#FF5722</color>
     <color name="sam_texte">#795548</color>
-    <color name="sam_bouton_bg">#795548</color>
+    <color name="sam_bouton1_bg">#FF5722</color>
+    <color name="sam_bouton2_bg">#795548</color>
     <color name="sam_bouton_txt">#FFFFFF</color>
 </resources>
