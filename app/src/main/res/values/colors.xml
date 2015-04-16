@@ -3,8 +3,15 @@
     <color name="sam_fond">#FFF8E1</color>
     <color name="sam_principale">#FFC107</color>
     <color name="sam_accentuation">#FF5722</color>
-    <color name="sam_texte">#795548</color>
-    <color name="sam_bouton1_bg">#FF5722</color>
-    <color name="sam_bouton2_bg">#795548</color>
+
+    <color name="sam_bouton_clair">#FF5722</color>
+    <color name="sam_bouton_fonce">#795548</color>
     <color name="sam_bouton_txt">#FFFFFF</color>
+
+    <color name="sam_txt_1">#795548</color>
+    <color name="sam_txt_2">#AAAAAA</color>
+    <color name="sam_txt_3">#CCCCCC</color>
+    <color name="sam_txt_0">#333333</color>
+    <color name="sam_carte">#FFFFFF</color>
+
 </resources>

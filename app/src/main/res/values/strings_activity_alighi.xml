@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <string name="title_activity_alighi">Aliĝi</string>
 
     <string name="txt_alighi1">Por aliĝi al la ludo, bonvolu elekti enirnomon kaj pasvorton. Bonvolu ankaŭ aldoni vian retadreson kaj vian landon.</string>
     <string name="txt_alighi2">Tiuj informoj helpos nin por kontakti vin. Ni ne uzos ilin por alia kialo.</string>

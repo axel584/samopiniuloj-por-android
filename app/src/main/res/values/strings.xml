@@ -1,5 +1,9 @@
 <resources>
     <string name="app_name">Samopiniuloj</string>
+    <string name="title_activity_akceptejo">Akceptejo</string>
+    <string name="title_activity_alighi">Aliĝi</string>
+    <string name="title_activity_eniri">Eniri</string>
+    <string name="title_activity_ludi">Ludi</string>
 
     <!-- Strings related to login -->
     <string name="prompt_enirnomo">enirnomo</string>
@@ -10,9 +14,19 @@
     <string name="action_aligxu">aliĝu</string>
     <string name="action_sendu">sendu</string>
     <string name="action_nuligu">nuligu</string>
+    <string name="action_rezultoj">rezultoj</string>
+    <string name="action_ludi">ludu</string>
 
     <string name="error_enirnomo">Enirnomo ne konata</string>
     <string name="error_pasvorto">Malĝusta pasvorto</string>
     <string name="error_deviga">Tiu informo estas deviga</string>
+
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="bonvenon_ludanto">Bonvenon, ... !</string>
+    <string name="nuna_horo">Nun estas:</string>
+
+<!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 
 </resources>

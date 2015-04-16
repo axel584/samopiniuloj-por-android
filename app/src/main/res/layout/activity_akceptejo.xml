@@ -1,0 +1,210 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent" android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:orientation="vertical"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    tools:context="org.esperanto_france.samopiniuloj.AkceptejoActivity">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/linearLayout"
+        android:gravity="right">
+
+        <TextView android:text="@string/bonvenon_ludanto" android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/bonvenon_ludando"
+            android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+            android:gravity="right"
+            android:textColor="@color/sam_txt_1" />
+
+        <TextView android:text="@string/nuna_horo" android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/nuna_horo"
+            android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+            android:gravity="right"
+            android:textColor="@color/sam_txt_1"
+            android:layout_gravity="left" />
+    </LinearLayout>
+
+        <android.support.v7.widget.CardView
+            xmlns:card_view="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/card_rezulto"
+            android:layout_gravity="center"
+            android:layout_width="match_parent"
+            android:layout_height="140dp"
+            card_view:cardCornerRadius="4dp"
+            card_view:cardBackgroundColor="@color/sam_carte"
+            android:layout_marginTop="32dp"
+            android:orientation="horizontal">
+
+            <RelativeLayout
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/img_rezulto"
+                    android:layout_gravity="center_vertical|bottom|left|top"
+                    android:src="@drawable/nimfeo"
+                    android:layout_weight="1" />
+
+                <RelativeLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:layout_toRightOf="@+id/img_rezulto"
+                    android:padding="0dp"
+                    android:id="@+id/info_rezultoj">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+                        android:textColor="@color/sam_txt_2"
+                        android:text="@string/la_hieraua_vorto_estis"
+                        android:id="@+id/txt_hieraua_vorto"
+                        android:layout_gravity="center_horizontal|top"
+                        android:paddingLeft="8dp"
+                        android:paddingTop="8dp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+                        android:textColor="@color/sam_txt_0"
+                        android:text="@string/vorto1"
+                        android:id="@+id/hieraua_vorto"
+                        android:layout_gravity="center_horizontal"
+                        style="@style/Base.TextAppearance.AppCompat.Headline"
+                        android:layout_marginTop="8dp"
+                        android:layout_below="@+id/txt_hieraua_vorto"
+                        android:layout_marginLeft="8dp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+                        android:textColor="@color/sam_txt_2"
+                        android:text="@string/vi_gajnis"
+                        android:id="@+id/txt_vigajnis"
+                        android:layout_gravity="center_horizontal|top"
+                        android:layout_marginTop="16dp"
+                        android:layout_below="@+id/hieraua_vorto"
+                        android:paddingLeft="8dp" />
+
+                    <LinearLayout
+                        android:orientation="vertical"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentBottom="true"
+                        android:layout_alignParentRight="true"
+                        android:layout_alignParentTop="false">
+
+                        <Button android:id="@+id/btn_rezultoj"
+                            android:layout_width="wrap_content"
+                            android:layout_height="48dp"
+                            android:text="@string/action_rezultoj"
+                            android:clickable="false"
+                            android:focusable="false"
+                            style="?android:attr/borderlessButtonStyle"
+                            android:textColor="@color/sam_bouton_fonce"
+                            android:layout_alignParentEnd="false"
+                            android:layout_alignParentStart="false"
+                            android:layout_toEndOf="@id/info_rezultoj" />
+                    </LinearLayout>
+
+                </RelativeLayout>
+
+            </RelativeLayout>
+
+        </android.support.v7.widget.CardView>
+
+        <android.support.v7.widget.CardView
+            xmlns:card_view="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/card_hodiaua_vorto"
+            android:layout_gravity="center"
+            android:layout_width="match_parent"
+            android:layout_height="140dp"
+            card_view:cardCornerRadius="4dp"
+            card_view:cardBackgroundColor="@color/sam_carte"
+            android:layout_marginTop="32dp"
+            android:background="@color/sam_carte"
+            android:orientation="horizontal">
+
+            <RelativeLayout
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/img_nuna_vorto"
+                android:layout_gravity="center_vertical|bottom|left|top"
+                android:src="@drawable/dentradajxo"
+                android:layout_weight="1" />
+
+            <RelativeLayout
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_toRightOf="@+id/img_nuna_vorto"
+                android:padding="0dp"
+                android:id="@+id/info_ludo">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+                    android:textColor="@color/sam_txt_2"
+                    android:text="@string/la_hodiaua_vorto_estas"
+                    android:id="@+id/txt_hodiaua_vorto"
+                    android:layout_gravity="center_horizontal|top"
+                    android:paddingLeft="8dp"
+                    android:paddingTop="8dp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+                    android:textColor="@color/sam_txt_0"
+                    android:text="@string/vorto2"
+                    android:id="@+id/hieraua_vorto"
+                    style="@style/Base.TextAppearance.AppCompat.Headline"
+                    android:layout_gravity="center_horizontal|top"
+                    android:layout_marginTop="8dp"
+                    android:layout_below="@+id/txt_hodiaua_vorto"
+                    android:layout_marginLeft="8dp"
+                    android:nestedScrollingEnabled="true" />
+
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true"
+                    android:layout_alignParentRight="true"
+                    android:layout_alignParentTop="false">
+
+                     <Button android:id="@+id/btn_ludu"
+                         android:layout_width="wrap_content"
+                         android:layout_height="48dp"
+                         android:text="@string/action_ludi"
+                         android:clickable="false"
+                         android:focusable="false"
+                         style="?android:attr/borderlessButtonStyle"
+                         android:textColor="@color/sam_bouton_fonce"
+                         android:layout_alignParentEnd="false"
+                         android:layout_alignParentStart="false"
+                         android:layout_toEndOf="@id/info_ludo" />
+                </LinearLayout>
+
+            </RelativeLayout>
+
+        </RelativeLayout>
+
+    </android.support.v7.widget.CardView>
+
+</LinearLayout>

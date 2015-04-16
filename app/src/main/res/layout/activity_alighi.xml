@@ -27,7 +27,7 @@
                 android:textAppearance="@style/TextAppearance.AppCompat.Body1"
                 android:text="@string/txt_alighi1"
                 android:id="@+id/txt_alighi1"
-                android:textColor="@color/sam_texte" />
+                android:textColor="@color/sam_txt_0" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -35,32 +35,38 @@
                 android:textAppearance="@style/TextAppearance.AppCompat.Body1"
                 android:text="@string/txt_alighi2"
                 android:id="@+id/txt_alighi2"
-                android:textColor="@color/sam_texte" />
+                android:textColor="@color/sam_txt_2"
+                android:layout_marginTop="4dp" />
 
             <EditText android:id="@+id/enirnomo" android:layout_width="match_parent"
                 android:layout_height="48dp" android:hint="@string/prompt_enirnomo"
                 android:maxLines="1"
                 android:singleLine="true"
+                android:layout_marginTop="16dp"
+                android:textColor="@color/sam_txt_1"
                 android:inputType="text"
-                android:layout_marginTop="16dp" />
+                android:textColorHint="@color/sam_txt_2"
+                android:selectAllOnFocus="true" />
 
             <EditText android:id="@+id/pasvorto" android:layout_width="match_parent"
                 android:layout_height="48dp" android:hint="@string/prompt_pasvorto"
-                android:imeActionId="@+id/login"
                 android:imeOptions="actionUnspecified" android:inputType="textPassword"
-                android:maxLines="1" android:singleLine="true" />
+                android:maxLines="1" android:singleLine="true"
+                android:textColorHint="@color/sam_txt_2" />
 
             <EditText android:id="@+id/retadreso" android:layout_width="match_parent"
                 android:layout_height="48dp" android:hint="@string/prompt_retadreso"
                 android:maxLines="1"
                 android:singleLine="true"
-                android:inputType="textEmailAddress" />
+                android:inputType="textEmailAddress"
+                android:textColorHint="@color/sam_txt_2" />
 
             <EditText android:id="@+id/lando" android:layout_width="match_parent"
                 android:layout_height="48dp" android:hint="@string/prompt_lando"
                 android:maxLines="1"
                 android:singleLine="true"
-                android:inputType="text" />
+                android:inputType="text"
+                android:textColorHint="@color/sam_txt_2" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -77,7 +83,7 @@
                 android:layout_gravity="right|top"
                 android:clickable="false"
                 android:focusable="false"
-                android:background="@color/sam_bouton1_bg"
+                android:background="@color/sam_bouton_fonce"
                 android:textColor="@color/sam_bouton_txt" />
 
         </LinearLayout>
@@ -98,7 +104,7 @@
             android:id="@+id/textView"
             android:layout_marginTop="16dp"
             android:password="false"
-            android:textColor="@color/sam_texte" />
+            android:textColor="@color/sam_txt_1" />
 
         <Button
             android:layout_width="wrap_content"
@@ -106,8 +112,8 @@
             android:text="@string/action_eniru"
             android:id="@+id/btn_eniru"
             android:layout_gravity="right"
-            android:background="@color/sam_bouton2_bg"
-            android:textColor="@color/sam_bouton_txt"
+            style="?android:attr/borderlessButtonStyle"
+            android:textColor="@color/sam_bouton_fonce"
             android:layout_marginTop="8dp" />
     </LinearLayout>
 
