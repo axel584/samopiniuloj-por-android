@@ -48,6 +48,14 @@
                 android:textColorHint="@color/sam_txt_2"
                 android:selectAllOnFocus="true" />
 
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/eraro_enirnomo"
+                android:id="@+id/eraro_enirnomo"
+                android:textColor="@color/sam_erreur"
+                android:textSize="12sp" />
+
             <EditText android:id="@+id/pasvorto" android:layout_width="match_parent"
                 android:layout_height="48dp" android:hint="@string/prompt_pasvorto"
                 android:imeOptions="actionUnspecified" android:inputType="textPassword"
@@ -61,6 +69,14 @@
                 android:inputType="textEmailAddress"
                 android:textColorHint="@color/sam_txt_2" />
 
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/eraro_retadreso"
+                android:id="@+id/eraro_pasvorto"
+                android:textColor="@color/sam_erreur"
+                android:textSize="12sp" />
+
             <EditText android:id="@+id/lando" android:layout_width="match_parent"
                 android:layout_height="48dp" android:hint="@string/prompt_lando"
                 android:maxLines="1"
@@ -68,23 +84,35 @@
                 android:inputType="text"
                 android:textColorHint="@color/sam_txt_2" />
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textAppearance="@style/TextAppearance.AppCompat.Body2"
-                android:text="@string/txt_forgesita_pasvorto"
-                android:id="@+id/txt_forgesita_pasvorto"
-                android:layout_marginTop="8dp"
-                android:layout_gravity="left" />
+            <RelativeLayout
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_marginTop="8dp">
 
-            <Button android:id="@+id/btn_aligxu"
-                android:layout_width="wrap_content" android:layout_height="wrap_content"
-                android:layout_marginTop="8dp" android:text="@string/action_aligxu"
-                android:layout_gravity="right|top"
-                android:clickable="false"
-                android:focusable="false"
-                android:background="@color/sam_bouton_fonce"
-                android:textColor="@color/sam_bouton_txt" />
+                <Button android:id="@+id/btn_aligxu"
+                    android:layout_width="wrap_content" android:layout_height="wrap_content"
+                    android:text="@string/action_aligxu"
+                    android:layout_gravity="right|top"
+                    android:clickable="false"
+                    android:focusable="false"
+                    android:background="@color/sam_bouton_fonce"
+                    android:textColor="@color/sam_bouton_txt"
+                    android:layout_alignParentRight="true"
+                    android:layout_alignParentTop="true" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+                    android:text="@string/txt_forgesita_pasvorto"
+                    android:id="@+id/txt_forgesita_pasvorto"
+                    android:layout_gravity="left"
+                    android:layout_alignParentLeft="false"
+                    android:layout_alignParentTop="false"
+                    android:layout_alignBottom="@+id/btn_aligxu"
+                    android:layout_toLeftOf="@+id/btn_aligxu" />
+
+            </RelativeLayout>
 
         </LinearLayout>
     </LinearLayout>
@@ -114,7 +142,7 @@
             android:layout_gravity="right"
             style="?android:attr/borderlessButtonStyle"
             android:textColor="@color/sam_bouton_fonce"
-            android:layout_marginTop="8dp" />
+            android:layout_marginTop="4dp" />
     </LinearLayout>
 
 </LinearLayout>
