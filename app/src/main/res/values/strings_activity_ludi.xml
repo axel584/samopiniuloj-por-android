@@ -1,3 +1,12 @@
-<?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <string name="txt_proponoj">Viaj proponoj:</string>
+    <string name="txt_propono_1">propono 1</string>
+    <string name="txt_propono_2">propono 2</string>
+    <string name="txt_propono_3">propono 3</string>
+    <string name="txt_propono_4">propono 4</string>
+    <string name="txt_propono_5">propono 5</string>
+    <string name="txt_propono_6">propono 6</string>
+    <string name="txt_propono_7">propono 7</string>
+    <string name="txt_propono_8">propono 8</string>
+
 </resources>

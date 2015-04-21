@@ -5,9 +5,7 @@
     <string name="txt_eniri1">Se vi jam havas konton en tiu ludo, (ekzemple se vi jam ludis en la reta ludo), bonvolu eniri ĉi-tie:</string>
     <string name="txt_eniri_nova_ludanto">Ĉu vi ankoraŭ ne havas konton? Vi povas tuj aliĝi. Estas rapide kaj senpage!</string>
 
-    <string name="txt_forgesita_pasvorto">Ĉu vi forgesis vian pasvorton?
-
-</string>
+    <string name="txt_forgesita_pasvorto">Ĉu vi forgesis vian pasvorton?</string>
 
 
 </resources>

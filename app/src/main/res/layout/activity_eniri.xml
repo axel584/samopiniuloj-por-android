@@ -29,7 +29,8 @@
                 android:id="@+id/txt_enkonduko" />
 
             <AutoCompleteTextView android:id="@+id/enirnomo" android:layout_width="match_parent"
-                android:layout_height="48dp" android:hint="@string/prompt_enirnomo"
+                android:layout_height="48dp"
+                android:hint="@string/prompt_enirnomo"
                 android:maxLines="1"
                 android:singleLine="true"
                 android:inputType="text"

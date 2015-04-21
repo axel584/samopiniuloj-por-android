@@ -7,13 +7,16 @@ import android.view.View;
 import android.widget.Button;
 
 import static org.esperanto_france.samopiniuloj.R.id.button_alighilo;
-
+import static org.esperanto_france.samopiniuloj.R.id.button_enirejo;
+import static org.esperanto_france.samopiniuloj.R.id.button_akceptejo;
+import static org.esperanto_france.samopiniuloj.R.id.button_ludo;
 
 public class MainActivity extends Activity {
 
     private Button bEniri = null;
     private Button bAlighi = null;
     private Button bAkceptejo = null;
+    private Button bLudi = null;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,6 +27,7 @@ public class MainActivity extends Activity {
         bEniri = (Button) findViewById(R.id.button_enirejo);
         bAlighi = (Button) findViewById(R.id.button_alighilo);
         bAkceptejo = (Button) findViewById(R.id.button_akceptejo);
+        bLudi = (Button) findViewById(R.id.button_ludo);
 
         bEniri.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -61,6 +65,17 @@ public class MainActivity extends Activity {
             }
         });
 
+        bLudi.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // Le premier paramètre est le nom de l'activité actuelle
+                // Le second est le nom de l'activité de destination
+                Intent ludiActivity = new Intent(MainActivity.this, LudiActivity.class);
+
+                // Puis on lance l'intent !
+                startActivity(ludiActivity);
+            }
+        });
     }
 
 
