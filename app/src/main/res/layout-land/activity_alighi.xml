@@ -35,7 +35,7 @@
                     android:textAppearance="@style/TextAppearance.AppCompat.Body1"
                     android:text="@string/txt_alighi1"
                     android:id="@+id/txt_alighi1"
-                    android:textColor="@color/sam_texte" />
+                    android:textColor="@color/sam_txt_0" />
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -43,7 +43,7 @@
                     android:textAppearance="@style/TextAppearance.AppCompat.Body1"
                     android:text="@string/txt_alighi2"
                     android:id="@+id/txt_alighi2"
-                    android:textColor="@color/sam_texte" />
+                    android:textColor="@color/sam_txt_2" />
 
                 <LinearLayout
                     android:orientation="vertical"
@@ -56,7 +56,7 @@
                         android:layout_width="fill_parent"
                         android:layout_height="wrap_content"
                         android:textAppearance="@style/TextAppearance.AppCompat.Body1"
-                        android:textColor="@color/sam_texte"
+                        android:textColor="@color/sam_txt_1"
                         android:text="@string/txt_alighi3"
                         android:id="@+id/txt_alighi3"
                         android:password="false" />
@@ -66,8 +66,8 @@
                         android:layout_height="wrap_content"
                         android:text="@string/action_eniru"
                         android:id="@+id/btn_eniru"
-                        android:background="@color/sam_bouton2_bg"
-                        android:textColor="@color/sam_bouton_txt"
+                        style="?android:attr/borderlessButtonStyle"
+                        android:textColor="@color/sam_bouton_fonce"
                         android:layout_gravity="right" />
                 </LinearLayout>
 
@@ -88,25 +88,33 @@
                         android:layout_height="48dp" android:hint="@string/prompt_enirnomo"
                         android:maxLines="1"
                         android:singleLine="true"
-                        android:inputType="text" />
+                        android:inputType="text"
+                        android:textColor="@color/sam_txt_1"
+                        android:textColorHint="@color/sam_txt_2" />
 
                     <EditText android:id="@+id/pasvorto" android:layout_width="match_parent"
                         android:layout_height="48dp" android:hint="@string/prompt_pasvorto"
-                        android:imeActionId="@+id/login"
                         android:imeOptions="actionUnspecified" android:inputType="textPassword"
-                        android:maxLines="1" android:singleLine="true" />
+                        android:maxLines="1" android:singleLine="true"
+                        android:textColor="@color/sam_txt_1"
+                        android:textColorHint="@color/sam_txt_2" />
 
                     <EditText android:id="@+id/retadreso" android:layout_width="match_parent"
                         android:layout_height="48dp" android:hint="@string/prompt_retadreso"
                         android:maxLines="1"
                         android:singleLine="true"
-                        android:inputType="textEmailAddress" />
+                        android:inputType="textEmailAddress"
+                        android:textColor="@color/sam_txt_1"
+                        android:textColorHint="@color/sam_txt_2" />
 
                     <EditText android:id="@+id/lando" android:layout_width="match_parent"
                         android:layout_height="48dp" android:hint="@string/prompt_lando"
                         android:maxLines="1"
                         android:singleLine="true"
-                        android:inputType="text" />
+                        android:inputType="text"
+                        android:textColor="@color/sam_txt_1"
+                        android:textColorHint="@color/sam_txt_2"
+                        android:textIsSelectable="true" />
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -121,7 +129,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginTop="8dp" android:text="@string/action_aligxu"
                         android:layout_gravity="right|top"
-                        android:background="@color/sam_bouton1_bg"
+                        android:background="@color/sam_bouton_fonce"
                         android:textColor="@color/sam_bouton_txt" />
 
                 </LinearLayout>

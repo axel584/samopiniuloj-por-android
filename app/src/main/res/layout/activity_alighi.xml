@@ -27,7 +27,7 @@
                 android:textAppearance="@style/TextAppearance.AppCompat.Body1"
                 android:text="@string/txt_alighi1"
                 android:id="@+id/txt_alighi1"
-                android:textColor="@color/sam_texte" />
+                android:textColor="@color/sam_txt_0" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -35,50 +35,84 @@
                 android:textAppearance="@style/TextAppearance.AppCompat.Body1"
                 android:text="@string/txt_alighi2"
                 android:id="@+id/txt_alighi2"
-                android:textColor="@color/sam_texte" />
+                android:textColor="@color/sam_txt_2"
+                android:layout_marginTop="4dp" />
 
             <EditText android:id="@+id/enirnomo" android:layout_width="match_parent"
                 android:layout_height="48dp" android:hint="@string/prompt_enirnomo"
                 android:maxLines="1"
                 android:singleLine="true"
+                android:layout_marginTop="16dp"
+                android:textColor="@color/sam_txt_1"
                 android:inputType="text"
-                android:layout_marginTop="16dp" />
+                android:textColorHint="@color/sam_txt_2"
+                android:selectAllOnFocus="true" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/eraro_enirnomo"
+                android:id="@+id/eraro_enirnomo"
+                android:textColor="@color/sam_erreur"
+                android:textSize="12sp" />
 
             <EditText android:id="@+id/pasvorto" android:layout_width="match_parent"
                 android:layout_height="48dp" android:hint="@string/prompt_pasvorto"
-                android:imeActionId="@+id/login"
                 android:imeOptions="actionUnspecified" android:inputType="textPassword"
-                android:maxLines="1" android:singleLine="true" />
+                android:maxLines="1" android:singleLine="true"
+                android:textColorHint="@color/sam_txt_2" />
 
             <EditText android:id="@+id/retadreso" android:layout_width="match_parent"
                 android:layout_height="48dp" android:hint="@string/prompt_retadreso"
                 android:maxLines="1"
                 android:singleLine="true"
-                android:inputType="textEmailAddress" />
+                android:inputType="textEmailAddress"
+                android:textColorHint="@color/sam_txt_2" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/eraro_retadreso"
+                android:id="@+id/eraro_pasvorto"
+                android:textColor="@color/sam_erreur"
+                android:textSize="12sp" />
 
             <EditText android:id="@+id/lando" android:layout_width="match_parent"
                 android:layout_height="48dp" android:hint="@string/prompt_lando"
                 android:maxLines="1"
                 android:singleLine="true"
-                android:inputType="text" />
+                android:inputType="text"
+                android:textColorHint="@color/sam_txt_2" />
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textAppearance="@style/TextAppearance.AppCompat.Body2"
-                android:text="@string/txt_forgesita_pasvorto"
-                android:id="@+id/txt_forgesita_pasvorto"
-                android:layout_marginTop="8dp"
-                android:layout_gravity="left" />
+            <RelativeLayout
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_marginTop="8dp">
 
-            <Button android:id="@+id/btn_aligxu"
-                android:layout_width="wrap_content" android:layout_height="wrap_content"
-                android:layout_marginTop="8dp" android:text="@string/action_aligxu"
-                android:layout_gravity="right|top"
-                android:clickable="false"
-                android:focusable="false"
-                android:background="@color/sam_bouton1_bg"
-                android:textColor="@color/sam_bouton_txt" />
+                <Button android:id="@+id/btn_aligxu"
+                    android:layout_width="wrap_content" android:layout_height="wrap_content"
+                    android:text="@string/action_aligxu"
+                    android:layout_gravity="right|top"
+                    android:clickable="false"
+                    android:focusable="false"
+                    android:background="@color/sam_bouton_fonce"
+                    android:textColor="@color/sam_bouton_txt"
+                    android:layout_alignParentRight="true"
+                    android:layout_alignParentTop="true" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+                    android:text="@string/txt_forgesita_pasvorto"
+                    android:id="@+id/txt_forgesita_pasvorto"
+                    android:layout_gravity="left"
+                    android:layout_alignParentLeft="false"
+                    android:layout_alignParentTop="false"
+                    android:layout_alignBottom="@+id/btn_aligxu"
+                    android:layout_toLeftOf="@+id/btn_aligxu" />
+
+            </RelativeLayout>
 
         </LinearLayout>
     </LinearLayout>
@@ -98,7 +132,7 @@
             android:id="@+id/textView"
             android:layout_marginTop="16dp"
             android:password="false"
-            android:textColor="@color/sam_texte" />
+            android:textColor="@color/sam_txt_1" />
 
         <Button
             android:layout_width="wrap_content"
@@ -106,9 +140,9 @@
             android:text="@string/action_eniru"
             android:id="@+id/btn_eniru"
             android:layout_gravity="right"
-            android:background="@color/sam_bouton2_bg"
-            android:textColor="@color/sam_bouton_txt"
-            android:layout_marginTop="8dp" />
+            style="?android:attr/borderlessButtonStyle"
+            android:textColor="@color/sam_bouton_fonce"
+            android:layout_marginTop="4dp" />
     </LinearLayout>
 
 </LinearLayout>
