@@ -77,12 +77,15 @@
                 android:textColor="@color/sam_erreur"
                 android:textSize="12sp" />
 
-            <EditText android:id="@+id/lando" android:layout_width="match_parent"
-                android:layout_height="48dp" android:hint="@string/prompt_lando"
-                android:maxLines="1"
-                android:singleLine="true"
-                android:inputType="text"
-                android:textColorHint="@color/sam_txt_2" />
+            <Spinner
+                android:id="@+id/landoj_spinner"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:textColor="@color/sam_txt_1"
+                android:textSize="12sp"
+                android:prompt="@string/prompt_lando"
+                android:spinnerMode="dropdown"
+                android:layout_gravity="left" />
 
             <RelativeLayout
                 android:layout_width="fill_parent"
@@ -90,7 +93,7 @@
                 android:layout_marginTop="8dp">
 
                 <Button android:id="@+id/btn_aligxu"
-                    android:layout_width="wrap_content" android:layout_height="wrap_content"
+                    android:layout_width="wrap_content" android:layout_height="48dp"
                     android:text="@string/action_aligxu"
                     android:layout_gravity="right|top"
                     android:clickable="false"

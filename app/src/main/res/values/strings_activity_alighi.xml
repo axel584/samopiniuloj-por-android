@@ -8,5 +8,21 @@
     <string name="eraro_enirnomo">Enirnomo jam uzita</string>
     <string name="eraro_retadreso">Retadreso jam uzita</string>
 
+    <string-array name="landoj">
+        <item>Finnlando</item>
+        <item>Francujo</item>
+        <item>Gabono</item>
+        <item>Gambio</item>
+        <item>Ganao</item>
+        <item>Germanujo</item>
+        <item>Grekujo</item>
+        <item>Grenado</item>
+        <item>Gronlando</item>
+        <item>Gujano</item>
+        <item>Gvadelupo</item>
+        <item>Gvamo</item>
+        <item>Gvatemalo</item>
+    </string-array>
+
 
 </resources>
