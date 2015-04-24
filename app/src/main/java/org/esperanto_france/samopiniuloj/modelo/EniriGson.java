@@ -7,6 +7,8 @@ public class EniriGson {
     private String respondo;
     private String kialo;
     private int id;
+    private int eraro_id;
+    private String nomo;
 
     public String getRespondo() {
         return respondo;
@@ -30,5 +32,21 @@ public class EniriGson {
 
     public void setId(int id) {
         this.id = id;
+    }
+
+    public int getEraro_id() {
+        return eraro_id;
+    }
+
+    public void setEraro_id(int eraro_id) {
+        this.eraro_id = eraro_id;
+    }
+
+    public String getNomo() {
+        return nomo;
+    }
+
+    public void setNomo(String nomo) {
+        this.nomo = nomo;
     }
 }

@@ -144,10 +144,10 @@ public class EniriActivity extends Activity {
                 SharedPreferences pref = getApplicationContext().getSharedPreferences("SamAgordo", 0); // 0 - for private mode
                 SharedPreferences.Editor editor = pref.edit();
                 editor.putInt("uzanto_id", eniriGson.getId());
-                editor.putInt("uzanto_nomo", eniriGson.getId());
+                editor.putString("uzanto_nomo", eniriGson.getNomo());
                 editor.commit();
-                Intent mainActivity = new Intent(EniriActivity.this, MainActivity.class);
-                startActivity(mainActivity);
+                Intent ludiActivity = new Intent(EniriActivity.this, LudiActivity.class);
+                startActivity(ludiActivity);
             }
 
         }
