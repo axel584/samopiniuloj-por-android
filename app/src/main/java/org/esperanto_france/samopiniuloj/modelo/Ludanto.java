@@ -3,9 +3,19 @@ package org.esperanto_france.samopiniuloj.modelo;
 
 public class Ludanto {
 
+    private Integer id;
+
     private String kromnomo;
     private String retadreso;
     private String lando;
+
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
 
     public String getKromnomo() {
         return kromnomo;

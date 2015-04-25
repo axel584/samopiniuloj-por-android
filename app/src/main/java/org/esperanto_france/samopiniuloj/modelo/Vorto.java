@@ -3,6 +3,8 @@ package org.esperanto_france.samopiniuloj.modelo;
 
 public class Vorto {
 
+    private Integer id;
+
     private Integer tago;
     private Integer monato;
     private Integer jaro;
@@ -12,6 +14,15 @@ public class Vorto {
 
     public Integer getTago() {
         return tago;
+    }
+
+
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
     }
 
     public void setTago(Integer tago) {
