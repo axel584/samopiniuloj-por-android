@@ -6,17 +6,13 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
-import static org.esperanto_france.samopiniuloj.R.id.button_alighilo;
-import static org.esperanto_france.samopiniuloj.R.id.button_enirejo;
-import static org.esperanto_france.samopiniuloj.R.id.button_akceptejo;
-import static org.esperanto_france.samopiniuloj.R.id.button_ludo;
-
 public class MainActivity extends Activity {
 
     private Button bEniri = null;
     private Button bAlighi = null;
     private Button bAkceptejo = null;
     private Button bLudi = null;
+    private Button bRezultoj = null;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,6 +24,7 @@ public class MainActivity extends Activity {
         bAlighi = (Button) findViewById(R.id.button_alighilo);
         bAkceptejo = (Button) findViewById(R.id.button_akceptejo);
         bLudi = (Button) findViewById(R.id.button_ludo);
+        bRezultoj = (Button) findViewById(R.id.button_rezultoj);
 
         bEniri.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -74,6 +71,18 @@ public class MainActivity extends Activity {
 
                 // Puis on lance l'intent !
                 startActivity(ludiActivity);
+            }
+        });
+
+        bRezultoj.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // Le premier paramètre est le nom de l'activité actuelle
+                // Le second est le nom de l'activité de destination
+                Intent rezultojActivity = new Intent(MainActivity.this, RezultojActivity.class);
+
+                // Puis on lance l'intent !
+                startActivity(rezultojActivity);
             }
         });
     }
