@@ -42,6 +42,8 @@ public class EniriActivity extends Activity {
 
     EditText inputEnirnomo;
     EditText inputPasvorto;
+    TextView eraroEnirnomo;
+    TextView eraroPasvorto;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -50,6 +52,9 @@ public class EniriActivity extends Activity {
 
         inputEnirnomo = (EditText) findViewById(R.id.enirnomo);
         inputPasvorto = (EditText) findViewById(R.id.pasvorto);
+        eraroEnirnomo = (TextView) findViewById(R.id.eraro_enirnomo);
+        eraroPasvorto = (TextView) findViewById(R.id.eraro_pasvorto);
+
         btnLogin = (Button) findViewById(R.id.btn_eniru);
 
         btnLogin.setOnClickListener(new View.OnClickListener() {
@@ -62,14 +67,13 @@ public class EniriActivity extends Activity {
                         (!sEnirnomo.equals("")) && (!sPasvorto.equals(""))) {
                     new HttpAsyncTask().execute("http://samopiniuloj.esperanto-jeunes.org/ws/ws_eniri.php?nomo=" + sEnirnomo + "&pasvorto=" + sPasvorto);
                 } else if ((!sEnirnomo.equals(""))) {
-                    Toast.makeText(getApplicationContext(),
-                            "Password field empty", Toast.LENGTH_SHORT).show();
+                    eraroPasvorto.setText(R.string.eraro_pasvorto_mankas);
                 } else if ((!sPasvorto.equals(""))) {
-                    Toast.makeText(getApplicationContext(),
-                            "Enirnomo field empty", Toast.LENGTH_SHORT).show();
+                    eraroEnirnomo.setText(R.string.eraro_enirnomo_mankas);
                 } else {
-                    Toast.makeText(getApplicationContext(),
-                            "Email and Password field are empty", Toast.LENGTH_SHORT).show();
+                    eraroEnirnomo.setText(R.string.eraro_enirnomo_mankas);
+                    eraroPasvorto.setText(R.string.eraro_pasvorto_mankas);
+
                 }
             }
 
@@ -137,7 +141,12 @@ public class EniriActivity extends Activity {
             Gson gson = new Gson();
             EniriGson eniriGson = gson.fromJson(result,EniriGson.class);
             if ("eraro".equals(eniriGson.getRespondo())) {
-                // TODO : cas en erreur
+                if (eniriGson.getEraro_id()==1) {
+                    eraroEnirnomo.setText(R.string.eraro_enirnomo_nekonata);
+                }
+                if (eniriGson.getEraro_id()==2) { // TODO : mettre des constantes pour les codes d'erreur
+                    eraroPasvorto.setText(R.string.eraro_pasvorto_malghusta);
+                }
             }
             if ("ok".equals(eniriGson.getRespondo())) {
                 // on enregistre dans sharedpreference l'id du joueur

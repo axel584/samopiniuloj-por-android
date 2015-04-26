@@ -8,7 +8,9 @@
     <string name="txt_forgesita_pasvorto">Ĉu vi forgesis vian pasvorton?</string>
 
     <string name="eraro_enirnomo_nekonata">Enirnomo ne konata</string>
+    <string name="eraro_enirnomo_mankas">Enirnomo mankas</string>
     <string name="eraro_pasvorto_malghusta">Malĝusta pasvorto</string>
+    <string name="eraro_pasvorto_mankas">Pasvorto mankas</string>
 
 
 </resources>
