@@ -42,7 +42,7 @@
                 android:layout_height="48dp" android:hint="@string/prompt_enirnomo"
                 android:maxLines="1"
                 android:singleLine="true"
-                android:layout_marginTop="16dp"
+                android:layout_marginTop="8dp"
                 android:textColor="@color/sam_txt_1"
                 android:inputType="text"
                 android:textColorHint="@color/sam_txt_2"
@@ -51,7 +51,6 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/eraro_enirnomo"
                 android:id="@+id/eraro_enirnomo"
                 android:textColor="@color/sam_erreur"
                 android:textSize="12sp" />
@@ -61,6 +60,13 @@
                 android:imeOptions="actionUnspecified" android:inputType="textPassword"
                 android:maxLines="1" android:singleLine="true"
                 android:textColorHint="@color/sam_txt_2" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/eraro_pasvorto"
+                android:textColor="@color/sam_erreur"
+                android:textSize="12sp" />
 
             <EditText android:id="@+id/retadreso" android:layout_width="match_parent"
                 android:layout_height="48dp" android:hint="@string/prompt_retadreso"
@@ -72,7 +78,6 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/eraro_retadreso"
                 android:id="@+id/eraro_pasvorto"
                 android:textColor="@color/sam_erreur"
                 android:textSize="12sp" />

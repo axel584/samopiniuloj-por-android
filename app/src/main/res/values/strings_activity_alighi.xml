@@ -3,10 +3,10 @@
 
     <string name="txt_alighi1">Por aliĝi al la ludo, bonvolu elekti enirnomon kaj pasvorton. Bonvolu ankaŭ aldoni vian retadreson kaj vian landon.</string>
     <string name="txt_alighi2">Tiuj informoj helpos nin por kontakti vin. Ni ne uzos ilin por alia kialo.</string>
-    <string name="txt_alighi3">Ĉu vi jam havas konton? Ĉu vi jam ludis en la reta ludo? Vi povas rekte eniri.</string>
+    <string name="txt_alighi3">Ĉu vi jam havas konton? Vi povas rekte eniri.</string>
 
-    <string name="eraro_enirnomo">Enirnomo jam uzita</string>
-    <string name="eraro_retadreso">Retadreso jam uzita</string>
+    <string name="eraro_enirnomo_uzita">Enirnomo jam uzita</string>
+    <string name="eraro_retadreso_uzita">Retadreso jam uzita</string>
 
     <string-array name="landoj">
         <item>Finnlando</item>

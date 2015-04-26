@@ -92,12 +92,26 @@
                         android:textColor="@color/sam_txt_1"
                         android:textColorHint="@color/sam_txt_2" />
 
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/eraro_enirnomo"
+                        android:textColor="@color/sam_erreur"
+                        android:textSize="12sp" />
+
                     <EditText android:id="@+id/pasvorto" android:layout_width="match_parent"
                         android:layout_height="48dp" android:hint="@string/prompt_pasvorto"
                         android:imeOptions="actionUnspecified" android:inputType="textPassword"
                         android:maxLines="1" android:singleLine="true"
                         android:textColor="@color/sam_txt_1"
                         android:textColorHint="@color/sam_txt_2" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/eraro_pasvorto"
+                        android:textColor="@color/sam_erreur"
+                        android:textSize="12sp" />
 
                     <EditText android:id="@+id/retadreso" android:layout_width="match_parent"
                         android:layout_height="48dp" android:hint="@string/prompt_retadreso"
@@ -106,6 +120,13 @@
                         android:inputType="textEmailAddress"
                         android:textColor="@color/sam_txt_1"
                         android:textColorHint="@color/sam_txt_2" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/eraro_pasvorto"
+                        android:textColor="@color/sam_erreur"
+                        android:textSize="12sp" />
 
                     <EditText android:id="@+id/lando" android:layout_width="match_parent"
                         android:layout_height="48dp" android:hint="@string/prompt_lando"

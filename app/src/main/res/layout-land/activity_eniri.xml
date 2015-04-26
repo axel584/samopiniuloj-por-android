@@ -81,12 +81,26 @@
                     android:textColor="@color/sam_txt_1"
                     android:textColorHint="@color/sam_txt_2" />
 
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/eraro_enirnomo"
+                    android:textColor="@color/sam_erreur"
+                    android:textSize="12sp" />
+
                 <EditText android:id="@+id/pasvorto" android:layout_width="fill_parent"
                     android:layout_height="48dp" android:hint="@string/prompt_pasvorto"
                     android:inputType="textPassword"
                     android:maxLines="1" android:singleLine="true"
                     android:text="@color/sam_txt_1"
                     android:textColor="@color/sam_txt_2" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/eraro_pasvorto_malghusta"
+                    android:textColor="@color/sam_erreur"
+                    android:textSize="12sp" />
 
                 <TextView
                     android:layout_width="wrap_content"
