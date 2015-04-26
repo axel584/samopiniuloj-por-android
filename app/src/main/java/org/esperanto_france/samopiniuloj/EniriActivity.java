@@ -14,6 +14,7 @@ import android.text.TextWatcher;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -46,6 +47,8 @@ public class EniriActivity extends Activity {
     EditText inputPasvorto;
     TextView eraroEnirnomo;
     TextView eraroPasvorto;
+
+    ProgressBar loginProgress;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -167,6 +170,19 @@ public class EniriActivity extends Activity {
             return false;
     }
     private class HttpAsyncTask extends AsyncTask<String, Void, String> {
+
+        ProgressDialog progressDialog;
+
+        @Override
+        protected void onPreExecute() {
+
+            progressDialog = new ProgressDialog(
+                    EniriActivity.this);
+            progressDialog.setMessage("Konektiĝas...");
+            progressDialog.setCancelable(false);
+            progressDialog.show();
+        }
+
         @Override
         protected String doInBackground(String... urls) {
 
@@ -175,6 +191,9 @@ public class EniriActivity extends Activity {
         // onPostExecute displays the results of the AsyncTask.
         @Override
         protected void onPostExecute(String result) {
+            // termine le sablier
+            progressDialog.cancel();
+            // traite la réponse
             Gson gson = new Gson();
             EniriGson eniriGson = gson.fromJson(result,EniriGson.class);
             if ("eraro".equals(eniriGson.getRespondo())) {

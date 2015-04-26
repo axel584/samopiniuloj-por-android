@@ -26,6 +26,9 @@
     <string name="bonvenon_ludanto">Bonvenon, ... !</string>
     <string name="nuna_horo">Nun estas:</string>
 
+    <!-- Pour tous les accès au webservice -->
+    <string name="konektigxas">Konektiĝas...</string>
+
 <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
 
