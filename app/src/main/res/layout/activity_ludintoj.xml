@@ -30,7 +30,7 @@
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceSmall"
             android:textColor="@color/sam_txt_1"
-            android:text="@string/la_hodiaua_vorto_estas"
+            android:text="@string/taga_vorto"
             android:id="@+id/rezultoj_txt1"
             android:layout_marginTop="8dp" />
 

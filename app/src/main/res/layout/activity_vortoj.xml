@@ -30,7 +30,7 @@
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceSmall"
             android:textColor="@color/sam_txt_1"
-            android:text="@string/la_hodiaua_vorto_estas"
+            android:text="@string/taga_vorto"
             android:id="@+id/rezultoj_txt1"
             android:layout_marginTop="8dp" />
 
@@ -267,7 +267,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:textAppearance="?android:attr/textAppearanceSmall"
-                        android:text="0"
+                        android:text="1"
                         android:id="@+id/poentoj4"
                         android:layout_gravity="right"
                         android:textColor="@color/sam_txt_2"

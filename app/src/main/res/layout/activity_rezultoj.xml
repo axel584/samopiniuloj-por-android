@@ -14,7 +14,7 @@
         android:background="@color/sam_fond2"
         android:padding="16dp"
         android:focusableInTouchMode="false"
-        android:elevation="4dp">
+        android:elevation="4dp" >
 
         <TextView
             android:layout_width="wrap_content"
@@ -30,7 +30,7 @@
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceSmall"
             android:textColor="@color/sam_txt_1"
-            android:text="@string/la_hodiaua_vorto_estas"
+            android:text="@string/taga_vorto"
             android:id="@+id/rezultoj_txt1"
             android:layout_marginTop="8dp" />
 
@@ -106,7 +106,8 @@
             android:layout_toEndOf="@+id/linearLayout3"
             android:padding="16dp"
             android:elevation="4dp"
-            android:focusable="true">
+            android:focusable="false"
+            android:layout_alignParentTop="true">
 
             <TextView
                 android:layout_width="wrap_content"

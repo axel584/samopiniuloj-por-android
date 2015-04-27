@@ -28,6 +28,7 @@ public class MainActivity extends Activity {
         bLudi = (Button) findViewById(R.id.button_ludo);
         bRezultoj = (Button) findViewById(R.id.button_rezultoj);
         bLudintoj = (Button) findViewById(R.id.button_ludintoj);
+        bVortoj = (Button) findViewById(R.id.button_vortoj);
 
 
         bEniri.setOnClickListener(new View.OnClickListener() {
