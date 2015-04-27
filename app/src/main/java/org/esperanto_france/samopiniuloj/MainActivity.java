@@ -2,9 +2,11 @@ package org.esperanto_france.samopiniuloj;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 
 import static org.esperanto_france.samopiniuloj.R.id.button_alighilo;
 import static org.esperanto_france.samopiniuloj.R.id.button_enirejo;
@@ -17,6 +19,7 @@ public class MainActivity extends Activity {
     private Button bAlighi = null;
     private Button bAkceptejo = null;
     private Button bLudi = null;
+    private TextView textSurtitre=null;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,10 +27,23 @@ public class MainActivity extends Activity {
         setContentView(R.layout.activity_main);
 
 
+
+
+
         bEniri = (Button) findViewById(R.id.button_enirejo);
         bAlighi = (Button) findViewById(R.id.button_alighilo);
         bAkceptejo = (Button) findViewById(R.id.button_akceptejo);
         bLudi = (Button) findViewById(R.id.button_ludo);
+        textSurtitre = (TextView) findViewById(R.id.text_surtitre);
+
+         // Récupère les informations de connection (id et nom) daans SharedPreferences
+        SharedPreferences pref = getApplicationContext().getSharedPreferences("SamAgordo", 0); // 0 - for private mode
+        Integer uzantoId = pref.getInt("uzanto_id",0);
+        String uzantoNomo = pref.getString("uzanto_nomo","");
+
+        if (uzantoId!=0) {
+            textSurtitre.setText("Bonvenon "+uzantoNomo);
+        }
 
         bEniri.setOnClickListener(new View.OnClickListener() {
             @Override
