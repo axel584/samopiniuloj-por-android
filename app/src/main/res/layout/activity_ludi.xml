@@ -19,7 +19,7 @@
         <TextView android:text="@string/bonvenon_ludanto" android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/bonvenon_ludando"
-            android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+            android:textAppearance="?android:attr/textAppearanceSmall"
             android:gravity="right"
             android:textColor="@color/sam_txt_1" />
 
@@ -37,7 +37,7 @@
         <TextView android:text="@string/nuna_horo" android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/nuna_horo"
-            android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+            android:textAppearance="?android:attr/textAppearanceSmall"
             android:gravity="right"
             android:textColor="@color/sam_txt_1" />
     </LinearLayout>
@@ -76,7 +76,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
                     android:textColor="@color/sam_txt_2"
                     android:text="@string/la_hodiaua_vorto_estas"
                     android:id="@+id/txt_hodiaua_vorto"
@@ -87,7 +87,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
                     android:textColor="@color/sam_txt_0"
                     android:text="@string/vorto2"
                     android:id="@+id/hieraua_vorto"
@@ -126,10 +126,11 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:id="@+id/done_1"
-                android:src="@mipmap/ic_done_green_18dp"
+                android:src="@mipmap/ic_done_black_18dp"
                 android:layout_gravity="center_vertical"
                 android:layout_marginRight="8dp"
-                android:contentDescription="" />
+                android:contentDescription=""
+                android:tint="@color/sam_bone" />
 
             <EditText
                 android:layout_width="0dp"
@@ -147,7 +148,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:id="@+id/done_2"
-                android:src="@mipmap/ic_done_green_18dp"
+                android:src="@mipmap/ic_done_black_18dp"
+                android:tint="@color/sam_bone"
                 android:layout_gravity="center_vertical"
                 android:layout_marginRight="8dp" />
 
@@ -171,7 +173,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:id="@+id/done_3"
-                android:src="@mipmap/ic_done_green_18dp"
+                android:src="@mipmap/ic_done_black_18dp"
+                android:tint="@color/sam_bone"
                 android:layout_gravity="center_vertical"
                 android:layout_marginRight="8dp" />
 
@@ -191,7 +194,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:id="@+id/done_4"
-                android:src="@mipmap/ic_done_green_18dp"
+                android:src="@mipmap/ic_done_black_18dp"
+                android:tint="@color/sam_bone"
                 android:layout_gravity="center_vertical"
                 android:layout_marginRight="8dp" />
 
@@ -215,7 +219,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:id="@+id/done_5"
-                android:src="@mipmap/ic_done_green_18dp"
+                android:src="@mipmap/ic_done_black_18dp"
+                android:tint="@color/sam_bone"
                 android:layout_gravity="center_vertical"
                 android:layout_marginRight="8dp" />
 
@@ -235,7 +240,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:id="@+id/done_6"
-                android:src="@mipmap/ic_done_green_18dp"
+                android:src="@mipmap/ic_done_black_18dp"
+                android:tint="@color/sam_bone"
                 android:layout_gravity="center_vertical"
                 android:layout_marginRight="8dp" />
 
@@ -259,7 +265,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:id="@+id/done_7"
-                android:src="@mipmap/ic_done_green_18dp"
+                android:src="@mipmap/ic_done_black_18dp"
+                android:tint="@color/sam_bone"
                 android:layout_gravity="center_vertical"
                 android:layout_marginRight="8dp" />
 
@@ -279,7 +286,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:id="@+id/done_8"
-                android:src="@mipmap/ic_done_green_18dp"
+                android:src="@mipmap/ic_done_black_18dp"
+                android:tint="@color/sam_bone"
                 android:layout_gravity="center_vertical"
                 android:layout_marginRight="8dp" />
 

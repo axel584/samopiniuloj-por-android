@@ -18,14 +18,14 @@
         <TextView android:text="@string/bonvenon_ludanto" android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/bonvenon_ludando"
-            android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+            android:textAppearance="?android:attr/textAppearanceSmall"
             android:gravity="right"
             android:textColor="@color/sam_txt_1" />
 
         <TextView android:text="@string/nuna_horo" android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/nuna_horo"
-            android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+            android:textAppearance="?android:attr/textAppearanceSmall"
             android:gravity="right"
             android:textColor="@color/sam_txt_1"
             android:layout_gravity="left" />
@@ -64,7 +64,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
                     android:textColor="@color/sam_txt_2"
                     android:text="@string/la_hieraua_vorto_estis"
                     android:id="@+id/txt_hieraua_vorto"
@@ -75,7 +75,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
                     android:textColor="@color/sam_txt_0"
                     android:text="@string/vorto1"
                     android:id="@+id/hieraua_vorto"
@@ -88,7 +88,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
                     android:textColor="@color/sam_txt_2"
                     android:text="@string/vi_gajnis"
                     android:id="@+id/txt_vigajnis"
@@ -159,7 +159,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
                     android:textColor="@color/sam_txt_2"
                     android:text="@string/la_hodiaua_vorto_estas"
                     android:id="@+id/txt_hodiaua_vorto"
@@ -170,7 +170,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
                     android:textColor="@color/sam_txt_0"
                     android:text="@string/vorto2"
                     android:id="@+id/hieraua_vorto"

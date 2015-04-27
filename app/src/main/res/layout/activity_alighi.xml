@@ -7,11 +7,6 @@
     tools:context="org.esperanto_france.samopiniuloj.AlighiActivity"
     android:orientation="vertical">
 
-    <!-- Login progress -->
-    <ProgressBar android:id="@+id/login_progress" style="?android:attr/progressBarStyleLarge"
-        android:layout_width="wrap_content" android:layout_height="wrap_content"
-        android:layout_marginBottom="8dp" android:visibility="gone" />
-
     <LinearLayout
         android:orientation="vertical"
         android:layout_width="fill_parent"
@@ -32,7 +27,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                android:textAppearance="?android:attr/textAppearanceSmall"
                 android:text="@string/txt_alighi2"
                 android:id="@+id/txt_alighi2"
                 android:textColor="@color/sam_txt_2"
@@ -111,14 +106,15 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
                     android:text="@string/txt_forgesita_pasvorto"
                     android:id="@+id/txt_forgesita_pasvorto"
                     android:layout_gravity="left"
                     android:layout_alignParentLeft="false"
                     android:layout_alignParentTop="false"
                     android:layout_alignBottom="@+id/btn_aligxu"
-                    android:layout_toLeftOf="@+id/btn_aligxu" />
+                    android:layout_toLeftOf="@+id/btn_aligxu"
+                    android:textColor="@color/sam_accentuation" />
 
             </RelativeLayout>
 
@@ -135,7 +131,7 @@
         <TextView
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+            android:textAppearance="?android:attr/textAppearanceSmall"
             android:text="@string/txt_alighi3"
             android:id="@+id/textView"
             android:layout_marginTop="16dp"

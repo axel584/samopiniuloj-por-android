@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="taga_vorto">La vorto de tiu tago estis:</string>
+    <string name="viaj_rezultoj">Viaj rezultoj:</string>
+    <string name="ludintoj">Ludis tiun tagon:</string>
+    <string name="vortoj">Jen ĉiuj proponitaj vortoj:</string>
+
+</resources>

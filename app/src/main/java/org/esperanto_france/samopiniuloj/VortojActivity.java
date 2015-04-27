@@ -4,12 +4,11 @@ import android.app.Activity;
 import android.os.Bundle;
 
 
-public class AkceptejoActivity extends Activity {
+public class VortojActivity extends Activity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_akceptejo);
-
+        setContentView(R.layout.activity_vortoj);
     }
 }

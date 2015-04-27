@@ -4,6 +4,9 @@
     <string name="title_activity_alighi">Aliĝi</string>
     <string name="title_activity_eniri">Eniri</string>
     <string name="title_activity_ludi">Ludi</string>
+    <string name="title_activity_rezultoj">Rezultoj</string>
+    <string name="title_activity_ludintoj">Rezultoj</string>
+    <string name="title_activity_vortoj">Rezultoj</string>
 
     <!-- Strings related to login -->
     <string name="prompt_enirnomo">enirnomo</string>
@@ -29,7 +32,19 @@
     <!-- Pour tous les accès au webservice -->
     <string name="konektigxas">Konektiĝas...</string>
 
+    <!-- tableaux -->
+    <string name="col_proponoj">proponoj</string>
+    <string name="col_poentoj">poentoj</string>
+    <string name="col_ludintoj">ludintoj</string>
+    <string name="col_vortoj">vortoj</string>
+    <string name="col_sumo">sumo</string>
+
 <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <!-- valeurs en dur utilisées pour tester les layouts - à supprimer plus tard -->
+    <string name="vorto1">Woody Allen</string>
+    <string name="vorto2">dentradaĵo</string>
+
 
 </resources>
