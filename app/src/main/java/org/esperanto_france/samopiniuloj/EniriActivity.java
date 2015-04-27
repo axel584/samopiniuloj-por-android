@@ -35,6 +35,8 @@ import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
+import java.net.URLConnection;
+
 import android.util.Log;
 
 import com.google.gson.Gson;
@@ -122,19 +124,14 @@ public class EniriActivity extends Activity {
 
     }
 
-    public static String GET(String url){
+    public static String GET(String urlWebservice){
         InputStream inputStream = null;
         String result = "";
         try {
 
-            // create HttpClient
-            HttpClient httpclient = new DefaultHttpClient();
-
-            // make GET request to the given URL
-            HttpResponse httpResponse = httpclient.execute(new HttpGet(url));
-
-            // receive response as inputStream
-            inputStream = httpResponse.getEntity().getContent();
+            URL url = new URL(urlWebservice);
+            URLConnection urlConnection = url.openConnection();
+            inputStream = new BufferedInputStream(urlConnection.getInputStream());
 
             // convert inputstream to string
             if(inputStream != null)
