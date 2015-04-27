@@ -42,4 +42,15 @@
         android:text="Rezultoj"
         android:id="@+id/button_rezultoj" />
 
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Ludintoj"
+        android:id="@+id/button_ludintoj" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Vortoj"
+        android:id="@+id/button_vortoj" />
 </LinearLayout>

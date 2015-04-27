@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="viaj_rezultoj">Viaj Rezultoj</string>
+    <string name="ludintoj">Ludintoj</string>
+    <string name="vortoj">Vortoj</string>
 
 </resources>

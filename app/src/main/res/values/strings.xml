@@ -43,5 +43,7 @@
     <!-- valeurs en dur utilisées pour tester les layouts - à supprimer plus tard -->
     <string name="vorto1">Woody Allen</string>
     <string name="vorto2">dentradaĵo</string>
+    <string name="title_activity_ludintoj">LudintojActivity</string>
+    <string name="title_activity_vortoj">VortojActivity</string>
 
 </resources>

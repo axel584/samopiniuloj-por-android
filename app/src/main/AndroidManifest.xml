@@ -39,6 +39,14 @@
             android:name=".RezultojActivity"
             android:label="@string/title_activity_rezultoj" >
         </activity>
+        <activity
+            android:name=".LudintojActivity"
+            android:label="@string/title_activity_ludintoj" >
+        </activity>
+        <activity
+            android:name=".VortojActivity"
+            android:label="@string/title_activity_vortoj" >
+        </activity>
     </application>
 
 </manifest>

@@ -13,6 +13,8 @@ public class MainActivity extends Activity {
     private Button bAkceptejo = null;
     private Button bLudi = null;
     private Button bRezultoj = null;
+    private Button bLudintoj = null;
+    private Button bVortoj = null;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,6 +27,8 @@ public class MainActivity extends Activity {
         bAkceptejo = (Button) findViewById(R.id.button_akceptejo);
         bLudi = (Button) findViewById(R.id.button_ludo);
         bRezultoj = (Button) findViewById(R.id.button_rezultoj);
+        bLudintoj = (Button) findViewById(R.id.button_ludintoj);
+
 
         bEniri.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -85,6 +89,31 @@ public class MainActivity extends Activity {
                 startActivity(rezultojActivity);
             }
         });
+
+        bLudintoj.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // Le premier paramètre est le nom de l'activité actuelle
+                // Le second est le nom de l'activité de destination
+                Intent ludintojActivity = new Intent(MainActivity.this, LudintojActivity.class);
+
+                // Puis on lance l'intent !
+                startActivity(ludintojActivity);
+            }
+        });
+
+        bVortoj.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // Le premier paramètre est le nom de l'activité actuelle
+                // Le second est le nom de l'activité de destination
+                Intent vortojActivity = new Intent(MainActivity.this, VortojActivity.class);
+
+                // Puis on lance l'intent !
+                startActivity(vortojActivity);
+            }
+        });
+
     }
 
 
