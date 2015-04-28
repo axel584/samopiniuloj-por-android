@@ -73,7 +73,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/eraro_pasvorto"
+                android:id="@+id/eraro_retadreso"
                 android:textColor="@color/sam_erreur"
                 android:textSize="12sp" />
 
@@ -85,6 +85,7 @@
                 android:textSize="12sp"
                 android:prompt="@string/prompt_lando"
                 android:spinnerMode="dropdown"
+                android:entries="@array/landoj"
                 android:layout_gravity="left" />
 
             <RelativeLayout
