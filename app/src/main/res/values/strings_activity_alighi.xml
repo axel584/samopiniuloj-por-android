@@ -7,6 +7,9 @@
 
     <string name="eraro_enirnomo_uzita">Enirnomo jam uzita</string>
     <string name="eraro_retadreso_uzita">Retadreso jam uzita</string>
+    <string name="eraro_retadreso_mankas">Retadreso mankas</string>
+    <string name="eraro_lando_mankas">Lando mankas</string>
+
 
     <string-array name="landoj">
         <item>Finnlando</item>
