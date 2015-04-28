@@ -15,6 +15,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ProgressBar;
+import android.widget.Spinner;
 import android.widget.TextView;
 
 
@@ -28,6 +29,7 @@ import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.net.URL;
 import java.net.URLConnection;
+import java.util.ArrayList;
 
 import android.util.Log;
 
@@ -42,7 +44,6 @@ public class EniriActivity extends Activity {
     TextView eraroEnirnomo;
     TextView eraroPasvorto;
 
-    ProgressBar loginProgress;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -53,6 +54,8 @@ public class EniriActivity extends Activity {
         inputPasvorto = (EditText) findViewById(R.id.pasvorto);
         eraroEnirnomo = (TextView) findViewById(R.id.eraro_enirnomo);
         eraroPasvorto = (TextView) findViewById(R.id.eraro_pasvorto);
+
+
 
         inputEnirnomo.addTextChangedListener(new TextWatcher() {
             @Override
