@@ -45,8 +45,6 @@ public class AlighiActivity extends Activity {
     TextView eraroRetadreso;
     TextView eraroLando;
 
-    ProgressBar loginProgress;
-
     Spinner landojSpinner;
 
     @Override
