@@ -46,7 +46,7 @@ public class VortoDao {
         return bdd;
     }
 
-    public long insertLivre(Vorto vorto) {
+    public long insertVorto(Vorto vorto) {
         //Création d'un ContentValues (fonctionne comme une HashMap)
         ContentValues values = new ContentValues();
         //on lui ajoute une valeur associé à une clé (qui est le nom de la colonne dans laquelle on veut mettre la valeur)

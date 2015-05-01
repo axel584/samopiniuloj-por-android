@@ -78,7 +78,7 @@
                     android:textAppearance="?android:attr/textAppearanceMedium"
                     android:textColor="@color/sam_txt_0"
                     android:text="@string/vorto1"
-                    android:id="@+id/hieraua_vorto"
+                    android:id="@+id/hodiaua_vorto"
                     android:layout_gravity="center_horizontal"
                     style="@style/Base.TextAppearance.AppCompat.Headline"
                     android:layout_marginTop="8dp"
@@ -94,7 +94,7 @@
                     android:id="@+id/txt_vigajnis"
                     android:layout_gravity="center_horizontal|top"
                     android:layout_marginTop="16dp"
-                    android:layout_below="@+id/hieraua_vorto"
+                    android:layout_below="@+id/hodiaua_vorto"
                     android:paddingLeft="8dp" />
 
                 <LinearLayout
@@ -173,7 +173,7 @@
                     android:textAppearance="?android:attr/textAppearanceMedium"
                     android:textColor="@color/sam_txt_0"
                     android:text="@string/vorto2"
-                    android:id="@+id/hieraua_vorto"
+                    android:id="@+id/hodiaua_vorto"
                     style="@style/Base.TextAppearance.AppCompat.Headline"
                     android:layout_gravity="center_horizontal|top"
                     android:layout_marginTop="8dp"
