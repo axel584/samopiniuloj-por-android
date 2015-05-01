@@ -4,34 +4,38 @@ import android.app.Activity;
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.util.Log;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.gson.Gson;
 
 import org.esperanto_france.samopiniuloj.dao.VortoDao;
-import org.esperanto_france.samopiniuloj.modelo.EniriGson;
 import org.esperanto_france.samopiniuloj.modelo.NovajVortojGson;
 import org.esperanto_france.samopiniuloj.modelo.Vorto;
 
 import java.io.BufferedInputStream;
 import java.io.BufferedReader;
 import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.io.OutputStream;
 import java.net.HttpURLConnection;
+import java.net.URI;
 import java.net.URL;
 import java.net.URLConnection;
 import java.util.Calendar;
-import java.util.Date;
 
 
 public class LudiActivity extends Activity {
@@ -39,6 +43,7 @@ public class LudiActivity extends Activity {
     TextView textBonvonon;
     VortoDao vortoDao;
     TextView tagaVorto;
+    ImageView tagaBildo;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -56,6 +61,8 @@ public class LudiActivity extends Activity {
         String uzantoNomo = pref.getString("uzanto_nomo","");
         textBonvonon = (TextView) findViewById(R.id.bonvenon_ludando);
         tagaVorto = (TextView) findViewById(R.id.taga_vorto);
+        tagaBildo = (ImageView) findViewById(R.id.img_taga_vorto);
+
         if (uzantoId!=0) {
             textBonvonon.setText("Bonvenon "+uzantoNomo+" !"+String.valueOf(tago)+"/"+String.valueOf(monato)+"/"+String.valueOf(jaro));
         }
@@ -69,8 +76,9 @@ public class LudiActivity extends Activity {
             // TODO : faire l'appel au webservice
             new HttpAsyncTask().execute("http://samopiniuloj.esperanto-jeunes.org/ws/ws_getNovajVortoj.php?tago=" + tago + "&monato=" + monato+"&jaro="+jaro);
         } else {
-            tagaVorto.setText(vorto.getVorto().replaceAll("<rad>","<u>").replaceAll("</rad>","</u>"));
-            
+            tagaVorto.setText(vorto.getVorto().replaceAll("<rad>", "<u>").replaceAll("</rad>","</u>"));
+            Bitmap bitmap = decodeFile(new File(getCacheDir()+vorto.getDosiero()));
+            tagaBildo.setImageBitmap(bitmap);
 
         }
 
@@ -78,6 +86,17 @@ public class LudiActivity extends Activity {
 
     }
 
+    private Bitmap decodeFile(File f) {
+        try {
+            BitmapFactory.Options o = new BitmapFactory.Options();
+            o.inJustDecodeBounds = true;
+            BitmapFactory.decodeStream(new FileInputStream(f), null, o);
+            return BitmapFactory.decodeStream(new FileInputStream(f));
+        } catch (FileNotFoundException e) {
+            Log.e("Error", "Decode File", e);
+        }
+        return null;
+    }
 
     public static String GET(String urlWebservice){
         InputStream inputStream = null;
