@@ -46,5 +46,13 @@
     <string name="vorto1">Woody Allen</string>
     <string name="vorto2">dentradaĵo</string>
 
+    <!-- Nav Drawer Menu Items -->
+    <string-array name="nav_drawer_items">
+        <item >Kiel ludi</item>
+        <item >Ludi</item>
+        <item >Rezultoj</item>
+        <item >Kontakti nin</item>
+        <item >Foriri</item>
+    </string-array>
 
 </resources>

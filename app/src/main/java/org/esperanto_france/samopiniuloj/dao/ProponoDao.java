@@ -46,7 +46,7 @@ public class ProponoDao {
         return bdd;
     }
 
-    public long insertLivre(Propono propono) {
+    public long insertPropono(Propono propono) {
         //Création d'un ContentValues (fonctionne comme une HashMap)
         ContentValues values = new ContentValues();
         //on lui ajoute une valeur associé à une clé (qui est le nom de la colonne dans laquelle on veut mettre la valeur)
@@ -72,7 +72,6 @@ public class ProponoDao {
         return cursorToPropono(c);
     }
 
-    //Cette méthode permet de convertir un cursor en un livre
     private Propono cursorToPropono(Cursor c) {
         //si aucun élément n'a été retourné dans la requête, on renvoie null
         if (c.getCount() == 0)
