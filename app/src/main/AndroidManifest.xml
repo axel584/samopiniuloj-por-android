@@ -48,6 +48,10 @@
             android:name=".VortojActivity"
             android:label="@string/title_activity_vortoj" >
         </activity>
+        <activity
+            android:name=".KontaktoActivity"
+            android:label="@string/title_activity_kontakto" >
+        </activity>
     </application>
 
 </manifest>

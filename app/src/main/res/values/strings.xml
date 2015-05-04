@@ -7,6 +7,7 @@
     <string name="title_activity_rezultoj">Rezultoj</string>
     <string name="title_activity_ludintoj">Rezultoj</string>
     <string name="title_activity_vortoj">Rezultoj</string>
+    <string name="title_activity_kontakto">Kontakti nin</string>
 
     <!-- Strings related to login -->
     <string name="prompt_enirnomo">enirnomo</string>
@@ -54,5 +55,6 @@
         <item >Kontakti nin</item>
         <item >Foriri</item>
     </string-array>
+
 
 </resources>
