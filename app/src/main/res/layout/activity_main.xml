@@ -1,64 +1,77 @@
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
-    android:layout_height="match_parent" android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin"
-    android:orientation="vertical"
-    android:paddingBottom="@dimen/activity_vertical_margin"
-    tools:context=".MainActivity"
-    android:background="@drawable/feuilles"
-    android:baselineAligned="false">
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="org.esperanto_france.samopiniuloj.MainActivity"
+    android:orientation="vertical" >
 
-    <TextView android:text="Samopiniuloj - ecran de test" android:layout_width="wrap_content"
-        android:layout_height="wrap_content" android:id="@+id/text_surtitre"/>
+    <include
+        android:id="@+id/toolbar"
+        layout="@layout/toolbar" />
 
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Akceptejo"
-        android:id="@+id/button_akceptejo" />
+    <LinearLayout
+        android:layout_below="@id/toolbar"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingBottom="@dimen/activity_vertical_margin"
+        android:paddingLeft="@dimen/activity_horizontal_margin"
+        android:paddingRight="@dimen/activity_horizontal_margin"
+        android:paddingTop="@dimen/activity_vertical_margin"
+        android:background="@drawable/feuilles" >
 
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Enirejo"
-        android:id="@+id/button_enirejo" />
+        <TextView android:text="Samopiniuloj - ecran de test" android:layout_width="wrap_content"
+            android:layout_height="wrap_content" android:id="@+id/text_surtitre"/>
 
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Alighilo"
-        android:id="@+id/button_alighilo" />
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Akceptejo"
+            android:id="@+id/button_akceptejo" />
 
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Ludo"
-        android:id="@+id/button_ludo" />
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Enirejo"
+            android:id="@+id/button_enirejo" />
 
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Rezultoj"
-        android:id="@+id/button_rezultoj" />
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Alighilo"
+            android:id="@+id/button_alighilo" />
 
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Ludintoj"
-        android:id="@+id/button_ludintoj" />
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Ludo"
+            android:id="@+id/button_ludo" />
 
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Vortoj"
-        android:id="@+id/button_vortoj" />
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Rezultoj"
+            android:id="@+id/button_rezultoj" />
 
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Kontakti nin"
-        android:id="@+id/button_kontakto" />
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Ludintoj"
+            android:id="@+id/button_ludintoj" />
 
-</LinearLayout>
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Vortoj"
+            android:id="@+id/button_vortoj" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Kontakti nin"
+            android:id="@+id/button_kontakto" />
+
+    </LinearLayout>
+
+</RelativeLayout>
 

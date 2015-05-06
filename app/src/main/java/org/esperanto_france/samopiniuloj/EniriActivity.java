@@ -1,26 +1,25 @@
 package org.esperanto_france.samopiniuloj;
 
-import android.app.Activity;
 import android.app.ProgressDialog;
-import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.support.v7.app.ActionBarActivity;
+import android.support.v7.widget.Toolbar;
 import android.text.Editable;
 import android.text.TextWatcher;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.ProgressBar;
-import android.widget.Spinner;
 import android.widget.TextView;
 
+import com.google.gson.Gson;
 
 import org.esperanto_france.samopiniuloj.modelo.EniriGson;
-
 
 import java.io.BufferedInputStream;
 import java.io.BufferedReader;
@@ -29,13 +28,8 @@ import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.net.URL;
 import java.net.URLConnection;
-import java.util.ArrayList;
 
-import android.util.Log;
-
-import com.google.gson.Gson;
-
-public class EniriActivity extends Activity {
+public class EniriActivity extends ActionBarActivity {
 
     Button btnLogin;
 
@@ -50,12 +44,14 @@ public class EniriActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_eniri);
 
+        // Ajout toolbar
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+
         inputEnirnomo = (EditText) findViewById(R.id.enirnomo);
         inputPasvorto = (EditText) findViewById(R.id.pasvorto);
         eraroEnirnomo = (TextView) findViewById(R.id.eraro_enirnomo);
         eraroPasvorto = (TextView) findViewById(R.id.eraro_pasvorto);
-
-
 
         inputEnirnomo.addTextChangedListener(new TextWatcher() {
             @Override
