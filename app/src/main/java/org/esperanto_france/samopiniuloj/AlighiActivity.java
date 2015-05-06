@@ -1,6 +1,5 @@
 package org.esperanto_france.samopiniuloj;
 
-import android.app.Activity;
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -8,20 +7,20 @@ import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.support.v7.app.ActionBarActivity;
+import android.support.v7.widget.Toolbar;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.ProgressBar;
 import android.widget.Spinner;
 import android.widget.TextView;
 
 import com.google.gson.Gson;
 
 import org.esperanto_france.samopiniuloj.modelo.AlighiGson;
-import org.esperanto_france.samopiniuloj.modelo.EniriGson;
 import org.esperanto_france.samopiniuloj.modelo.Lando;
 
 import java.io.BufferedInputStream;
@@ -33,7 +32,7 @@ import java.net.URL;
 import java.net.URLConnection;
 import java.util.ArrayList;
 
-public class AlighiActivity extends Activity {
+public class AlighiActivity extends ActionBarActivity {
 
     Button btnLogin;
 
@@ -51,6 +50,10 @@ public class AlighiActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_alighi);
+
+        // Ajout toolbar
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
 
         inputEnirnomo = (EditText) findViewById(R.id.enirnomo);
         inputPasvorto = (EditText) findViewById(R.id.pasvorto);

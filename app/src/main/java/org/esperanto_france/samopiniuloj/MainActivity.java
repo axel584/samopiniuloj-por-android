@@ -1,6 +1,7 @@
 package org.esperanto_france.samopiniuloj;
 
-import android.app.Activity;
+import android.support.v7.app.ActionBarActivity;
+import android.support.v7.widget.Toolbar;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
@@ -8,7 +9,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
-public class MainActivity extends Activity {
+public class MainActivity extends ActionBarActivity {
 
     private Button bEniri = null;
     private Button bAlighi = null;
@@ -27,6 +28,9 @@ public class MainActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        // Ajout toolbar
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
 
         bEniri = (Button) findViewById(R.id.button_enirejo);
         bAlighi = (Button) findViewById(R.id.button_alighilo);
