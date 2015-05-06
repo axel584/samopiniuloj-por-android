@@ -17,6 +17,7 @@ public class MainActivity extends Activity {
     private Button bRezultoj = null;
     private Button bLudintoj = null;
     private Button bVortoj = null;
+    private Button bKontakto = null;
 
     private TextView textSurtitre=null;
 
@@ -35,6 +36,7 @@ public class MainActivity extends Activity {
         bRezultoj = (Button) findViewById(R.id.button_rezultoj);
         bLudintoj = (Button) findViewById(R.id.button_ludintoj);
         bVortoj = (Button) findViewById(R.id.button_vortoj);
+        bKontakto = (Button) findViewById(R.id.button_kontakto);
 
         textSurtitre = (TextView) findViewById(R.id.text_surtitre);
 
@@ -129,6 +131,18 @@ public class MainActivity extends Activity {
 
                 // Puis on lance l'intent !
                 startActivity(vortojActivity);
+            }
+        });
+
+        bKontakto.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // Le premier paramètre est le nom de l'activité actuelle
+                // Le second est le nom de l'activité de destination
+                Intent kontaktoActivity = new Intent(MainActivity.this, KontaktoActivity.class);
+
+                // Puis on lance l'intent !
+                startActivity(kontaktoActivity);
             }
         });
 
