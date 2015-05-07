@@ -9,6 +9,22 @@
         android:id="@+id/toolbar"
         layout="@layout/toolbar" />
 
+    <android.support.v4.widget.DrawerLayout
+        android:id="@+id/drawer_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/toolbar"
+        >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/hello_world" />
+
+        <include layout="@layout/nav_drawer" />
+
+    </android.support.v4.widget.DrawerLayout>
+
     <LinearLayout
         android:layout_below="@id/toolbar"
         android:orientation="vertical"

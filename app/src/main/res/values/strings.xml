@@ -47,6 +47,10 @@
     <string name="vorto1">Woody Allen</string>
     <string name="vorto2">dentradaĵo</string>
 
+
+    <string name="drawer_open">drawer_open</string>
+    <string name="drawer_close">drawer_close</string>
+
     <!-- Nav Drawer Menu Items -->
     <string-array name="nav_drawer_items">
         <item >Kiel ludi</item>

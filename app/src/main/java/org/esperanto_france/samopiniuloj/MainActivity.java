@@ -1,15 +1,27 @@
 package org.esperanto_france.samopiniuloj;
 
+import android.content.res.Configuration;
+import android.support.v4.widget.DrawerLayout;
+import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.ActionBarActivity;
 import android.support.v7.widget.Toolbar;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
 public class MainActivity extends ActionBarActivity {
+
+    // truc ajouté pour le menu hamburger
+    private DrawerLayout mDrawerLayout;
+    private ActionBarDrawerToggle mDrawerToggle;
+    private CharSequence mDrawerTitle;
+    private CharSequence mTitle;
+
 
     private Button bEniri = null;
     private Button bAlighi = null;
@@ -26,11 +38,44 @@ public class MainActivity extends ActionBarActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main_malnova);
+        setContentView(R.layout.activity_main);
 
         // Ajout toolbar
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        final Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+
+        // ajout pour le menu hamburger
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
+        mTitle = getTitle();
+        mDrawerTitle = "Menuo";
+
+        mDrawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
+        mDrawerToggle = new ActionBarDrawerToggle(
+                this,
+                mDrawerLayout,
+                toolbar,
+                R.string.drawer_open,
+                R.string.drawer_close)
+        {
+            public void onDrawerClosed(View view) {
+                super.onDrawerClosed(view);
+                toolbar.setTitle(mTitle);
+                invalidateOptionsMenu();
+                syncState();
+            }
+
+            public void onDrawerOpened(View drawerView) {
+                super.onDrawerOpened(drawerView);
+                toolbar.setTitle(mDrawerTitle);
+                invalidateOptionsMenu();
+                syncState();
+            }
+        };
+
+        mDrawerLayout.setDrawerListener(mDrawerToggle);
+        // fin des trucs pour le menu hamburger
+
 
         bEniri = (Button) findViewById(R.id.button_enirejo);
         bAlighi = (Button) findViewById(R.id.button_alighilo);
@@ -150,6 +195,52 @@ public class MainActivity extends ActionBarActivity {
             }
         });
 
+    }
+
+    @Override
+    protected void onPostCreate(Bundle savedInstanceState) {
+        super.onPostCreate(savedInstanceState);
+        // This to ensure the navigation icon is displayed as
+        // burger instead of arrow.
+        // Call syncState() from your Activity's onPostCreate
+        // to synchronize the indicator with the state of the
+        // linked DrawerLayout after onRestoreInstanceState
+        // has occurred.
+        mDrawerToggle.syncState();
+    }
+
+    @Override
+    public void onConfigurationChanged(Configuration newConfig) {
+        super.onConfigurationChanged(newConfig);
+        // This method should always be called by your Activity's
+        // onConfigurationChanged method.
+        mDrawerToggle.onConfigurationChanged(newConfig);
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        // Inflate the menu; this adds items to the action bar if it is present.
+        getMenuInflater().inflate(R.menu.menu_main, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        // Pass the event to ActionBarDrawerToggle, if it returns
+        // true, then it has handled the app icon touch event
+        // This handle among other things open & close the drawer
+        // when the navigation icon(burger/arrow) is clicked on.
+        if (mDrawerToggle.onOptionsItemSelected(item)) {
+            return true;
+        }
+
+        // Handle other action bar items...
+        switch (item.getItemId()) {
+            case R.id.action_settings:
+                return true;
+        }
+
+        return super.onOptionsItemSelected(item);
     }
 
 
