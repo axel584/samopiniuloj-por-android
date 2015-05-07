@@ -52,6 +52,10 @@
             android:name=".KontaktoActivity"
             android:label="@string/title_activity_kontakto" >
         </activity>
+        <activity
+            android:name=".KielLudiActivity"
+            android:label="@string/title_activity_kiel_ludi" >
+        </activity>
     </application>
 
 </manifest>

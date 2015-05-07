@@ -8,6 +8,10 @@
         <item name="android:textColor">@color/sam_txt_1</item>
     </style>
 
+    <style name="TexteNormal.Alinea">
+        <item name="android:paddingTop">8dp</item>
+    </style>
+
     <style name="TexteNormal.Clair">
         <item name="android:textColor">@color/sam_txt_2</item>
     </style>
@@ -19,6 +23,11 @@
     <style name="TexteNormal.Important">
         <item name="android:textColor">@color/sam_accentuation</item>
     </style>
+
+    <style name="TexteNormal.Important.Alinea">
+        <item name="android:paddingTop">8dp</item>
+    </style>
+
 
     <style name="Input">
         <item name="android:layout_width">match_parent</item>

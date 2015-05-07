@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="txt_kiel_ludi_0">Reguloj</string>
+    <string name="txt_kiel_ludi_1">Samopiniuloj estas simpla ludo. Ĉiutage aperas nova vorto kaj vi devas trovi 8 vortojn, kiuj rilatas al tiu vorto sed kiuj ne enhavas saman radikon. Ekzemple, se aperas la vorto “<b>luno</b>” vi rajtas proponi :</string>
+    <string name="txt_kiel_ludi_2">\tSuno\n\tEklipso\n\tArmstrong\n\tSatelito\n\t&#8230;</string>
+    <string name="txt_kiel_ludi_3">Vi ne rajtas proponi “<b>lun</b>arko” aŭ alian vorton, kiu enhavas tiun radikon.</string>
+    <string name="txt_kiel_ludi_4">Tamen vi rajtas proponi vortojn kun la sama radiko, se tiu radiko ne estas en la vorto de la tago.</string>
+    <string name="txt_kiel_ludi_5">Ekzemple, vi rajtas proponi “paroli” kaj “parolo” kaj “parola” : por la sistemo temas pri tri malsamaj vortoj. Same “parolo” kaj “paroloj” estas konsiderataj kiel malsamaj vortoj.</string>
+    <string name="txt_kiel_ludi_6"><b>Atentu pri la uskleco!</b> Se unu ludanto proponis “Luno” kaj unu alia proponis “luno”, ili gajnas neniun poenton por tiuj vortoj ĉar por la sistemo, tiuj vortoj malsimilas. Do prefereble skribu nur per minuskloj, krom komence de propraj nomoj.</string>
+    <string name="txt_kiel_ludi_7">Post 24 horoj<b>*</b>, ĉiuj ludantoj ricevas poentojn se ili havas la samajn vortojn kiel la aliaj. Se neniu alia proponis la saman vorton, tiu vorto ricevigas neniun poenton al la ludinto.</string>
+    <string name="txt_kiel_ludi_8">Provu, estas facile !</string>
+    <string name="txt_kiel_ludi_9">Atentu! Kaze de friponado (ekzemple se ludantoj videble konsentis por proponi la samajn vortojn kaj tiel ricevi pli da poentoj) la administrantoj povos malakcepti la friponintojn, forviŝi ties proponojn kaj poentojn.</string>
+    <string name="txt_kiel_ludi_10">* <i>nova luda tago komenciĝas je la 23a UTC. Rezultoj aperas post unu horo.</i></string>
+</resources>

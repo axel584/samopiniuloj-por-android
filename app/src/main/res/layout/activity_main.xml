@@ -78,6 +78,12 @@
                 android:text="Kontakti nin"
                 android:id="@+id/button_kontakto" />
 
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Kiel ludi"
+                android:id="@+id/button_kiel_ludi" />
+
         </LinearLayout>
 
         <include layout="@layout/nav_drawer" />

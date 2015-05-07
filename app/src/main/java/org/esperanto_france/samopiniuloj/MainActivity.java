@@ -1,17 +1,16 @@
 package org.esperanto_france.samopiniuloj;
 
-import android.content.res.Configuration;
-import android.support.v4.widget.DrawerLayout;
-import android.support.v7.app.ActionBarDrawerToggle;
-import android.support.v7.app.ActionBarActivity;
-import android.support.v7.widget.Toolbar;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.content.res.Configuration;
 import android.os.Bundle;
+import android.support.v4.widget.DrawerLayout;
+import android.support.v7.app.ActionBarActivity;
+import android.support.v7.app.ActionBarDrawerToggle;
+import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ListView;
 import android.widget.TextView;
@@ -35,6 +34,7 @@ public class MainActivity extends ActionBarActivity {
     private Button bLudintoj = null;
     private Button bVortoj = null;
     private Button bKontakto = null;
+    private Button bKielLudi = null;
 
     private TextView textSurtitre=null;
 
@@ -97,6 +97,7 @@ public class MainActivity extends ActionBarActivity {
         bLudintoj = (Button) findViewById(R.id.button_ludintoj);
         bVortoj = (Button) findViewById(R.id.button_vortoj);
         bKontakto = (Button) findViewById(R.id.button_kontakto);
+        bKielLudi = (Button) findViewById(R.id.button_kiel_ludi);
 
         textSurtitre = (TextView) findViewById(R.id.text_surtitre);
 
@@ -203,6 +204,18 @@ public class MainActivity extends ActionBarActivity {
 
                 // Puis on lance l'intent !
                 startActivity(kontaktoActivity);
+            }
+        });
+
+        bKielLudi.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // Le premier paramètre est le nom de l'activité actuelle
+                // Le second est le nom de l'activité de destination
+                Intent kielLudiActivity = new Intent(MainActivity.this, KielLudiActivity.class);
+
+                // Puis on lance l'intent !
+                startActivity(kielLudiActivity);
             }
         });
 
