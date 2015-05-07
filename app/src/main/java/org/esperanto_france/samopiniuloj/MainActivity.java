@@ -11,16 +11,20 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.ListView;
 import android.widget.TextView;
 
 public class MainActivity extends ActionBarActivity {
 
     // truc ajouté pour le menu hamburger
     private DrawerLayout mDrawerLayout;
+    private ListView mDrawerList;
     private ActionBarDrawerToggle mDrawerToggle;
     private CharSequence mDrawerTitle;
     private CharSequence mTitle;
+    private String[] navMenuTitles;
 
 
     private Button bEniri = null;
@@ -47,10 +51,17 @@ public class MainActivity extends ActionBarActivity {
         // ajout pour le menu hamburger
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
-        mTitle = getTitle();
+        mTitle = mDrawerTitle = getTitle();
         mDrawerTitle = "Menuo";
 
         mDrawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
+
+
+       // mDrawerList = (ListView) findViewById(R.id.nav_list);
+       // ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, getResources().getStringArray(R.array.nav_drawer_items));
+        //mDrawerList.setAdapter(adapter);
+
+
         mDrawerToggle = new ActionBarDrawerToggle(
                 this,
                 mDrawerLayout,
@@ -73,7 +84,7 @@ public class MainActivity extends ActionBarActivity {
             }
         };
 
-        mDrawerLayout.setDrawerListener(mDrawerToggle);
+        mDrawerLayout.setDrawerListener(mDrawerToggle); // c'est pour changer le menu hamburger en fleche
         // fin des trucs pour le menu hamburger
 
 
