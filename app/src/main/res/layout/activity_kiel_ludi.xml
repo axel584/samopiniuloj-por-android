@@ -63,7 +63,6 @@
             android:text="@string/txt_kiel_ludi_10"
             style="@style/TexteNormal.Important.Alinea" />
 
-
     </LinearLayout>
 
 </RelativeLayout>
