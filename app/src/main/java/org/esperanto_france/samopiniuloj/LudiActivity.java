@@ -42,6 +42,7 @@ import java.net.HttpURLConnection;
 import java.net.URL;
 import java.net.URLConnection;
 import java.util.Calendar;
+import java.util.List;
 
 
 public class LudiActivity extends ActionBarActivity {
@@ -112,12 +113,7 @@ public class LudiActivity extends ActionBarActivity {
             startActivity(eniriActivity);
         } else {
             textBonvonon.setText("Bonvenon "+uzantoNomo+" !");
-            //textBonvonon.setText("Bonvenon !");
         }
-
-
-
-
 
 
         // On récupère le mot du jour dans la base
@@ -132,13 +128,14 @@ public class LudiActivity extends ActionBarActivity {
         }
 
         proponoDao = new ProponoDao(this);
+        proponoDao.open();
         Log.i("","vorto id : "+vorto.getId().toString());
         Log.i("","uzanto id : "+uzantoId.toString());
-        Propono[] endatumbazaProponoj = proponoDao.getProponoj(vorto.getId(),uzantoId);
-        for (Propono propono : endatumbazaProponoj) {
-            Log.i("LudiActivity propono : ",propono.getPropono());
-            Log.i("LudiActivity vico : ",propono.getVico().toString());
-            // TODO : affiche dans les EditText les valeurs qui se trouvent en base de données
+        List<Propono> endatumbazaProponoj = proponoDao.getProponoj(vorto.getId(),uzantoId);
+        if (endatumbazaProponoj!=null) {
+            for (Propono propono : endatumbazaProponoj) {
+                // TODO : affiche dans les EditText les valeurs qui se trouvent en base de données
+            }
         }
 
         // gestion du bouton d'envoie des propositions
@@ -154,7 +151,6 @@ public class LudiActivity extends ActionBarActivity {
                     String propono7 = prop7.getText().toString();
                     String propono8 = prop8.getText().toString();
                     String requete = "http://samopiniuloj.esperanto-jeunes.org/ws/ws_ludo.php?ludanto_id="+uzantoId+"&vorto_id="+vorto.getId()+"&prop[0]="+propono1+"&prop[1]="+propono2+"&prop[2]="+propono3+"&prop[3]="+propono4+"&prop[4]="+propono5+"&prop[5]="+propono6+"&prop[6]="+propono7+"&prop[7]="+propono8;
-                    Log.i("LudiActivity",requete);
                     new LudiAsyncTask(LudiActivity.this).execute(requete);
                 }
         });

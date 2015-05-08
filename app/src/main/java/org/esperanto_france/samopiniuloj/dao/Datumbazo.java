@@ -18,7 +18,7 @@ public class Datumbazo extends SQLiteOpenHelper {
     @Override
     public void onCreate(SQLiteDatabase db) {
         //on créé la table à partir de la requête écrite dans la variable CREATE_BDD
-        db.execSQL("CREATE TABLE IF NOT EXISTS `sam_proponoj` (  `id` INTEGER,  `ludanto_id` INTEGER,  `vorto_id` INTEGER,  `propono` TEXT,  `vico` INTEGER,  `poento` INTEGER,  `ip` TEXT)");
+        db.execSQL("CREATE TABLE IF NOT EXISTS `sam_proponoj` (  `id` INTEGER,  `ludanto_id` INTEGER,  `vorto_id` INTEGER,  `propono` TEXT,  `vico` INTEGER,  `poento` INTEGER)");
         db.execSQL("CREATE TABLE IF NOT EXISTS `sam_vortoj` (  `id` INTEGER,  `tago` INTEGER,  `monato` INTEGER,  `jaro` TEXT,  `vorto` TEXT,  `dosiero` TEXT)");
         db.execSQL("CREATE TABLE IF NOT EXISTS `sam_ludantoj` (  `id` INTEGER,  `kromnomo` TEXT,  `retadreso` TEXT,  `pasvorto` TEXT,  `lando` TEXT)");
     }

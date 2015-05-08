@@ -5,6 +5,7 @@ import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
+import android.util.Log;
 
 import org.esperanto_france.samopiniuloj.modelo.Propono;
 
@@ -67,13 +68,13 @@ public class ProponoDao {
 
     public Propono getPropono(int vorto,int ludanto,int vico) {
         //Récupère dans un Cursor les valeur correspondant à un livre contenu dans la BDD (ici on sélectionne le livre grâce à son titre)
-        Cursor c = bdd.query(TABLE_PROPONOJ, new String[]{COL_ID, COL_VORTO, COL_LUDANTO, COL_PROPONO, COL_POENTO, COL_VICO}, COL_VORTO+ " = " + vorto + " and "+COL_LUDANTO + "= "+ludanto+" and "+COL_VICO+" = "+vico, null, null, null, null);
+        Cursor c = bdd.query(TABLE_PROPONOJ, new String[]{COL_ID, COL_VORTO, COL_LUDANTO, COL_PROPONO, COL_POENTO, COL_VICO}, COL_VORTO+ " = ? and "+COL_LUDANTO + "= ? and "+COL_VICO+" = ?", new String[] { String.valueOf(vorto),String.valueOf(ludanto),String.valueOf(vico) }, null, null, null);
         return cursorToPropono(c);
     }
 
-    public Propono[] getProponoj(int vorto,int ludanto) {
+    public List<Propono> getProponoj(int vorto,int ludanto) {
         //Récupère dans un Cursor les valeur correspondant à un livre contenu dans la BDD (ici on sélectionne le livre grâce à son titre)
-        Cursor c = bdd.query(TABLE_PROPONOJ, new String[]{COL_ID, COL_VORTO, COL_LUDANTO, COL_PROPONO, COL_POENTO, COL_VICO}, COL_VORTO+ " = " + vorto + " and "+COL_LUDANTO + "= "+ludanto, null, null, null, null);
+        Cursor c = bdd.query(TABLE_PROPONOJ, new String[]{COL_ID, COL_VORTO, COL_LUDANTO, COL_PROPONO, COL_POENTO, COL_VICO}, COL_VORTO+ " = ? and "+COL_LUDANTO + "= ?", new String[] { String.valueOf(vorto),String.valueOf(ludanto) }, null, null, null);
         return cursorToProponoj(c);
     }
 
@@ -89,7 +90,7 @@ public class ProponoDao {
         //on lui affecte toutes les infos grâce aux infos contenues dans le Cursor
         propono.setId(c.getInt(0));
         propono.setVorto_id(c.getInt(1));
-        propono.setVorto_id(c.getInt(2));
+        propono.setLudanto_id(c.getInt(2));
         propono.setPropono(c.getString(3));
         propono.setPoento(c.getInt(4));
         propono.setVico(c.getInt(5));
@@ -100,7 +101,7 @@ public class ProponoDao {
         return propono;
     }
 
-    private Propono[] cursorToProponoj(Cursor c) {
+    private List<Propono> cursorToProponoj(Cursor c) {
         //si aucun élément n'a été retourné dans la requête, on renvoie null
         if (c.getCount() == 0)
             return null;
@@ -115,7 +116,7 @@ public class ProponoDao {
             //on lui affecte toutes les infos grâce aux infos contenues dans le Cursor
             propono.setId(c.getInt(0));
             propono.setVorto_id(c.getInt(1));
-            propono.setVorto_id(c.getInt(2));
+            propono.setLudanto_id(c.getInt(2));
             propono.setPropono(c.getString(3));
             propono.setPoento(c.getInt(4));
             propono.setVico(c.getInt(5));
@@ -126,7 +127,7 @@ public class ProponoDao {
         c.close();
 
         //On retourne le tableau de proposition
-        return proponoj.toArray(new Propono[proponoj.size()]);
+        return proponoj;
     }
 
 }
