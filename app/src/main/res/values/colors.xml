@@ -3,11 +3,13 @@
     <color name="sam_fond">#FFF8E1</color>
     <color name="sam_fond2">#FFF59D</color>
     <color name="sam_fond_blanc">#FFFFFF</color>
+    <color name="sam_fond_fonce">#795548</color>
     <color name="sam_principale">#FFC107</color>
     <color name="sam_secondaire">#FF9800</color>
     <color name="sam_accentuation">#FF5722</color>
     <color name="sam_erreur">#DD2C00</color>
     <color name="sam_bone">#4CAF50</color>
+
 
     <color name="sam_bouton_clair">#FF5722</color>
     <color name="sam_bouton_fonce">#795548</color>

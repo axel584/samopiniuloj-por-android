@@ -65,7 +65,7 @@
                     android:text="@string/viaj_rezultoj"
                     style="@style/Titre" />
 
-                <TableLayout id="@+id/tab_rezultoj"
+                <TableLayout android:id="@+id/tab_rezultoj"
                     style="@style/TableauResultats" >
 
                     <TableRow android:id="@+id/ligne0"
