@@ -5,21 +5,18 @@
      The drawer is given a fixed width in dp and extends the full height of
      the container. A solid background is used for contrast
      with the content view. -->
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/scrollView"
     android:layout_width="260dp"
     android:layout_height="match_parent"
-    android:background="@color/button_material_light"
-    android:layout_gravity="start">
-
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
+    android:background="@color/sam_fond_blanc"
+    android:layout_gravity="start"
         android:orientation="vertical">
 
         <FrameLayout
             android:id="@+id/nav_top"
             android:layout_width="match_parent"
+            android:background="@color/sam_principale"
             android:layout_height="100dp"
             >
 
@@ -27,11 +24,10 @@
 
         <ListView
             android:id="@+id/nav_list"
-            android:textColor="@color/sam_txt_2"
+            android:textColor="@color/sam_txt_0"
             android:background="@color/sam_fond_blanc"
             android:entries="@array/nav_drawer_items"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_below="@+id/nav_top" />
-    </RelativeLayout>
-</ScrollView>
+</RelativeLayout>
