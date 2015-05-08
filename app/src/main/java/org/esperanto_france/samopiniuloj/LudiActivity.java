@@ -79,8 +79,6 @@ public class LudiActivity extends ActionBarActivity {
         vortoDao.open();
         Vorto vorto = vortoDao.getVortoPerTago(tago,monato,jaro);
         if (vorto==null) {
-            textBonvonon.setText("mot inconnu pour "+String.valueOf(tago)+"/"+String.valueOf(monato)+"/"+String.valueOf(jaro));
-            // TODO : faire l'appel au webservice
             new HttpAsyncTask(this).execute("http://samopiniuloj.esperanto-jeunes.org/ws/ws_getNovajVortoj.php?tago=" + tago + "&monato=" + monato+"&jaro="+jaro);
         } else {
             this.populate(vorto);
@@ -252,6 +250,7 @@ public class LudiActivity extends ActionBarActivity {
                 }
                 // Une fois télécharger, on s'occupe de la base de données
                 long resInsertVorto = vortoDao.insertVorto(vorto);
+                Log.i("LudiActivity","resultat de l'insertion : "+resInsertVorto);
             }
             vortoDao.close();
             return novajVortojGson;

@@ -46,6 +46,7 @@ public class VortoDao {
         //Création d'un ContentValues (fonctionne comme une HashMap)
         ContentValues values = new ContentValues();
         //on lui ajoute une valeur associé à une clé (qui est le nom de la colonne dans laquelle on veut mettre la valeur)
+        values.put(COL_ID, vorto.getId().intValue());
         values.put(COL_TAGO, vorto.getTago().intValue());
         values.put(COL_MONATO, vorto.getMonato().intValue());
         values.put(COL_JARO, vorto.getJaro());
