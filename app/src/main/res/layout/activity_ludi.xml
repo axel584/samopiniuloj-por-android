@@ -3,7 +3,8 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     xmlns:card_view="http://schemas.android.com/apk/res-auto"
-    tools:context="org.esperanto_france.samopiniuloj.LudiActivity">
+    tools:context="org.esperanto_france.samopiniuloj.LudiActivity"
+    android:background="@color/sam_fond">
 
     <include
         android:id="@+id/toolbar"
@@ -23,12 +24,14 @@
         <TextView android:id="@+id/bonvenon_ludando"
             tools:text="@string/bonvenon_ludanto"
             android:gravity="end"
-            style="@style/TexteNormal" />
+            style="@style/TexteNormal"
+            android:layout_width="fill_parent" />
 
         <TextView android:id="@+id/nuna_horo"
             tools:text="Nun estas 8 Majo 2015"
             style="@style/TexteNormal"
-            android:layout_gravity="start" />
+            android:layout_gravity="start"
+            android:layout_width="fill_parent" />
 
         <android.support.v7.widget.CardView
             xmlns:card_view="http://schemas.android.com/apk/res-auto"
@@ -51,7 +54,9 @@
                     android:layout_height="140dp"
                     android:layout_gravity="center_vertical|bottom|left|top"
                     tools:src="@drawable/dentradajxo"
-                    android:layout_weight="1" />
+                    android:layout_weight="1"
+                    android:layout_alignParentBottom="false"
+                    android:layout_alignParentEnd="false" />
 
                 <RelativeLayout
                     android:layout_width="fill_parent"
@@ -100,17 +105,42 @@
 
                 <EditText android:id="@+id/propono_1"
                     android:hint="@string/txt_propono_1"
-                    style="@style/Input.Texte.Propono" />
+                    style="@style/Input.Texte.Propono"
+                    android:selectAllOnFocus="false"
+                    android:singleLine="true"
+                    android:phoneNumber="false" />
 
                 <ImageView android:id="@+id/done_1"
-                    style="@style/Sendita" />
+                    style="@style/Sendita"
+                    android:visibility="invisible" />
+
+                <EditText android:id="@+id/propono_5"
+                    android:hint="@string/txt_propono_5"
+                    style="@style/Input.Texte.Propono" />
+
+                <ImageView android:id="@+id/done_5"
+                    style="@style/Sendita"
+                    android:visibility="invisible" />
+
+            </TableRow>
+
+            <TableRow>
 
                 <EditText android:id="@+id/propono_2"
                     android:hint="@string/txt_propono_2"
                     style="@style/Input.Texte.Propono" />
 
                 <ImageView android:id="@+id/done_2"
-                    style="@style/Sendita" />
+                    style="@style/Sendita"
+                    android:visibility="invisible" />
+
+                <EditText android:id="@+id/propono_6"
+                    android:hint="@string/txt_propono_6"
+                    style="@style/Input.Texte.Propono" />
+
+                <ImageView android:id="@+id/done_6"
+                    style="@style/Sendita"
+                    android:visibility="invisible" />
 
             </TableRow>
 
@@ -121,50 +151,36 @@
                     style="@style/Input.Texte.Propono" />
 
                 <ImageView android:id="@+id/done_3"
-                    style="@style/Sendita" />
-
-                <EditText android:id="@+id/propono_4"
-                    android:hint="@string/txt_propono_4"
-                    style="@style/Input.Texte.Propono" />
-
-                <ImageView android:id="@+id/done_4"
-                    style="@style/Sendita" />
-
-            </TableRow>
-
-            <TableRow>
-
-                <EditText android:id="@+id/propono_5"
-                    android:hint="@string/txt_propono_5"
-                    style="@style/Input.Texte.Propono" />
-
-                <ImageView android:id="@+id/done_5"
-                    style="@style/Sendita" />
-
-                <EditText android:id="@+id/propono_6"
-                    android:hint="@string/txt_propono_6"
-                    style="@style/Input.Texte.Propono" />
-
-                <ImageView android:id="@+id/done_6"
-                    style="@style/Sendita" />
-
-            </TableRow>
-
-            <TableRow>
+                    style="@style/Sendita"
+                    android:visibility="invisible" />
 
                 <EditText android:id="@+id/propono_7"
                     android:hint="@string/txt_propono_7"
                     style="@style/Input.Texte.Propono" />
 
                 <ImageView android:id="@+id/done_7"
-                    style="@style/Sendita" />
+                    style="@style/Sendita"
+                    android:visibility="invisible" />
+
+            </TableRow>
+
+            <TableRow>
+
+                <EditText android:id="@+id/propono_4"
+                    android:hint="@string/txt_propono_4"
+                    style="@style/Input.Texte.Propono" />
+
+                <ImageView android:id="@+id/done_4"
+                    style="@style/Sendita"
+                    android:visibility="invisible" />
 
                 <EditText android:id="@+id/propono_8"
                     android:hint="@string/txt_propono_8"
                     style="@style/Input.Texte.Propono" />
 
                 <ImageView android:id="@+id/done_8"
-                    style="@style/Sendita" />
+                    style="@style/Sendita"
+                    android:visibility="invisible" />
 
             </TableRow>
 
