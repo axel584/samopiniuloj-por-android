@@ -1,6 +1,7 @@
 package org.esperanto_france.samopiniuloj;
 
 import android.app.ProgressDialog;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
@@ -11,6 +12,9 @@ import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
+import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -43,10 +47,25 @@ public class LudiActivity extends ActionBarActivity {
     VortoDao vortoDao;
     TextView tagaVorto;
     ImageView tagaBildo;
+    Button sendu;
 
     int tago;
     int monato;
     int jaro;
+
+    // Proponoj :
+    EditText prop1;
+    EditText prop2;
+    EditText prop3;
+    EditText prop4;
+    EditText prop5;
+    EditText prop6;
+    EditText prop7;
+    EditText prop8;
+
+    Vorto vorto;
+
+    Integer uzantoId;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -64,11 +83,27 @@ public class LudiActivity extends ActionBarActivity {
 
         // Récupère les infos de l'utilisateur
         SharedPreferences pref = getApplicationContext().getSharedPreferences("SamAgordo", 0); // 0 - for private mode
-        Integer uzantoId = pref.getInt("uzanto_id",0);
+        uzantoId = pref.getInt("uzanto_id",0);
+        if (uzantoId==0) {
+            // Aucun utilisateur, on renvoit sur la page eniri
+            Intent eniriActivity = new Intent(LudiActivity.this, EniriActivity.class);
+            startActivity(eniriActivity);
+        }
         String uzantoNomo = pref.getString("uzanto_nomo","");
         textBonvonon = (TextView) findViewById(R.id.bonvenon_ludando);
         tagaVorto = (TextView) findViewById(R.id.taga_vorto);
         tagaBildo = (ImageView) findViewById(R.id.img_taga_vorto);
+        sendu = (Button) findViewById(R.id.btn_sendu);
+
+        prop1 = (EditText) findViewById(R.id.propono_1);
+        prop2 = (EditText) findViewById(R.id.propono_2);
+        prop3 = (EditText) findViewById(R.id.propono_3);
+        prop4 = (EditText) findViewById(R.id.propono_4);
+        prop5 = (EditText) findViewById(R.id.propono_5);
+        prop6 = (EditText) findViewById(R.id.propono_6);
+        prop7 = (EditText) findViewById(R.id.propono_7);
+        prop8 = (EditText) findViewById(R.id.propono_8);
+
 
         if (uzantoId!=0) {
             textBonvonon.setText("Bonvenon "+uzantoNomo+" !"+String.valueOf(tago)+"/"+String.valueOf(monato)+"/"+String.valueOf(jaro));
@@ -77,23 +112,45 @@ public class LudiActivity extends ActionBarActivity {
         // On récupère le mot du jour dans la base
         vortoDao = new VortoDao(this);
         vortoDao.open();
-        Vorto vorto = vortoDao.getVortoPerTago(tago,monato,jaro);
+        vorto = vortoDao.getVortoPerTago(tago,monato,jaro);
         if (vorto==null) {
-            new HttpAsyncTask(this).execute("http://samopiniuloj.esperanto-jeunes.org/ws/ws_getNovajVortoj.php?tago=" + tago + "&monato=" + monato+"&jaro="+jaro);
+            new NovajVortojAsyncTask(this).execute("http://samopiniuloj.esperanto-jeunes.org/ws/ws_getNovajVortoj.php?tago=" + tago + "&monato=" + monato+"&jaro="+jaro);
         } else {
-            this.populate(vorto);
+            this.populateNovajVortoj(vorto);
 
         }
 
+        // gestion du bouton d'envoie des propositions
+        sendu.setOnClickListener(new View.OnClickListener() {
+
+                public void onClick(View view) {
+                    String propono1 = prop1.getText().toString();
+                    String propono2 = prop2.getText().toString();
+                    String propono3 = prop3.getText().toString();
+                    String propono4 = prop4.getText().toString();
+                    String propono5 = prop5.getText().toString();
+                    String propono6 = prop6.getText().toString();
+                    String propono7 = prop7.getText().toString();
+                    String propono8 = prop8.getText().toString();
+                    String requete = "http://samopiniuloj.esperanto-jeunes.org/ws/ws_ludo.php?ludanto_id="+uzantoId+"&vorto_id="+vorto.getId()+"&prop[0]="+propono1+"&prop[1]="+propono2;
+                    Log.i("LudiActivity",requete);
+                    Toast.makeText(getApplicationContext(), "coucou", Toast.LENGTH_LONG).show();
+                }
+        });
 
 
     }
 
     // méthode appelée après avoir téléchargé les images ou si on trouve une image du cours
-    public void populate(Vorto vorto) {
+    public void populateNovajVortoj(Vorto vorto) {
         tagaVorto.setText(vorto.getVorto().replaceAll("<rad>", "<u>").replaceAll("</rad>","</u>"));
         Bitmap bitmap = decodeFile(new File(getCacheDir()+vorto.getDosiero()));
         tagaBildo.setImageBitmap(bitmap);
+    }
+
+    // méthode appelée après avoir envoyé les propositions jouées
+    public void populateLudo() {
+
     }
 
     private Bitmap decodeFile(File f) {
@@ -151,12 +208,12 @@ public class LudiActivity extends ActionBarActivity {
             return false;
     }
 
-    private class HttpAsyncTask extends AsyncTask<String, Void, NovajVortojGson> {
+    private class NovajVortojAsyncTask extends AsyncTask<String, Void, NovajVortojGson> {
 
         ProgressDialog progressDialog;
         private LudiActivity ludiActivity;
 
-        private HttpAsyncTask(LudiActivity ludiActivity) {
+        private NovajVortojAsyncTask(LudiActivity ludiActivity) {
             this.ludiActivity = ludiActivity;
         }
 
@@ -268,7 +325,7 @@ public class LudiActivity extends ActionBarActivity {
 
                 for (Vorto vorto : novajVortojGson.getVortoj()) {
                     if (vorto.getTago()==this.ludiActivity.tago && vorto.getMonato()==this.ludiActivity.monato && vorto.getJaro()==this.ludiActivity.jaro) {
-                        this.ludiActivity.populate(vorto);
+                        this.ludiActivity.populateNovajVortoj(vorto);
                     }
                 }
 
