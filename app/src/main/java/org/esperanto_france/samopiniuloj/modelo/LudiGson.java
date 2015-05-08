@@ -7,7 +7,11 @@ public class LudiGson {
     private int eraro_id;
     private Integer[] registritaj;
     private String[] kialoj;
-    private Integer[] proponoj;
+    private Integer[] eraraj_proponoj;
+    private String [] proponoj;
+    private int vorto_id;
+    private int ludanto_id;
+
 
     public String getRespondo() {
         return respondo;
@@ -49,11 +53,35 @@ public class LudiGson {
         this.kialoj = kialoj;
     }
 
-    public Integer[] getProponoj() {
+    public Integer[] getEraraj_proponoj() {
+        return eraraj_proponoj;
+    }
+
+    public void setEraraj_proponoj(Integer[] eraraj_proponoj) {
+        this.eraraj_proponoj = eraraj_proponoj;
+    }
+
+    public String[] getProponoj() {
         return proponoj;
     }
 
-    public void setProponoj(Integer[] proponoj) {
+    public void setProponoj(String[] proponoj) {
         this.proponoj = proponoj;
+    }
+
+    public int getVorto_id() {
+        return vorto_id;
+    }
+
+    public void setVorto_id(int vorto_id) {
+        this.vorto_id = vorto_id;
+    }
+
+    public int getLudanto_id() {
+        return ludanto_id;
+    }
+
+    public void setLudanto_id(int ludanto_id) {
+        this.ludanto_id = ludanto_id;
     }
 }

@@ -21,9 +21,11 @@ import android.widget.Toast;
 
 import com.google.gson.Gson;
 
+import org.esperanto_france.samopiniuloj.dao.ProponoDao;
 import org.esperanto_france.samopiniuloj.dao.VortoDao;
 import org.esperanto_france.samopiniuloj.modelo.LudiGson;
 import org.esperanto_france.samopiniuloj.modelo.NovajVortojGson;
+import org.esperanto_france.samopiniuloj.modelo.Propono;
 import org.esperanto_france.samopiniuloj.modelo.Vorto;
 
 import java.io.BufferedInputStream;
@@ -46,6 +48,7 @@ public class LudiActivity extends ActionBarActivity {
 
     TextView textBonvonon;
     VortoDao vortoDao;
+    ProponoDao proponoDao;
     TextView tagaVorto;
     ImageView tagaBildo;
     Button sendu;
@@ -82,15 +85,7 @@ public class LudiActivity extends ActionBarActivity {
         monato = c.get(Calendar.MONTH)+1; // ils sont trop con, ils commencent à numéroter les mois à 0 jusqu'à 11..
         jaro = c.get(Calendar.YEAR);
 
-        // Récupère les infos de l'utilisateur
-        SharedPreferences pref = getApplicationContext().getSharedPreferences("SamAgordo", 0); // 0 - for private mode
-        uzantoId = pref.getInt("uzanto_id",0);
-        if (uzantoId==0) {
-            // Aucun utilisateur, on renvoit sur la page eniri
-            Intent eniriActivity = new Intent(LudiActivity.this, EniriActivity.class);
-            startActivity(eniriActivity);
-        }
-        String uzantoNomo = pref.getString("uzanto_nomo","");
+        // on récupère les objets de l'interface
         textBonvonon = (TextView) findViewById(R.id.bonvenon_ludando);
         tagaVorto = (TextView) findViewById(R.id.taga_vorto);
         tagaBildo = (ImageView) findViewById(R.id.img_taga_vorto);
@@ -106,9 +101,24 @@ public class LudiActivity extends ActionBarActivity {
         prop8 = (EditText) findViewById(R.id.propono_8);
 
 
-        if (uzantoId!=0) {
-            textBonvonon.setText("Bonvenon "+uzantoNomo+" !"+String.valueOf(tago)+"/"+String.valueOf(monato)+"/"+String.valueOf(jaro));
+
+        // Récupère les infos de l'utilisateur
+        SharedPreferences pref = getApplicationContext().getSharedPreferences("SamAgordo", 0); // 0 - for private mode
+        uzantoId = pref.getInt("uzanto_id",0);
+        String uzantoNomo = pref.getString("uzanto_nomo","");
+        if (uzantoId==0) {
+            // Aucun utilisateur, on renvoit sur la page eniri
+            Intent eniriActivity = new Intent(LudiActivity.this, EniriActivity.class);
+            startActivity(eniriActivity);
+        } else {
+            textBonvonon.setText("Bonvenon "+uzantoNomo+" !");
+            //textBonvonon.setText("Bonvenon !");
         }
+
+
+
+
+
 
         // On récupère le mot du jour dans la base
         vortoDao = new VortoDao(this);
@@ -119,6 +129,16 @@ public class LudiActivity extends ActionBarActivity {
         } else {
             this.populateNovajVortoj(vorto);
 
+        }
+
+        proponoDao = new ProponoDao(this);
+        Log.i("","vorto id : "+vorto.getId().toString());
+        Log.i("","uzanto id : "+uzantoId.toString());
+        Propono[] endatumbazaProponoj = proponoDao.getProponoj(vorto.getId(),uzantoId);
+        for (Propono propono : endatumbazaProponoj) {
+            Log.i("LudiActivity propono : ",propono.getPropono());
+            Log.i("LudiActivity vico : ",propono.getVico().toString());
+            // TODO : affiche dans les EditText les valeurs qui se trouvent en base de données
         }
 
         // gestion du bouton d'envoie des propositions
@@ -135,8 +155,7 @@ public class LudiActivity extends ActionBarActivity {
                     String propono8 = prop8.getText().toString();
                     String requete = "http://samopiniuloj.esperanto-jeunes.org/ws/ws_ludo.php?ludanto_id="+uzantoId+"&vorto_id="+vorto.getId()+"&prop[0]="+propono1+"&prop[1]="+propono2+"&prop[2]="+propono3+"&prop[3]="+propono4+"&prop[4]="+propono5+"&prop[5]="+propono6+"&prop[6]="+propono7+"&prop[7]="+propono8;
                     Log.i("LudiActivity",requete);
-                    Toast.makeText(getApplicationContext(), requete, Toast.LENGTH_LONG).show();
-                    new LudiAsyncTask(LudiActivity.this).execute();
+                    new LudiAsyncTask(LudiActivity.this).execute(requete);
                 }
         });
 
@@ -152,7 +171,11 @@ public class LudiActivity extends ActionBarActivity {
 
     // méthode appelée après avoir envoyé les propositions jouées
     public void populateLudi(LudiGson ludiGson) {
+        // TODO : ajouter les coches ici
         Log.i("LudiActivity","ici on va s'occuper de mettre les coches vertes");
+        for (Integer i : ludiGson.getRegistritaj()) {
+            Log.i("LudiActivity",i.toString());
+        }
 
     }
 
@@ -365,7 +388,19 @@ public class LudiActivity extends ActionBarActivity {
             String rezulto = GET(urls[0]);
             Gson gson = new Gson();
             LudiGson ludiGson = gson.fromJson(rezulto,LudiGson.class);
-
+            // On sauvegarde en base
+            int i = 0 ; // vico
+            for (String propono : ludiGson.getProponoj()) {
+                i++;
+                if (propono!="" && propono!=null) {
+                    Propono p = new Propono();
+                    p.setPropono(propono);
+                    p.setLudanto_id(ludiGson.getLudanto_id());
+                    p.setVorto_id(ludiGson.getVorto_id());
+                    p.setVico(i);
+                    proponoDao.insertPropono(p);
+                }
+            }
 
             return ludiGson;
         }

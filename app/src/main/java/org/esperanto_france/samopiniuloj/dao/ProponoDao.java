@@ -8,6 +8,9 @@ import android.database.sqlite.SQLiteDatabase;
 
 import org.esperanto_france.samopiniuloj.modelo.Propono;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class ProponoDao {
 
     private static final String TABLE_PROPONOJ = "sam_proponoj";
@@ -51,8 +54,14 @@ public class ProponoDao {
         values.put(COL_PROPONO, propono.getPropono());
         values.put(COL_POENTO, propono.getPoento());
         values.put(COL_VICO, propono.getVico());
-        //on insère l'objet dans la BDD via le ContentValues
-        return bdd.insert(TABLE_PROPONOJ, null, values);
+        // On verifie si l'objet est déjà en base :
+        Propono jamEnDatumbazo = getPropono(propono.getVorto_id().intValue(),propono.getLudanto_id().intValue(),propono.getVico());
+        if (jamEnDatumbazo==null) {
+            //on insère l'objet dans la BDD via le ContentValues
+            return bdd.insert(TABLE_PROPONOJ, null, values);
+        }else {
+            return bdd.update(TABLE_PROPONOJ,values,"id="+jamEnDatumbazo.getId().toString(),null);
+        }
     }
 
 
@@ -62,10 +71,10 @@ public class ProponoDao {
         return cursorToPropono(c);
     }
 
-    public Propono getProponoj(int vorto,int ludanto) {
+    public Propono[] getProponoj(int vorto,int ludanto) {
         //Récupère dans un Cursor les valeur correspondant à un livre contenu dans la BDD (ici on sélectionne le livre grâce à son titre)
         Cursor c = bdd.query(TABLE_PROPONOJ, new String[]{COL_ID, COL_VORTO, COL_LUDANTO, COL_PROPONO, COL_POENTO, COL_VICO}, COL_VORTO+ " = " + vorto + " and "+COL_LUDANTO + "= "+ludanto, null, null, null, null);
-        return cursorToPropono(c);
+        return cursorToProponoj(c);
     }
 
     private Propono cursorToPropono(Cursor c) {
@@ -90,4 +99,34 @@ public class ProponoDao {
         //On retourne le livre
         return propono;
     }
+
+    private Propono[] cursorToProponoj(Cursor c) {
+        //si aucun élément n'a été retourné dans la requête, on renvoie null
+        if (c.getCount() == 0)
+            return null;
+
+
+        //On créé le tableau de réponses
+        List<Propono> proponoj = new ArrayList<Propono>();
+        //Sinon on se place sur le premier élément
+        c.moveToFirst();
+        while (c.isAfterLast() == false) {
+            Propono propono = new Propono();
+            //on lui affecte toutes les infos grâce aux infos contenues dans le Cursor
+            propono.setId(c.getInt(0));
+            propono.setVorto_id(c.getInt(1));
+            propono.setVorto_id(c.getInt(2));
+            propono.setPropono(c.getString(3));
+            propono.setPoento(c.getInt(4));
+            propono.setVico(c.getInt(5));
+            // une fois créé on l'ajoute à la liste résultat
+            proponoj.add(propono);
+            c.moveToNext();
+        }
+        c.close();
+
+        //On retourne le tableau de proposition
+        return proponoj.toArray(new Propono[proponoj.size()]);
+    }
+
 }
