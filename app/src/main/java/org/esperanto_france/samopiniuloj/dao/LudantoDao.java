@@ -6,14 +6,9 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 
-import org.esperanto_france.samopiniuloj.Datumbazo;
 import org.esperanto_france.samopiniuloj.modelo.Ludanto;
-import org.esperanto_france.samopiniuloj.modelo.Propono;
 
 public class LudantoDao {
-
-    private static final int VERSION_BDD = 1;
-    private static final String NOM_BDD = "sam.db";
 
     private static final String TABLE_LUDANTOJ = "sam_ludantoj";
     private static final String COL_ID = "id";
@@ -28,7 +23,7 @@ public class LudantoDao {
 
     public LudantoDao(Context context) {
         //On créer la BDD et sa table
-        maBaseSQLite = new Datumbazo(context, NOM_BDD, null, VERSION_BDD);
+        maBaseSQLite = new Datumbazo(context);
     }
 
     public void open() {

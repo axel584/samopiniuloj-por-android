@@ -6,13 +6,9 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 
-import org.esperanto_france.samopiniuloj.Datumbazo;
 import org.esperanto_france.samopiniuloj.modelo.Vorto;
 
 public class VortoDao {
-
-    private static final int VERSION_BDD = 1;
-    private static final String NOM_BDD = "sam.db";
 
     private static final String TABLE_VORTOJ = "sam_vortoj";
     private static final String COL_ID = "id";
@@ -29,7 +25,7 @@ public class VortoDao {
 
     public VortoDao(Context context) {
         //On créer la BDD et sa table
-        maBaseSQLite = new Datumbazo(context, NOM_BDD, null, VERSION_BDD);
+        maBaseSQLite = new Datumbazo(context);
     }
 
     public void open() {

@@ -44,6 +44,10 @@ public class LudiActivity extends ActionBarActivity {
     TextView tagaVorto;
     ImageView tagaBildo;
 
+    int tago;
+    int monato;
+    int jaro;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -54,9 +58,9 @@ public class LudiActivity extends ActionBarActivity {
         setSupportActionBar(toolbar);
 
         Calendar c = Calendar.getInstance();
-        int tago = c.get(Calendar.DAY_OF_MONTH);
-        int monato = c.get(Calendar.MONTH)+1; // ils sont trop con, ils commencent à numéroter les mois à 0 jusqu'à 11..
-        int jaro = c.get(Calendar.YEAR);
+        tago = c.get(Calendar.DAY_OF_MONTH);
+        monato = c.get(Calendar.MONTH)+1; // ils sont trop con, ils commencent à numéroter les mois à 0 jusqu'à 11..
+        jaro = c.get(Calendar.YEAR);
 
         // Récupère les infos de l'utilisateur
         SharedPreferences pref = getApplicationContext().getSharedPreferences("SamAgordo", 0); // 0 - for private mode
@@ -77,16 +81,21 @@ public class LudiActivity extends ActionBarActivity {
         if (vorto==null) {
             textBonvonon.setText("mot inconnu pour "+String.valueOf(tago)+"/"+String.valueOf(monato)+"/"+String.valueOf(jaro));
             // TODO : faire l'appel au webservice
-            new HttpAsyncTask().execute("http://samopiniuloj.esperanto-jeunes.org/ws/ws_getNovajVortoj.php?tago=" + tago + "&monato=" + monato+"&jaro="+jaro);
+            new HttpAsyncTask(this).execute("http://samopiniuloj.esperanto-jeunes.org/ws/ws_getNovajVortoj.php?tago=" + tago + "&monato=" + monato+"&jaro="+jaro);
         } else {
-            tagaVorto.setText(vorto.getVorto().replaceAll("<rad>", "<u>").replaceAll("</rad>","</u>"));
-            Bitmap bitmap = decodeFile(new File(getCacheDir()+vorto.getDosiero()));
-            tagaBildo.setImageBitmap(bitmap);
+            this.populate(vorto);
 
         }
 
 
 
+    }
+
+    // méthode appelée après avoir téléchargé les images ou si on trouve une image du cours
+    public void populate(Vorto vorto) {
+        tagaVorto.setText(vorto.getVorto().replaceAll("<rad>", "<u>").replaceAll("</rad>","</u>"));
+        Bitmap bitmap = decodeFile(new File(getCacheDir()+vorto.getDosiero()));
+        tagaBildo.setImageBitmap(bitmap);
     }
 
     private Bitmap decodeFile(File f) {
@@ -147,6 +156,11 @@ public class LudiActivity extends ActionBarActivity {
     private class HttpAsyncTask extends AsyncTask<String, Void, NovajVortojGson> {
 
         ProgressDialog progressDialog;
+        private LudiActivity ludiActivity;
+
+        private HttpAsyncTask(LudiActivity ludiActivity) {
+            this.ludiActivity = ludiActivity;
+        }
 
         @Override
         protected void onPreExecute() {
@@ -238,10 +252,6 @@ public class LudiActivity extends ActionBarActivity {
                 }
                 // Une fois télécharger, on s'occupe de la base de données
                 long resInsertVorto = vortoDao.insertVorto(vorto);
-                Log.i("LudiActivity","resultat de l'insertion en base : "+resInsertVorto);
-                Log.i("LudiActivity","tago  : "+vorto.getTago());
-                Log.i("LudiActivity","monato  : "+vorto.getMonato());
-                Log.i("LudiActivity","jaro  : "+vorto.getJaro());
             }
             vortoDao.close();
             return novajVortojGson;
@@ -255,6 +265,14 @@ public class LudiActivity extends ActionBarActivity {
 
             if ("eraro".equals(novajVortojGson.getRespondo())) {
                 Toast.makeText(getApplicationContext(), novajVortojGson.getKialo(), Toast.LENGTH_LONG);
+            } else {
+
+                for (Vorto vorto : novajVortojGson.getVortoj()) {
+                    if (vorto.getTago()==this.ludiActivity.tago && vorto.getMonato()==this.ludiActivity.monato && vorto.getJaro()==this.ludiActivity.jaro) {
+                        this.ludiActivity.populate(vorto);
+                    }
+                }
+
             }
 
         }
