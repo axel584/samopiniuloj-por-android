@@ -22,6 +22,7 @@ import android.widget.Toast;
 import com.google.gson.Gson;
 
 import org.esperanto_france.samopiniuloj.dao.VortoDao;
+import org.esperanto_france.samopiniuloj.modelo.LudiGson;
 import org.esperanto_france.samopiniuloj.modelo.NovajVortojGson;
 import org.esperanto_france.samopiniuloj.modelo.Vorto;
 
@@ -132,9 +133,10 @@ public class LudiActivity extends ActionBarActivity {
                     String propono6 = prop6.getText().toString();
                     String propono7 = prop7.getText().toString();
                     String propono8 = prop8.getText().toString();
-                    String requete = "http://samopiniuloj.esperanto-jeunes.org/ws/ws_ludo.php?ludanto_id="+uzantoId+"&vorto_id="+vorto.getId()+"&prop[0]="+propono1+"&prop[1]="+propono2;
+                    String requete = "http://samopiniuloj.esperanto-jeunes.org/ws/ws_ludo.php?ludanto_id="+uzantoId+"&vorto_id="+vorto.getId()+"&prop[0]="+propono1+"&prop[1]="+propono2+"&prop[2]="+propono3+"&prop[3]="+propono4+"&prop[4]="+propono5+"&prop[5]="+propono6+"&prop[6]="+propono7+"&prop[7]="+propono8;
                     Log.i("LudiActivity",requete);
-                    Toast.makeText(getApplicationContext(), "coucou", Toast.LENGTH_LONG).show();
+                    Toast.makeText(getApplicationContext(), requete, Toast.LENGTH_LONG).show();
+                    new LudiAsyncTask(LudiActivity.this).execute();
                 }
         });
 
@@ -149,7 +151,8 @@ public class LudiActivity extends ActionBarActivity {
     }
 
     // méthode appelée après avoir envoyé les propositions jouées
-    public void populateLudo() {
+    public void populateLudi(LudiGson ludiGson) {
+        Log.i("LudiActivity","ici on va s'occuper de mettre les coches vertes");
 
     }
 
@@ -333,4 +336,57 @@ public class LudiActivity extends ActionBarActivity {
 
         }
     }
+
+
+    // Accès au webservice Ludi :
+    private class LudiAsyncTask extends AsyncTask<String, Void, LudiGson> {
+
+        ProgressDialog progressDialog;
+        private LudiActivity ludiActivity;
+
+        private LudiAsyncTask(LudiActivity ludiActivity) {
+            this.ludiActivity = ludiActivity;
+        }
+
+        @Override
+        protected void onPreExecute() {
+
+            progressDialog = new ProgressDialog(
+                    LudiActivity.this);
+            progressDialog.setMessage("Konektiĝas...");
+            progressDialog.setCancelable(false);
+            progressDialog.show();
+        }
+
+        @Override
+        protected LudiGson doInBackground(String... urls) {
+
+            // On recupere le résultat du web service et on le renvoit
+            String rezulto = GET(urls[0]);
+            Gson gson = new Gson();
+            LudiGson ludiGson = gson.fromJson(rezulto,LudiGson.class);
+
+
+            return ludiGson;
+        }
+        // onPostExecute displays the results of the AsyncTask.
+        @Override
+        protected void onPostExecute(LudiGson ludiGson) {
+            // termine le sablier
+            progressDialog.cancel();
+            // traite la réponse
+
+            if ("eraro".equals(ludiGson.getRespondo())) {
+                // TODO : faut regarder si le problème vient de l'ensemble de la réponse ou juste d'une des propositions
+                Toast.makeText(getApplicationContext(), ludiGson.getKialo(), Toast.LENGTH_LONG);
+            } else {
+                this.ludiActivity.populateLudi(ludiGson);
+
+            }
+
+        }
+    }
+
+
+
 }
