@@ -41,7 +41,7 @@
             android:layout_height="140dp"
             card_view:cardCornerRadius="4dp"
             card_view:cardBackgroundColor="@color/sam_carte"
-            android:layout_marginTop="16dp"
+            android:layout_marginTop="@dimen/marge_3"
             android:background="@color/sam_carte"
             android:orientation="horizontal">
 
@@ -93,7 +93,7 @@
 
         <TableLayout android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="16dp">
+            android:layout_marginTop="@dimen/marge_3">
 
             <TableRow android:layout_width="fill_parent">
 
@@ -186,8 +186,10 @@
             android:weightSum="1">
 
             <Button android:id="@+id/btn_sendu"
-                android:layout_width="wrap_content" android:layout_height="0dp"
-                android:layout_marginTop="16dp" android:text="@string/action_sendu"
+                android:layout_width="wrap_content"
+                android:layout_height="0dp"
+                android:layout_marginTop="@dimen/marge_3"
+                android:text="@string/action_sendu"
                 android:layout_gravity="right|top"
                 android:layout_weight="0.42"
                 android:clickable="false"

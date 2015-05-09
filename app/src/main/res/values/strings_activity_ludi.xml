@@ -9,6 +9,11 @@
     <string name="txt_propono_7">propono 7</string>
     <string name="txt_propono_8">propono 8</string>
 
+    <string name="ludi_klarigo_1">(vi rajtas ŝanĝi ilin ĝis la horlimo)</string>
+    <string name="ludi_klarigo_2">Tajpu cx, sx... por ricevi ĉ, ŝ...</string>
+
+    <string name="ludi_helpo_1">Skribu viajn proponojn en la liberaj lokoj kaj alklaku la butonon SENDU.</string>
+    <string name="ludi_helpo_2">Vi rajtas proponi nur parton de la listo kaj kompletigi la liston poste. Kiam viaj proponoj estos senditaj, vi rajtos ŝanĝi ilin ĝis la horlimo.</string>
 
     <string name="eraro_neniu_nova_vorto">Neniu nova vorto</string>
 </resources>
