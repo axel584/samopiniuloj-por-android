@@ -11,6 +11,8 @@ import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
 import android.support.v7.widget.Toolbar;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
@@ -184,6 +186,72 @@ public class LudiActivity extends ActionBarActivity {
             }
         }
 
+        // on fait en sorte que si on change le contenu des propositions, la coche verte disparaisse
+        prop1.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence charSequence, int i, int i2, int i3) {}
+            @Override
+            public void onTextChanged(CharSequence charSequence, int i, int i2, int i3) {done1.setVisibility(ImageView.INVISIBLE);}
+            @Override
+            public void afterTextChanged(Editable editable) {}
+        });
+        prop2.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence charSequence, int i, int i2, int i3) {}
+            @Override
+            public void onTextChanged(CharSequence charSequence, int i, int i2, int i3) {done2.setVisibility(ImageView.INVISIBLE);}
+            @Override
+            public void afterTextChanged(Editable editable) {}
+        });
+        prop3.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence charSequence, int i, int i2, int i3) {}
+            @Override
+            public void onTextChanged(CharSequence charSequence, int i, int i2, int i3) {done3.setVisibility(ImageView.INVISIBLE);}
+            @Override
+            public void afterTextChanged(Editable editable) {}
+        });
+        prop4.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence charSequence, int i, int i2, int i3) {}
+            @Override
+            public void onTextChanged(CharSequence charSequence, int i, int i2, int i3) {done4.setVisibility(ImageView.INVISIBLE);}
+            @Override
+            public void afterTextChanged(Editable editable) {}
+        });
+        prop5.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence charSequence, int i, int i2, int i3) {}
+            @Override
+            public void onTextChanged(CharSequence charSequence, int i, int i2, int i3) {done5.setVisibility(ImageView.INVISIBLE);}
+            @Override
+            public void afterTextChanged(Editable editable) {}
+        });
+        prop6.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence charSequence, int i, int i2, int i3) {}
+            @Override
+            public void onTextChanged(CharSequence charSequence, int i, int i2, int i3) {done6.setVisibility(ImageView.INVISIBLE);}
+            @Override
+            public void afterTextChanged(Editable editable) {}
+        });
+        prop7.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence charSequence, int i, int i2, int i3) {}
+            @Override
+            public void onTextChanged(CharSequence charSequence, int i, int i2, int i3) {done7.setVisibility(ImageView.INVISIBLE);}
+            @Override
+            public void afterTextChanged(Editable editable) {}
+        });
+        prop8.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence charSequence, int i, int i2, int i3) {}
+            @Override
+            public void onTextChanged(CharSequence charSequence, int i, int i2, int i3) {done8.setVisibility(ImageView.INVISIBLE);}
+            @Override
+            public void afterTextChanged(Editable editable) {}
+        });
+
         // gestion du bouton d'envoie des propositions
         sendu.setOnClickListener(new View.OnClickListener() {
 
@@ -213,9 +281,7 @@ public class LudiActivity extends ActionBarActivity {
 
     // méthode appelée après avoir envoyé les propositions jouées
     public void populateLudi(LudiGson ludiGson) {
-        Log.i("LudiActivity","ici on va s'occuper de mettre les coches vertes");
         for (Integer i : ludiGson.getRegistritaj()) {
-            Log.i("LudiActivity",i.toString());
             switch (i) {
                 case 0: done1.setVisibility(ImageView.VISIBLE);
                     break;
