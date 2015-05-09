@@ -5,7 +5,6 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
-import android.media.Image;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.os.AsyncTask;
@@ -182,9 +181,6 @@ public class LudiActivity extends ActionBarActivity {
                             break;
 
                 }
-                // TODO : affiche dans les EditText les valeurs qui se trouvent en base de données
-                Log.i("LudiActivity","en base sqlite nous avons : "+propono.getPropono());
-                Log.i("LudiActivity","en base sqlite nous avons : "+propono.getVico());
             }
         }
 
@@ -367,7 +363,6 @@ public class LudiActivity extends ActionBarActivity {
                     output = new FileOutputStream(getCacheDir()+vorto.getDosiero());
 
                     byte data[] = new byte[4096];
-                    long total = 0;
                     int count;
                     while ((count = input.read(data)) != -1) {
                         // allow canceling with back button
@@ -377,7 +372,6 @@ public class LudiActivity extends ActionBarActivity {
                             novajVortojGson.setKialo("Nuligita");
                             return novajVortojGson;
                         }
-                        total += count;
                         output.write(data, 0, count);
                     }
                 } catch (Exception e) {
@@ -457,7 +451,7 @@ public class LudiActivity extends ActionBarActivity {
             int i = 0 ; // vico
             for (String propono : ludiGson.getProponoj()) {
                 i++;
-                if (propono!="" && propono!=null) {
+                if (!"".equals(propono) && propono!=null) {
                     Propono p = new Propono();
                     p.setPropono(propono);
                     p.setLudanto_id(ludiGson.getLudanto_id());
@@ -478,7 +472,7 @@ public class LudiActivity extends ActionBarActivity {
 
             if ("eraro".equals(ludiGson.getRespondo())) {
                 // TODO : faut regarder si le problème vient de l'ensemble de la réponse ou juste d'une des propositions
-                Toast.makeText(getApplicationContext(), ludiGson.getKialo(), Toast.LENGTH_LONG);
+                Toast.makeText(getApplicationContext(), ludiGson.getKialo(), Toast.LENGTH_LONG).show();
             } else {
                 this.ludiActivity.populateLudi(ludiGson);
 
