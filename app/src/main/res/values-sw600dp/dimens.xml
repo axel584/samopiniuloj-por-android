@@ -1,11 +1,7 @@
 <resources>
     <!-- Tablettes à partir de 7'' -->
-    <dimen name="activity_horizontal_margin">32dp</dimen>
-    <dimen name="activity_vertical_margin">32dp</dimen>
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
     <dimen name="texte_normal">14sp</dimen>
     <dimen name="texte_xlarge">24sp</dimen>
-    <dimen name="marge_1">8dp</dimen>
-    <dimen name="marge_2">16dp</dimen>
-    <dimen name="marge_3">32dp</dimen>
-    <dimen name="marge_4">64dp</dimen>
 </resources>
