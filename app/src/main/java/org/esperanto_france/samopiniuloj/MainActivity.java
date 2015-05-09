@@ -1,5 +1,7 @@
 package org.esperanto_france.samopiniuloj;
 
+import android.app.Fragment;
+import android.app.FragmentManager;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.res.Configuration;
@@ -87,137 +89,14 @@ public class MainActivity extends ActionBarActivity {
         mDrawerLayout.setDrawerListener(mDrawerToggle); // c'est pour changer le menu hamburger en fleche
         // fin des trucs pour le menu hamburger
 
+        // on lance le fragment "test"
+        Fragment fragment = new TestFragment();
 
-        bEniri = (Button) findViewById(R.id.button_enirejo);
-        bAlighi = (Button) findViewById(R.id.button_alighilo);
-        bAkceptejo = (Button) findViewById(R.id.button_akceptejo);
-        bLudi = (Button) findViewById(R.id.button_ludo);
-
-        bRezultoj = (Button) findViewById(R.id.button_rezultoj);
-        bLudintoj = (Button) findViewById(R.id.button_ludintoj);
-        bVortoj = (Button) findViewById(R.id.button_vortoj);
-        bKontakto = (Button) findViewById(R.id.button_kontakto);
-        bKielLudi = (Button) findViewById(R.id.button_kiel_ludi);
-
-        textSurtitre = (TextView) findViewById(R.id.text_surtitre);
-
-         // Récupère les informations de connection (id et nom) daans SharedPreferences
-        SharedPreferences pref = getApplicationContext().getSharedPreferences("SamAgordo", 0); // 0 - for private mode
-        Integer uzantoId = pref.getInt("uzanto_id",0);
-        String uzantoNomo = pref.getString("uzanto_nomo","");
-
-        if (uzantoId!=0) {
-            textSurtitre.setText("Bonvenon "+uzantoNomo);
-        }
-
-
-        bEniri.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                // Le premier paramètre est le nom de l'activité actuelle
-                // Le second est le nom de l'activité de destination
-                Intent eniriActivity = new Intent(MainActivity.this, EniriActivity.class);
-
-                // Puis on lance l'intent !
-                startActivity(eniriActivity);
-            }
-        });
-
-        bAlighi.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                // Le premier paramètre est le nom de l'activité actuelle
-                // Le second est le nom de l'activité de destination
-                Intent alighiActivity = new Intent(MainActivity.this, AlighiActivity.class);
-
-                // Puis on lance l'intent !
-                startActivity(alighiActivity);
-            }
-        });
-
-        bAkceptejo.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                // Le premier paramètre est le nom de l'activité actuelle
-                // Le second est le nom de l'activité de destination
-                Intent akceptejoActivity = new Intent(MainActivity.this, AkceptejoActivity.class);
-
-                // Puis on lance l'intent !
-                startActivity(akceptejoActivity);
-            }
-        });
-
-        bLudi.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                // Le premier paramètre est le nom de l'activité actuelle
-                // Le second est le nom de l'activité de destination
-                Intent ludiActivity = new Intent(MainActivity.this, LudiActivity.class);
-
-                // Puis on lance l'intent !
-                startActivity(ludiActivity);
-            }
-        });
-
-        bRezultoj.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                // Le premier paramètre est le nom de l'activité actuelle
-                // Le second est le nom de l'activité de destination
-                Intent rezultojActivity = new Intent(MainActivity.this, RezultojActivity.class);
-
-                // Puis on lance l'intent !
-                startActivity(rezultojActivity);
-            }
-        });
-
-        bLudintoj.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                // Le premier paramètre est le nom de l'activité actuelle
-                // Le second est le nom de l'activité de destination
-                Intent ludintojActivity = new Intent(MainActivity.this, LudintojActivity.class);
-
-                // Puis on lance l'intent !
-                startActivity(ludintojActivity);
-            }
-        });
-
-        bVortoj.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                // Le premier paramètre est le nom de l'activité actuelle
-                // Le second est le nom de l'activité de destination
-                Intent vortojActivity = new Intent(MainActivity.this, VortojActivity.class);
-
-                // Puis on lance l'intent !
-                startActivity(vortojActivity);
-            }
-        });
-
-        bKontakto.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                // Le premier paramètre est le nom de l'activité actuelle
-                // Le second est le nom de l'activité de destination
-                Intent kontaktoActivity = new Intent(MainActivity.this, KontaktoActivity.class);
-
-                // Puis on lance l'intent !
-                startActivity(kontaktoActivity);
-            }
-        });
-
-        bKielLudi.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                // Le premier paramètre est le nom de l'activité actuelle
-                // Le second est le nom de l'activité de destination
-                Intent kielLudiActivity = new Intent(MainActivity.this, KielLudiActivity.class);
-
-                // Puis on lance l'intent !
-                startActivity(kielLudiActivity);
-            }
-        });
+        // Insert the fragment by replacing any existing fragment
+        FragmentManager fragmentManager = getFragmentManager();
+        fragmentManager.beginTransaction()
+                .replace(R.id.content_frame, fragment)
+                .commit();
 
     }
 

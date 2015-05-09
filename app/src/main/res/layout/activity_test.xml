@@ -22,12 +22,14 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Enirejo"
+        android:onClick="iruAlEnirejo"
         android:id="@+id/button_enirejo" />
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Alighilo"
+        android:onClick="iruAlAlighilo"
         android:id="@+id/button_alighilo" />
 
     <Button
@@ -53,5 +55,17 @@
         android:layout_height="wrap_content"
         android:text="Vortoj"
         android:id="@+id/button_vortoj" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Kontakti nin"
+        android:id="@+id/button_kontakto" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Kiel ludi"
+        android:id="@+id/button_kiel_ludi" />
 
 </LinearLayout>
