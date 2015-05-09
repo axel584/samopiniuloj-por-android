@@ -49,13 +49,13 @@
             android:orientation="horizontal"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/marge_3">
+            android:layout_marginTop="@dimen/marge_2">
 
             <LinearLayout
                 android:orientation="vertical"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_weight="3">
+                android:layout_weight="4">
 
                 <android.support.v7.widget.CardView
                     xmlns:card_view="http://schemas.android.com/apk/res-auto"
@@ -135,7 +135,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="@dimen/marge_3"
-                android:layout_weight="4">
+                android:layout_weight="3">
 
                 <TextView android:id="@+id/titolo"
                     android:layout_width="match_parent"
@@ -162,6 +162,7 @@
                     android:layout_marginTop="@dimen/marge_2">
 
                     <TableRow android:layout_width="fill_parent">
+
                         <EditText android:id="@+id/propono_1"
                             android:hint="@string/txt_propono_1"
                             style="@style/Input.Texte.Propono"
@@ -172,39 +173,7 @@
                         <ImageView android:id="@+id/done_1"
                             style="@style/Sendita"
                             android:visibility="invisible" />
-                    </TableRow>
 
-                    <TableRow android:layout_width="fill_parent">
-                        <EditText android:id="@+id/propono_2"
-                            android:hint="@string/txt_propono_2"
-                            style="@style/Input.Texte.Propono" />
-
-                        <ImageView android:id="@+id/done_2"
-                            style="@style/Sendita"
-                            android:visibility="invisible" />
-                    </TableRow>
-
-                    <TableRow android:layout_width="fill_parent">
-                        <EditText android:id="@+id/propono_3"
-                            android:hint="@string/txt_propono_3"
-                            style="@style/Input.Texte.Propono" />
-
-                        <ImageView android:id="@+id/done_3"
-                            style="@style/Sendita"
-                            android:visibility="invisible" />
-                    </TableRow>
-
-                    <TableRow android:layout_width="fill_parent">
-                        <EditText android:id="@+id/propono_4"
-                            android:hint="@string/txt_propono_4"
-                            style="@style/Input.Texte.Propono" />
-
-                        <ImageView android:id="@+id/done_4"
-                            style="@style/Sendita"
-                            android:visibility="invisible" />
-                    </TableRow>
-
-                    <TableRow android:layout_width="fill_parent">
                         <EditText android:id="@+id/propono_5"
                             android:hint="@string/txt_propono_5"
                             style="@style/Input.Texte.Propono" />
@@ -212,9 +181,19 @@
                         <ImageView android:id="@+id/done_5"
                             style="@style/Sendita"
                             android:visibility="invisible" />
+
                     </TableRow>
 
-                    <TableRow android:layout_width="fill_parent">
+                    <TableRow>
+
+                        <EditText android:id="@+id/propono_2"
+                            android:hint="@string/txt_propono_2"
+                            style="@style/Input.Texte.Propono" />
+
+                        <ImageView android:id="@+id/done_2"
+                            style="@style/Sendita"
+                            android:visibility="invisible" />
+
                         <EditText android:id="@+id/propono_6"
                             android:hint="@string/txt_propono_6"
                             style="@style/Input.Texte.Propono" />
@@ -222,9 +201,19 @@
                         <ImageView android:id="@+id/done_6"
                             style="@style/Sendita"
                             android:visibility="invisible" />
+
                     </TableRow>
 
-                    <TableRow android:layout_width="fill_parent">
+                    <TableRow>
+
+                        <EditText android:id="@+id/propono_3"
+                            android:hint="@string/txt_propono_3"
+                            style="@style/Input.Texte.Propono" />
+
+                        <ImageView android:id="@+id/done_3"
+                            style="@style/Sendita"
+                            android:visibility="invisible" />
+
                         <EditText android:id="@+id/propono_7"
                             android:hint="@string/txt_propono_7"
                             style="@style/Input.Texte.Propono" />
@@ -232,9 +221,19 @@
                         <ImageView android:id="@+id/done_7"
                             style="@style/Sendita"
                             android:visibility="invisible" />
+
                     </TableRow>
 
-                    <TableRow android:layout_width="fill_parent">
+                    <TableRow>
+
+                        <EditText android:id="@+id/propono_4"
+                            android:hint="@string/txt_propono_4"
+                            style="@style/Input.Texte.Propono" />
+
+                        <ImageView android:id="@+id/done_4"
+                            style="@style/Sendita"
+                            android:visibility="invisible" />
+
                         <EditText android:id="@+id/propono_8"
                             android:hint="@string/txt_propono_8"
                             style="@style/Input.Texte.Propono" />
@@ -242,6 +241,7 @@
                         <ImageView android:id="@+id/done_8"
                             style="@style/Sendita"
                             android:visibility="invisible" />
+
                     </TableRow>
 
                 </TableLayout>
