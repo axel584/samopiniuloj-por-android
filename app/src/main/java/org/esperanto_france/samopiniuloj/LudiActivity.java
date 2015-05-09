@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.media.Image;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.os.AsyncTask;
@@ -67,6 +68,16 @@ public class LudiActivity extends ActionBarActivity {
     EditText prop6;
     EditText prop7;
     EditText prop8;
+    // Coches vertes :
+    ImageView done1;
+    ImageView done2;
+    ImageView done3;
+    ImageView done4;
+    ImageView done5;
+    ImageView done6;
+    ImageView done7;
+    ImageView done8;
+
 
     Vorto vorto;
 
@@ -100,6 +111,14 @@ public class LudiActivity extends ActionBarActivity {
         prop6 = (EditText) findViewById(R.id.propono_6);
         prop7 = (EditText) findViewById(R.id.propono_7);
         prop8 = (EditText) findViewById(R.id.propono_8);
+        done1 = (ImageView) findViewById(R.id.done_1);
+        done2 = (ImageView) findViewById(R.id.done_2);
+        done3 = (ImageView) findViewById(R.id.done_3);
+        done4 = (ImageView) findViewById(R.id.done_4);
+        done5 = (ImageView) findViewById(R.id.done_5);
+        done6 = (ImageView) findViewById(R.id.done_6);
+        done7 = (ImageView) findViewById(R.id.done_7);
+        done8 = (ImageView) findViewById(R.id.done_8);
 
 
 
@@ -134,7 +153,38 @@ public class LudiActivity extends ActionBarActivity {
         List<Propono> endatumbazaProponoj = proponoDao.getProponoj(vorto.getId(),uzantoId);
         if (endatumbazaProponoj!=null) {
             for (Propono propono : endatumbazaProponoj) {
+                switch (propono.getVico()) {
+                    case 1: prop1.setText(propono.getPropono());
+                            done1.setVisibility(ImageView.VISIBLE);
+                        break;
+                    case 2: prop2.setText(propono.getPropono());
+                        done2.setVisibility(ImageView.VISIBLE);
+                        break;
+                    case 3: prop3.setText(propono.getPropono());
+                        done3.setVisibility(ImageView.VISIBLE);
+                        break;
+                    case 4: prop4.setText(propono.getPropono());
+                        done4.setVisibility(ImageView.VISIBLE);
+                        break;
+                    case 5: prop5.setText(propono.getPropono());
+                        done5.setVisibility(ImageView.VISIBLE);
+                        break;
+                    case 6: prop6.setText(propono.getPropono());
+                        done6.setVisibility(ImageView.VISIBLE);
+                        break;
+                    case 7: prop7.setText(propono.getPropono());
+                        done7.setVisibility(ImageView.VISIBLE);
+                        break;
+                    case 8: prop8.setText(propono.getPropono());
+                        done8.setVisibility(ImageView.VISIBLE);
+                        break;
+                    default : Log.e("LudiActivity","Information inconnue en base : "+propono.getVico());
+                            break;
+
+                }
                 // TODO : affiche dans les EditText les valeurs qui se trouvent en base de données
+                Log.i("LudiActivity","en base sqlite nous avons : "+propono.getPropono());
+                Log.i("LudiActivity","en base sqlite nous avons : "+propono.getVico());
             }
         }
 
@@ -167,10 +217,29 @@ public class LudiActivity extends ActionBarActivity {
 
     // méthode appelée après avoir envoyé les propositions jouées
     public void populateLudi(LudiGson ludiGson) {
-        // TODO : ajouter les coches ici
         Log.i("LudiActivity","ici on va s'occuper de mettre les coches vertes");
         for (Integer i : ludiGson.getRegistritaj()) {
             Log.i("LudiActivity",i.toString());
+            switch (i) {
+                case 0: done1.setVisibility(ImageView.VISIBLE);
+                    break;
+                case 1: done2.setVisibility(ImageView.VISIBLE);
+                    break;
+                case 2: done3.setVisibility(ImageView.VISIBLE);
+                    break;
+                case 3: done4.setVisibility(ImageView.VISIBLE);
+                    break;
+                case 4: done5.setVisibility(ImageView.VISIBLE);
+                    break;
+                case 5: done6.setVisibility(ImageView.VISIBLE);
+                    break;
+                case 6: done7.setVisibility(ImageView.VISIBLE);
+                    break;
+                case 7: done8.setVisibility(ImageView.VISIBLE);
+                    break;
+                default : Log.e("LudiActivity", " numéro inconu de registrita :" + String.valueOf(i));
+                    break;
+            }
         }
 
     }
