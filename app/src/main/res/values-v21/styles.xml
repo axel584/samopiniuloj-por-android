@@ -37,14 +37,18 @@
 
     <style name="BoutonPrimaire" parent="@android:style/Widget.Material.Light.Button">
         <item name="android:layout_width">wrap_content</item>
-        <item name="android:layout_height">36sp</item>
+        <item name="android:minWidth">88dp</item>
+        <item name="android:layout_height">36dp</item>
+        <item name="android:textSize">16sp</item>
         <item name="android:textColor">@color/sam_bouton_txt</item>
         <item name="android:background">@color/sam_bouton_fonce</item>
     </style>
 
     <style name="BoutonSecondaire" parent="@android:style/Widget.Material.Light.Button.Borderless" >
         <item name="android:layout_width">wrap_content</item>
-        <item name="android:layout_height">36sp</item>
+        <item name="android:minWidth">88dp</item>
+        <item name="android:layout_height">36dp</item>
+        <item name="android:textSize">16sp</item>
         <item name="android:textColor">@color/sam_bouton_fonce</item>
     </style>
 
