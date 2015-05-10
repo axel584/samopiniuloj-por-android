@@ -30,7 +30,7 @@ public class LudintojActivity extends ActionBarActivity {
             public void onClick(View v) {
                 // Le premier paramètre est le nom de l'activité actuelle
                 // Le second est le nom de l'activité de destination
-                Intent rezultojActivity = new Intent(LudintojActivity.this, RezultojActivity.class);
+                Intent rezultojActivity = new Intent(LudintojActivity.this, RezultojFragment.class);
 
                 // Puis on lance l'intent !
                 startActivity(rezultojActivity);

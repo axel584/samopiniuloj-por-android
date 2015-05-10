@@ -16,76 +16,11 @@
         android:layout_below="@id/toolbar"
         >
 
-        <LinearLayout
-            android:layout_below="@id/toolbar"
-            android:orientation="vertical"
+        <!-- Fragment qui va contenir les différents écrans de l'application -->
+        <FrameLayout
+            android:id="@+id/content_frame"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:paddingBottom="@dimen/activity_vertical_margin"
-            android:paddingLeft="@dimen/activity_horizontal_margin"
-            android:paddingRight="@dimen/activity_horizontal_margin"
-            android:paddingTop="@dimen/activity_vertical_margin"
-            android:background="@drawable/feuilles" >
-
-            <TextView android:text="Samopiniuloj - ecran de test" android:layout_width="wrap_content"
-                android:layout_height="wrap_content" android:id="@+id/text_surtitre"/>
-
-            <Button
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Akceptejo"
-                android:id="@+id/button_akceptejo" />
-
-            <Button
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Enirejo"
-                android:id="@+id/button_enirejo" />
-
-            <Button
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Alighilo"
-                android:id="@+id/button_alighilo" />
-
-            <Button
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:clickable="false"
-                android:text="Ludo"
-                android:id="@+id/button_ludo" />
-
-            <Button
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Rezultoj"
-                android:id="@+id/button_rezultoj" />
-
-            <Button
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Ludintoj"
-                android:id="@+id/button_ludintoj" />
-
-            <Button
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Vortoj"
-                android:id="@+id/button_vortoj" />
-
-            <Button
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Kontakti nin"
-                android:id="@+id/button_kontakto" />
-
-            <Button
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Kiel ludi"
-                android:id="@+id/button_kiel_ludi" />
-
-        </LinearLayout>
+            android:layout_height="match_parent" />
 
         <include layout="@layout/nav_drawer" />
 

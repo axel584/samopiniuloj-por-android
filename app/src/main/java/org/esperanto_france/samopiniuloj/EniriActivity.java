@@ -199,7 +199,7 @@ public class EniriActivity extends ActionBarActivity {
                 editor.putInt("uzanto_id", eniriGson.getId());
                 editor.putString("uzanto_nomo", eniriGson.getNomo());
                 editor.commit();
-                Intent ludiActivity = new Intent(EniriActivity.this, LudiActivity.class);
+                Intent ludiActivity = new Intent(EniriActivity.this, LudiFragment.class);
                 startActivity(ludiActivity);
             }
 

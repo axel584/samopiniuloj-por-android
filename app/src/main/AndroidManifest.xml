@@ -29,7 +29,7 @@
             android:label="@string/title_activity_alighi" >
         </activity>
         <activity
-            android:name=".LudiActivity"
+            android:name=".LudiFragment"
             android:label="@string/title_activity_ludi" >
         </activity>
         <activity
@@ -37,7 +37,7 @@
             android:label="@string/title_activity_akceptejo" >
         </activity>
         <activity
-            android:name=".RezultojActivity"
+            android:name=".RezultojFragment"
             android:label="@string/title_activity_rezultoj" >
         </activity>
         <activity
@@ -49,11 +49,11 @@
             android:label="@string/title_activity_vortoj" >
         </activity>
         <activity
-            android:name=".KontaktoActivity"
+            android:name=".KontaktoFragment"
             android:label="@string/title_activity_kontakto" >
         </activity>
         <activity
-            android:name=".KielLudiActivity"
+            android:name=".KielLudiFragment"
             android:label="@string/title_activity_kiel_ludi" >
         </activity>
     </application>
