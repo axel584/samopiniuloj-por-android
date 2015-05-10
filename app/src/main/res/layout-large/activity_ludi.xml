@@ -3,7 +3,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     xmlns:card_view="http://schemas.android.com/apk/res-auto"
-    tools:context="org.esperanto_france.samopiniuloj.LudiActivity"
+    tools:context="org.esperanto_france.samopiniuloj.LudiFragment"
     android:background="@color/sam_fond">
 
     <include

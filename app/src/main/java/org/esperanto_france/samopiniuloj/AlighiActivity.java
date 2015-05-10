@@ -480,7 +480,7 @@ public class AlighiActivity extends ActionBarActivity {
                 editor.putInt("uzanto_id", aligiGson.getId());
                 editor.putString("uzanto_nomo", aligiGson.getNomo());
                 editor.commit();
-                Intent ludiActivity = new Intent(AlighiActivity.this, LudiActivity.class);
+                Intent ludiActivity = new Intent(AlighiActivity.this, LudiFragment.class);
                 startActivity(ludiActivity);
             }
 

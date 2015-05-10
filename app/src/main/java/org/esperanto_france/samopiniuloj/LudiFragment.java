@@ -1,5 +1,6 @@
 package org.esperanto_france.samopiniuloj;
 
+import android.app.Fragment;
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -9,12 +10,13 @@ import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.os.AsyncTask;
 import android.os.Bundle;
-import android.support.v7.app.ActionBarActivity;
 import android.support.v7.widget.Toolbar;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.util.Log;
+import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
@@ -47,7 +49,7 @@ import java.util.Calendar;
 import java.util.List;
 
 
-public class LudiActivity extends ActionBarActivity {
+public class LudiFragment extends Fragment {
 
     TextView textBonvonon;
     VortoDao vortoDao;
@@ -85,13 +87,11 @@ public class LudiActivity extends ActionBarActivity {
     Integer uzantoId;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+                             Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_ludi);
+        View rootView = inflater.inflate(R.layout.activity_ludi, container, false);
 
-        // Ajout toolbar
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
 
         Calendar c = Calendar.getInstance();
         tago = c.get(Calendar.DAY_OF_MONTH);
@@ -99,45 +99,43 @@ public class LudiActivity extends ActionBarActivity {
         jaro = c.get(Calendar.YEAR);
 
         // on récupère les objets de l'interface
-        textBonvonon = (TextView) findViewById(R.id.bonvenon_ludando);
-        tagaVorto = (TextView) findViewById(R.id.taga_vorto);
-        tagaBildo = (ImageView) findViewById(R.id.img_taga_vorto);
-        sendu = (Button) findViewById(R.id.btn_sendu);
+        textBonvonon = (TextView) getActivity().findViewById(R.id.bonvenon_ludando);
+        tagaVorto = (TextView) getActivity().findViewById(R.id.taga_vorto);
+        tagaBildo = (ImageView) getActivity().findViewById(R.id.img_taga_vorto);
+        sendu = (Button) getActivity().findViewById(R.id.btn_sendu);
 
-        prop1 = (EditText) findViewById(R.id.propono_1);
-        prop2 = (EditText) findViewById(R.id.propono_2);
-        prop3 = (EditText) findViewById(R.id.propono_3);
-        prop4 = (EditText) findViewById(R.id.propono_4);
-        prop5 = (EditText) findViewById(R.id.propono_5);
-        prop6 = (EditText) findViewById(R.id.propono_6);
-        prop7 = (EditText) findViewById(R.id.propono_7);
-        prop8 = (EditText) findViewById(R.id.propono_8);
-        done1 = (ImageView) findViewById(R.id.done_1);
-        done2 = (ImageView) findViewById(R.id.done_2);
-        done3 = (ImageView) findViewById(R.id.done_3);
-        done4 = (ImageView) findViewById(R.id.done_4);
-        done5 = (ImageView) findViewById(R.id.done_5);
-        done6 = (ImageView) findViewById(R.id.done_6);
-        done7 = (ImageView) findViewById(R.id.done_7);
-        done8 = (ImageView) findViewById(R.id.done_8);
+        prop1 = (EditText) getActivity().findViewById(R.id.propono_1);
+        prop2 = (EditText) getActivity().findViewById(R.id.propono_2);
+        prop3 = (EditText)getActivity(). findViewById(R.id.propono_3);
+        prop4 = (EditText) getActivity().findViewById(R.id.propono_4);
+        prop5 = (EditText) getActivity().findViewById(R.id.propono_5);
+        prop6 = (EditText) getActivity().findViewById(R.id.propono_6);
+        prop7 = (EditText) getActivity().findViewById(R.id.propono_7);
+        prop8 = (EditText) getActivity().findViewById(R.id.propono_8);
+        done1 = (ImageView) getActivity().findViewById(R.id.done_1);
+        done2 = (ImageView) getActivity().findViewById(R.id.done_2);
+        done3 = (ImageView) getActivity().findViewById(R.id.done_3);
+        done4 = (ImageView) getActivity().findViewById(R.id.done_4);
+        done5 = (ImageView) getActivity().findViewById(R.id.done_5);
+        done6 = (ImageView) getActivity().findViewById(R.id.done_6);
+        done7 = (ImageView) getActivity().findViewById(R.id.done_7);
+        done8 = (ImageView) getActivity().findViewById(R.id.done_8);
 
 
 
         // Récupère les infos de l'utilisateur
-        SharedPreferences pref = getApplicationContext().getSharedPreferences("SamAgordo", 0); // 0 - for private mode
+        SharedPreferences pref = getActivity().getApplicationContext().getSharedPreferences("SamAgordo", 0); // 0 - for private mode
         uzantoId = pref.getInt("uzanto_id",0);
         String uzantoNomo = pref.getString("uzanto_nomo","");
         if (uzantoId==0) {
-            // Aucun utilisateur, on renvoit sur la page eniri
-            Intent eniriActivity = new Intent(LudiActivity.this, EniriActivity.class);
-            startActivity(eniriActivity);
+            // TODO : il faut renvoyer l'utilisateur sur le fragment de connection (eniriFragment)
         } else {
             textBonvonon.setText("Bonvenon "+uzantoNomo+" !");
         }
 
 
         // On récupère le mot du jour dans la base
-        vortoDao = new VortoDao(this);
+        vortoDao = new VortoDao(getActivity().getApplicationContext());
         vortoDao.open();
         vorto = vortoDao.getVortoPerTago(tago,monato,jaro);
         if (vorto==null) {
@@ -147,7 +145,7 @@ public class LudiActivity extends ActionBarActivity {
 
         }
 
-        proponoDao = new ProponoDao(this);
+        proponoDao = new ProponoDao(getActivity().getApplicationContext());
         proponoDao.open();
         Log.i("","vorto id : "+vorto.getId().toString());
         Log.i("","uzanto id : "+uzantoId.toString());
@@ -265,17 +263,17 @@ public class LudiActivity extends ActionBarActivity {
                     String propono7 = prop7.getText().toString();
                     String propono8 = prop8.getText().toString();
                     String requete = "http://samopiniuloj.esperanto-jeunes.org/ws/ws_ludo.php?ludanto_id="+uzantoId+"&vorto_id="+vorto.getId()+"&prop[0]="+propono1+"&prop[1]="+propono2+"&prop[2]="+propono3+"&prop[3]="+propono4+"&prop[4]="+propono5+"&prop[5]="+propono6+"&prop[6]="+propono7+"&prop[7]="+propono8;
-                    new LudiAsyncTask(LudiActivity.this).execute(requete);
+                    new LudiAsyncTask(LudiFragment.this).execute(requete);
                 }
         });
 
-
+        return rootView;
     }
 
     // méthode appelée après avoir téléchargé les images ou si on trouve une image du cours
     public void populateNovajVortoj(Vorto vorto) {
         tagaVorto.setText(vorto.getVorto().replaceAll("<rad>", "<u>").replaceAll("</rad>","</u>"));
-        Bitmap bitmap = decodeFile(new File(getCacheDir()+vorto.getDosiero()));
+        Bitmap bitmap = decodeFile(new File(getActivity().getCacheDir()+vorto.getDosiero()));
         tagaBildo.setImageBitmap(bitmap);
     }
 
@@ -352,29 +350,21 @@ public class LudiActivity extends ActionBarActivity {
 
     }
 
-    public boolean isConnected(){
-        ConnectivityManager connMgr = (ConnectivityManager) getSystemService(this.CONNECTIVITY_SERVICE);
-        NetworkInfo networkInfo = connMgr.getActiveNetworkInfo();
-        if (networkInfo != null && networkInfo.isConnected())
-            return true;
-        else
-            return false;
-    }
 
     private class NovajVortojAsyncTask extends AsyncTask<String, Void, NovajVortojGson> {
 
         ProgressDialog progressDialog;
-        private LudiActivity ludiActivity;
+        private LudiFragment ludiFragment;
 
-        private NovajVortojAsyncTask(LudiActivity ludiActivity) {
-            this.ludiActivity = ludiActivity;
+        private NovajVortojAsyncTask(LudiFragment ludiFragment) {
+            this.ludiFragment = ludiFragment;
         }
 
         @Override
         protected void onPreExecute() {
 
             progressDialog = new ProgressDialog(
-                    LudiActivity.this);
+                    getActivity().getApplicationContext());
             progressDialog.setMessage("Konektiĝas...");
             progressDialog.setCancelable(false);
             progressDialog.show();
@@ -393,7 +383,7 @@ public class LudiActivity extends ActionBarActivity {
                 return novajVortojGson;
             }
             // on verifie si le repertoire cache+dosiero existe
-            File f = new File (getCacheDir()+"/dosiero/");
+            File f = new File (getActivity().getCacheDir()+"/dosiero/");
             if (!f.exists()) {
                 boolean mkdir = f.mkdir();
                 if (!mkdir) {
@@ -426,7 +416,7 @@ public class LudiActivity extends ActionBarActivity {
                     int fileLength = connection.getContentLength();
                     // download the file
                     input = connection.getInputStream();
-                    output = new FileOutputStream(getCacheDir()+vorto.getDosiero());
+                    output = new FileOutputStream(getActivity().getCacheDir()+vorto.getDosiero());
 
                     byte data[] = new byte[4096];
                     int count;
@@ -471,12 +461,12 @@ public class LudiActivity extends ActionBarActivity {
             // traite la réponse
 
             if ("eraro".equals(novajVortojGson.getRespondo())) {
-                Toast.makeText(getApplicationContext(), novajVortojGson.getKialo(), Toast.LENGTH_LONG);
+                Toast.makeText(getActivity().getApplicationContext(), novajVortojGson.getKialo(), Toast.LENGTH_LONG);
             } else {
 
                 for (Vorto vorto : novajVortojGson.getVortoj()) {
-                    if (vorto.getTago()==this.ludiActivity.tago && vorto.getMonato()==this.ludiActivity.monato && vorto.getJaro()==this.ludiActivity.jaro) {
-                        this.ludiActivity.populateNovajVortoj(vorto);
+                    if (vorto.getTago()==this.ludiFragment.tago && vorto.getMonato()==this.ludiFragment.monato && vorto.getJaro()==this.ludiFragment.jaro) {
+                        this.ludiFragment.populateNovajVortoj(vorto);
                     }
                 }
 
@@ -490,17 +480,17 @@ public class LudiActivity extends ActionBarActivity {
     private class LudiAsyncTask extends AsyncTask<String, Void, LudiGson> {
 
         ProgressDialog progressDialog;
-        private LudiActivity ludiActivity;
+        private LudiFragment ludiFragment;
 
-        private LudiAsyncTask(LudiActivity ludiActivity) {
-            this.ludiActivity = ludiActivity;
+        private LudiAsyncTask(LudiFragment ludiFragment) {
+            this.ludiFragment = ludiFragment;
         }
 
         @Override
         protected void onPreExecute() {
 
             progressDialog = new ProgressDialog(
-                    LudiActivity.this);
+                    getActivity().getApplicationContext());
             progressDialog.setMessage("Konektiĝas...");
             progressDialog.setCancelable(false);
             progressDialog.show();
@@ -538,9 +528,9 @@ public class LudiActivity extends ActionBarActivity {
 
             if ("eraro".equals(ludiGson.getRespondo())) {
                 // TODO : faut regarder si le problème vient de l'ensemble de la réponse ou juste d'une des propositions
-                Toast.makeText(getApplicationContext(), ludiGson.getKialo(), Toast.LENGTH_LONG).show();
+                Toast.makeText(getActivity().getApplicationContext(), ludiGson.getKialo(), Toast.LENGTH_LONG).show();
             } else {
-                this.ludiActivity.populateLudi(ludiGson);
+                this.ludiFragment.populateLudi(ludiGson);
 
             }
 

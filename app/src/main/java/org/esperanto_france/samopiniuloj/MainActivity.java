@@ -2,17 +2,18 @@ package org.esperanto_france.samopiniuloj;
 
 import android.app.Fragment;
 import android.app.FragmentManager;
-import android.content.Intent;
-import android.content.SharedPreferences;
 import android.content.res.Configuration;
 import android.os.Bundle;
+
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarActivity;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.ListView;
 import android.widget.TextView;
@@ -87,6 +88,11 @@ public class MainActivity extends ActionBarActivity {
         };
 
         mDrawerLayout.setDrawerListener(mDrawerToggle); // c'est pour changer le menu hamburger en fleche
+
+        // Set the list's click listener
+        mDrawerList = (ListView) findViewById(R.id.nav_list);
+        mDrawerList.setOnItemClickListener(new DrawerItemClickListener()); // C'est pour gérer les clicks sur le menu
+
         // fin des trucs pour le menu hamburger
 
         // on lance le fragment "test"
@@ -144,6 +150,49 @@ public class MainActivity extends ActionBarActivity {
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    private class DrawerItemClickListener implements ListView.OnItemClickListener {
+        @Override
+        public void onItemClick(AdapterView parent, View view, int position, long id) {
+            selectItem(position);
+        }
+    }
+
+    /** Swaps fragments in the main content view */
+    private void selectItem(int position) {
+        Log.i("MainActivity","position : "+position);
+        Fragment nouveauFragment;
+        switch (position){
+            case 0 : nouveauFragment = new KielLudiFragment();// kiel ludi
+                    break;
+            case 1 : nouveauFragment = new LudiFragment();
+                    break;
+            case 2 : nouveauFragment = new KontaktoFragment();
+                break;
+            default :
+                  Log.e("Main Activity ","position inconnu dans le menu hamburger");
+                break;
+
+        }
+
+
+//        // Create a new fragment and specify the planet to show based on position
+//        Fragment fragment = new PlanetFragment();
+//        Bundle args = new Bundle();
+//        args.putInt(PlanetFragment.ARG_PLANET_NUMBER, position);
+//        fragment.setArguments(args);
+//
+//        // Insert the fragment by replacing any existing fragment
+//        FragmentManager fragmentManager = getFragmentManager();
+//        fragmentManager.beginTransaction()
+//                .replace(R.id.content_frame, fragment)
+//                .commit();
+//
+//        // Highlight the selected item, update the title, and close the drawer
+//        mDrawerList.setItemChecked(position, true);
+//        setTitle(mPlanetTitles[position]);
+//        mDrawerLayout.closeDrawer(mDrawerList);
     }
 
 
