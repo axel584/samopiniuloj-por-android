@@ -37,7 +37,7 @@
             android:label="@string/title_activity_akceptejo" >
         </activity>
         <activity
-            android:name=".RezultojActivity"
+            android:name=".RezultojFragment"
             android:label="@string/title_activity_rezultoj" >
         </activity>
         <activity

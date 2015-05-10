@@ -99,27 +99,27 @@ public class LudiFragment extends Fragment {
         jaro = c.get(Calendar.YEAR);
 
         // on récupère les objets de l'interface
-        textBonvonon = (TextView) getActivity().findViewById(R.id.bonvenon_ludando);
-        tagaVorto = (TextView) getActivity().findViewById(R.id.taga_vorto);
-        tagaBildo = (ImageView) getActivity().findViewById(R.id.img_taga_vorto);
-        sendu = (Button) getActivity().findViewById(R.id.btn_sendu);
+        textBonvonon = (TextView) rootView.findViewById(R.id.bonvenon_ludando);
+        tagaVorto = (TextView) rootView.findViewById(R.id.taga_vorto);
+        tagaBildo = (ImageView) rootView.findViewById(R.id.img_taga_vorto);
+        sendu = (Button) rootView.findViewById(R.id.btn_sendu);
 
-        prop1 = (EditText) getActivity().findViewById(R.id.propono_1);
-        prop2 = (EditText) getActivity().findViewById(R.id.propono_2);
-        prop3 = (EditText)getActivity(). findViewById(R.id.propono_3);
-        prop4 = (EditText) getActivity().findViewById(R.id.propono_4);
-        prop5 = (EditText) getActivity().findViewById(R.id.propono_5);
-        prop6 = (EditText) getActivity().findViewById(R.id.propono_6);
-        prop7 = (EditText) getActivity().findViewById(R.id.propono_7);
-        prop8 = (EditText) getActivity().findViewById(R.id.propono_8);
-        done1 = (ImageView) getActivity().findViewById(R.id.done_1);
-        done2 = (ImageView) getActivity().findViewById(R.id.done_2);
-        done3 = (ImageView) getActivity().findViewById(R.id.done_3);
-        done4 = (ImageView) getActivity().findViewById(R.id.done_4);
-        done5 = (ImageView) getActivity().findViewById(R.id.done_5);
-        done6 = (ImageView) getActivity().findViewById(R.id.done_6);
-        done7 = (ImageView) getActivity().findViewById(R.id.done_7);
-        done8 = (ImageView) getActivity().findViewById(R.id.done_8);
+        prop1 = (EditText) rootView.findViewById(R.id.propono_1);
+        prop2 = (EditText) rootView.findViewById(R.id.propono_2);
+        prop3 = (EditText)rootView. findViewById(R.id.propono_3);
+        prop4 = (EditText) rootView.findViewById(R.id.propono_4);
+        prop5 = (EditText) rootView.findViewById(R.id.propono_5);
+        prop6 = (EditText) rootView.findViewById(R.id.propono_6);
+        prop7 = (EditText) rootView.findViewById(R.id.propono_7);
+        prop8 = (EditText) rootView.findViewById(R.id.propono_8);
+        done1 = (ImageView) rootView.findViewById(R.id.done_1);
+        done2 = (ImageView) rootView.findViewById(R.id.done_2);
+        done3 = (ImageView) rootView.findViewById(R.id.done_3);
+        done4 = (ImageView) rootView.findViewById(R.id.done_4);
+        done5 = (ImageView) rootView.findViewById(R.id.done_5);
+        done6 = (ImageView) rootView.findViewById(R.id.done_6);
+        done7 = (ImageView) rootView.findViewById(R.id.done_7);
+        done8 = (ImageView) rootView.findViewById(R.id.done_8);
 
 
 
@@ -130,6 +130,7 @@ public class LudiFragment extends Fragment {
         if (uzantoId==0) {
             // TODO : il faut renvoyer l'utilisateur sur le fragment de connection (eniriFragment)
         } else {
+            Log.i("LudiFragment","textBonvenon : "+textBonvonon);
             textBonvonon.setText("Bonvenon "+uzantoNomo+" !");
         }
 
@@ -489,8 +490,7 @@ public class LudiFragment extends Fragment {
         @Override
         protected void onPreExecute() {
 
-            progressDialog = new ProgressDialog(
-                    getActivity().getApplicationContext());
+            progressDialog = new ProgressDialog(getActivity());
             progressDialog.setMessage("Konektiĝas...");
             progressDialog.setCancelable(false);
             progressDialog.show();

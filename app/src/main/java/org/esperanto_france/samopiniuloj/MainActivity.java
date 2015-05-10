@@ -2,6 +2,7 @@ package org.esperanto_france.samopiniuloj;
 
 import android.app.Fragment;
 import android.app.FragmentManager;
+import android.content.SharedPreferences;
 import android.content.res.Configuration;
 import android.os.Bundle;
 
@@ -95,14 +96,22 @@ public class MainActivity extends ActionBarActivity {
 
         // fin des trucs pour le menu hamburger
 
-        // on lance le fragment "test"
-        Fragment fragment = new TestFragment();
+        // Si on est connecté, on lance automatiquement le "ludi" fragment, sinon on lance le "eniri" fragment
+        SharedPreferences pref = getApplicationContext().getSharedPreferences("SamAgordo", 0); // 0 - for private mode
+        Integer uzantoId = pref.getInt("uzanto_id",0);
+        String uzantoNomo = pref.getString("uzanto_nomo","");
+        // TODO : placer le nom de l'utilisateur dans le menu
+        if (uzantoId==0) {
+            Fragment fragment = new EniriFragment();
+            FragmentManager fragmentManager = getFragmentManager();
+            fragmentManager.beginTransaction().replace(R.id.content_frame, fragment).commit();
+        } else {
+            Fragment fragment = new LudiFragment();
+            FragmentManager fragmentManager = getFragmentManager();
+            fragmentManager.beginTransaction().replace(R.id.content_frame, fragment).commit();
+        }
 
-        // Insert the fragment by replacing any existing fragment
-        FragmentManager fragmentManager = getFragmentManager();
-        fragmentManager.beginTransaction()
-                .replace(R.id.content_frame, fragment)
-                .commit();
+
 
     }
 
@@ -162,37 +171,29 @@ public class MainActivity extends ActionBarActivity {
     /** Swaps fragments in the main content view */
     private void selectItem(int position) {
         Log.i("MainActivity","position : "+position);
-        Fragment nouveauFragment;
+        Fragment nouveauFragment = new Fragment();
         switch (position){
             case 0 : nouveauFragment = new KielLudiFragment();// kiel ludi
                     break;
             case 1 : nouveauFragment = new LudiFragment();
                     break;
-            case 2 : nouveauFragment = new KontaktoFragment();
+            case 2 :
+                    nouveauFragment = new RezultojFragment();
+                    break;
+            case 3 : nouveauFragment = new KontaktoFragment();
+                break;
+            case 4 : nouveauFragment = new FoririFragment();
                 break;
             default :
                   Log.e("Main Activity ","position inconnu dans le menu hamburger");
                 break;
 
         }
+        FragmentManager fragmentManager = getFragmentManager();
+        fragmentManager.beginTransaction()
+                .replace(R.id.content_frame, nouveauFragment)
+                .commit();
 
-
-//        // Create a new fragment and specify the planet to show based on position
-//        Fragment fragment = new PlanetFragment();
-//        Bundle args = new Bundle();
-//        args.putInt(PlanetFragment.ARG_PLANET_NUMBER, position);
-//        fragment.setArguments(args);
-//
-//        // Insert the fragment by replacing any existing fragment
-//        FragmentManager fragmentManager = getFragmentManager();
-//        fragmentManager.beginTransaction()
-//                .replace(R.id.content_frame, fragment)
-//                .commit();
-//
-//        // Highlight the selected item, update the title, and close the drawer
-//        mDrawerList.setItemChecked(position, true);
-//        setTitle(mPlanetTitles[position]);
-//        mDrawerLayout.closeDrawer(mDrawerList);
     }
 
 

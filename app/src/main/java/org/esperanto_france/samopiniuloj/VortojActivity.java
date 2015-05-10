@@ -31,7 +31,7 @@ public class VortojActivity extends ActionBarActivity {
             public void onClick(View v) {
                 // Le premier paramètre est le nom de l'activité actuelle
                 // Le second est le nom de l'activité de destination
-                Intent rezultojActivity = new Intent(VortojActivity.this, RezultojActivity.class);
+                Intent rezultojActivity = new Intent(VortojActivity.this, RezultojFragment.class);
 
                 // Puis on lance l'intent !
                 startActivity(rezultojActivity);
