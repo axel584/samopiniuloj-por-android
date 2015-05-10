@@ -56,12 +56,11 @@
                     tools:src="@drawable/dentradajxo"
                     android:layout_alignParentBottom="false"
                     android:layout_alignParentEnd="false"
-                    android:layout_alignParentRight="false"/>
+                    android:contentDescription="" />
 
                 <RelativeLayout
                     android:layout_width="fill_parent"
                     android:layout_height="fill_parent"
-                    android:layout_toRightOf="@+id/img_taga_vorto"
                     android:layout_toEndOf="@+id/img_taga_vorto"
                     android:padding="8dp"
                     android:id="@+id/info_ludo">
