@@ -51,18 +51,18 @@
                 <ImageView android:id="@+id/img_taga_vorto"
                     android:layout_width="140dp"
                     android:layout_height="140dp"
-                    android:layout_gravity="center_vertical|bottom|left|top"
+                    android:layout_gravity="center_vertical|bottom|start|top"
                     tools:src="@drawable/dentradajxo"
-                    android:layout_weight="1"
                     android:layout_alignParentBottom="false"
-                    android:layout_alignParentEnd="false" />
+                    android:layout_alignParentEnd="false"
+                    android:layout_alignParentRight="false"/>
 
                 <RelativeLayout
                     android:layout_width="fill_parent"
                     android:layout_height="fill_parent"
                     android:layout_toRightOf="@+id/img_taga_vorto"
                     android:layout_toEndOf="@+id/img_taga_vorto"
-                    android:padding="0dp"
+                    android:padding="8dp"
                     android:id="@+id/info_ludo">
 
                     <TextView android:id="@+id/txt_hodiaua_vorto"
@@ -70,8 +70,6 @@
                         android:layout_height="wrap_content"
                         android:text="@string/la_hodiaua_vorto_estas"
                         android:layout_gravity="center_horizontal|top"
-                        android:paddingLeft="8dp"
-                        android:paddingTop="8dp"
                         style="@style/TexteNormal.Clair"/>
 
                     <TextView android:id="@+id/taga_vorto"
@@ -80,7 +78,6 @@
                         android:layout_gravity="center_horizontal|top"
                         android:layout_marginTop="8dp"
                         android:layout_below="@+id/txt_hodiaua_vorto"
-                        android:layout_marginLeft="8dp"
                         tools:text="dendrataĵo"
                         style="@style/Vorto" />
 
@@ -99,7 +96,8 @@
         android:layout_below="@+id/parto_1"
         android:paddingLeft="@dimen/activity_horizontal_margin"
         android:paddingRight="@dimen/activity_horizontal_margin"
-        android:paddingTop="@dimen/activity_vertical_margin">
+        android:paddingTop="@dimen/activity_vertical_margin"
+        android:baselineAligned="false">
 
         <LinearLayout
             android:orientation="vertical"
@@ -126,6 +124,7 @@
             android:orientation="vertical"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/marge_3"
             android:layout_marginLeft="@dimen/marge_3"
             android:layout_weight="3">
 
@@ -156,10 +155,7 @@
                 <TableRow android:layout_width="fill_parent">
                     <EditText android:id="@+id/propono_1"
                         android:hint="@string/txt_propono_1"
-                        style="@style/Input.Texte.Propono"
-                        android:selectAllOnFocus="false"
-                        android:singleLine="true"
-                        android:phoneNumber="false" />
+                        style="@style/Input.Texte.Propono"  />
 
                     <ImageView android:id="@+id/done_1"
                         style="@style/Sendita"
@@ -240,11 +236,10 @@
 
             <Button android:id="@+id/btn_sendu"
                 android:layout_width="wrap_content"
-                android:layout_height="0dp"
+                android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/marge_3"
                 android:text="@string/action_sendu"
-                android:layout_gravity="right|top"
-                android:layout_weight="0.42"
+                android:layout_gravity="end|top"
                 android:clickable="false"
                 android:focusable="false"
                 android:background="@color/sam_bouton_fonce"

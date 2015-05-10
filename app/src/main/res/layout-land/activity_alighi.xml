@@ -16,118 +16,106 @@
         android:paddingBottom="@dimen/activity_vertical_margin"
         android:paddingLeft="@dimen/activity_horizontal_margin"
         android:paddingRight="@dimen/activity_horizontal_margin"
-        android:paddingTop="@dimen/activity_vertical_margin"  >
+        android:paddingTop="@dimen/activity_vertical_margin" >
 
         <LinearLayout
-        android:orientation="vertical"
-        android:layout_width="fill_parent"
-        android:layout_height="fill_parent">
+            android:orientation="vertical"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="3"
+            android:layout_marginRight="8dp"
+            android:layout_marginEnd="8dp">
+
+            <TextView android:id="@+id/txt_alighi1"
+                android:text="@string/txt_alighi1"
+                style="@style/TexteNormal" />
+
+            <TextView android:id="@+id/txt_alighi2"
+                android:text="@string/txt_alighi2"
+                android:layout_marginTop="8dp"
+                style="@style/TexteNormal.Clair" />
 
             <LinearLayout
-                android:orientation="horizontal"
+                android:orientation="vertical"
                 android:layout_width="fill_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:baselineAligned="false"
+                android:layout_marginTop="48dp">
 
-                <LinearLayout
-                    android:orientation="vertical"
-                    android:layout_width="fill_parent"
-                    android:layout_height="fill_parent"
-                    android:layout_weight="3"
-                    android:layout_marginRight="8dp">
+                <TextView android:id="@+id/txt_alighi3"
+                    android:text="@string/txt_alighi3"
+                    style="@style/TexteNormal" />
 
-                    <TextView android:id="@+id/txt_alighi1"
-                        android:text="@string/txt_alighi1"
-                        style="@style/TexteNormal" />
-
-                    <TextView android:id="@+id/txt_alighi2"
-                        android:text="@string/txt_alighi2"
-                        android:layout_marginTop="8dp"
-                        style="@style/TexteNormal.Clair" />
-
-                    <LinearLayout
-                        android:orientation="vertical"
-                        android:layout_width="fill_parent"
-                        android:layout_height="fill_parent"
-                        android:baselineAligned="false"
-                        android:layout_marginTop="48dp">
-
-                        <TextView android:id="@+id/txt_alighi3"
-                            android:text="@string/txt_alighi3"
-                            style="@style/TexteNormal" />
-
-                        <Button
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="@string/action_eniru"
-                            android:id="@+id/btn_eniru"
-                            style="?android:attr/borderlessButtonStyle"
-                            android:textColor="@color/sam_bouton_fonce"
-                            android:layout_gravity="right" />
-                    </LinearLayout>
-
-                </LinearLayout>
-
-                <LinearLayout android:id="@+id/email_login_form"
-                    android:orientation="vertical"
-                    android:layout_width="fill_parent"
+                <Button
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_weight="2"
-                    android:layout_marginLeft="16dp">
-
-                    <EditText android:id="@+id/enirnomo"
-                        android:hint="@string/prompt_enirnomo"
-                        android:layout_marginTop="8dp"
-                        style="@style/Input.Texte" />
-
-                    <TextView android:id="@+id/eraro_enirnomo"
-                        tools:text="erreur sur le nom"
-                        style="@style/Erreur" />
-
-                    <EditText android:id="@+id/pasvorto"
-                        android:hint="@string/prompt_pasvorto"
-                        style="@style/Input.Passe" />
-
-                    <TextView
-                        android:id="@+id/eraro_pasvorto"
-                        tools:text="erreur sur le mot de passe"
-                        style="@style/Erreur" />
-
-                    <EditText android:id="@+id/retadreso"
-                        android:hint="@string/prompt_retadreso"
-                        style="@style/Input.Email" />
-
-                    <TextView
-                        android:id="@+id/eraro_retadreso"
-                        tools:text="erreur sur l'adresse mail"
-                        style="@style/Erreur" />
-
-                    <Spinner android:id="@+id/landoj_spinner"
-                        android:layout_width="match_parent"
-                        android:layout_height="48dp"
-                        android:textColor="@color/sam_txt_1"
-                        android:textSize="12sp"
-                        android:prompt="@string/prompt_lando"
-                        android:spinnerMode="dropdown"
-                        android:entries="@array/landoj"
-                        android:layout_gravity="left" />
-
-                    <TextView android:id="@+id/txt_forgesita_pasvorto"
-                        android:text="@string/txt_forgesita_pasvorto"
-                        android:layout_marginTop="8dp"
-                        style="@style/TexteNormal.Important" />
-
-                    <Button android:id="@+id/btn_aligxu"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="8dp"
-                        android:text="@string/action_aligxu"
-                        android:layout_gravity="right|top"
-                        android:background="@color/sam_bouton_fonce"
-                        android:textColor="@color/sam_bouton_txt" />
-
-                </LinearLayout>
-
+                    android:text="@string/action_eniru"
+                    android:id="@+id/btn_eniru"
+                    style="?android:attr/borderlessButtonStyle"
+                    android:textColor="@color/sam_bouton_fonce"
+                    android:layout_gravity="end" />
             </LinearLayout>
+
+        </LinearLayout>
+
+    <LinearLayout android:id="@+id/email_login_form"
+            android:orientation="vertical"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="2"
+            android:layout_marginLeft="16dp"
+            android:layout_marginStart="16dp" >
+
+            <EditText android:id="@+id/enirnomo"
+                android:hint="@string/prompt_enirnomo"
+                android:layout_marginTop="8dp"
+                style="@style/Input.Texte" />
+
+            <TextView android:id="@+id/eraro_enirnomo"
+                tools:text="erreur sur le nom"
+                style="@style/Erreur" />
+
+            <EditText android:id="@+id/pasvorto"
+                android:hint="@string/prompt_pasvorto"
+                style="@style/Input.Passe" />
+
+            <TextView
+                android:id="@+id/eraro_pasvorto"
+                tools:text="erreur sur le mot de passe"
+                style="@style/Erreur" />
+
+            <EditText android:id="@+id/retadreso"
+                android:hint="@string/prompt_retadreso"
+                style="@style/Input.Email" />
+
+            <TextView
+                android:id="@+id/eraro_retadreso"
+                tools:text="erreur sur l'adresse mail"
+                style="@style/Erreur" />
+
+            <Spinner android:id="@+id/landoj_spinner"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:textColor="@color/sam_txt_1"
+                android:textSize="12sp"
+                android:prompt="@string/prompt_lando"
+                android:spinnerMode="dropdown"
+                android:entries="@array/landoj"
+                android:layout_gravity="start" />
+
+            <TextView android:id="@+id/txt_forgesita_pasvorto"
+                android:text="@string/txt_forgesita_pasvorto"
+                android:layout_marginTop="8dp"
+                style="@style/TexteNormal.Important" />
+
+            <Button android:id="@+id/btn_aligxu"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="@string/action_aligxu"
+                android:layout_gravity="end|top"
+                android:background="@color/sam_bouton_fonce"
+                android:textColor="@color/sam_bouton_txt" />
 
         </LinearLayout>
 
