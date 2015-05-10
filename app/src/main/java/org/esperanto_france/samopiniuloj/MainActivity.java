@@ -170,7 +170,6 @@ public class MainActivity extends ActionBarActivity {
 
     /** Swaps fragments in the main content view */
     private void selectItem(int position) {
-        Log.i("MainActivity","position : "+position);
         Fragment nouveauFragment = new Fragment();
         switch (position){
             case 0 : nouveauFragment = new KielLudiFragment();// kiel ludi
@@ -193,6 +192,7 @@ public class MainActivity extends ActionBarActivity {
         fragmentManager.beginTransaction()
                 .replace(R.id.content_frame, nouveauFragment)
                 .commit();
+        mDrawerLayout.closeDrawers();
 
     }
 
