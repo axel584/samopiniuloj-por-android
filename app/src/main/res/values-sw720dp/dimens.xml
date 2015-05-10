@@ -8,4 +8,5 @@
     <dimen name="marge_2">16dp</dimen>
     <dimen name="marge_3">32dp</dimen>
     <dimen name="marge_4">64dp</dimen>
+    <dimen name="marge_5">128dp</dimen>
 </resources>

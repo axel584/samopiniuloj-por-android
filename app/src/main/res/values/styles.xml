@@ -28,11 +28,9 @@
         <item name="android:paddingTop">8dp</item>
     </style>
 
-
     <style name="Input">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">48dp</item>
-        <item name="android:maxLines">1</item>
         <item name="android:singleLine">true</item>
         <item name="android:textColor">@color/sam_txt_1</item>
         <item name="android:textColorHint">@color/sam_txt_2</item>
@@ -56,7 +54,9 @@
     </style>
 
     <style name="Input.Texte.Multi">
-        <item name="android:maxLines">6</item>
+        <item name="android:minLines">4</item>
+        <item name="android:maxLines">8</item>
+        <item name="android:inputType">textMultiLine</item>
         <item name="android:layout_height">wrap_content</item>
     </style>
 
@@ -200,5 +200,3 @@
     </style>
 
 </resources>
-
-

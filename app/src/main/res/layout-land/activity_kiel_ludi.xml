@@ -1,0 +1,68 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="org.esperanto_france.samopiniuloj.KielLudiActivity">
+
+    <include
+        android:id="@+id/toolbar"
+        layout="@layout/toolbar" />
+
+    <LinearLayout
+        android:layout_below="@id/toolbar"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingBottom="@dimen/activity_vertical_margin"
+        android:paddingLeft="@dimen/marge_4"
+        android:paddingRight="@dimen/marge_4"
+        android:paddingTop="@dimen/marge_4" >
+
+        <TextView android:id="@+id/txtKielLudi0"
+            android:text="@string/txt_kiel_ludi_0"
+            style="@style/Titre" />
+
+        <TextView android:id="@+id/txtKielLudi1"
+            android:text="@string/txt_kiel_ludi_1"
+            style="@style/TexteNormal.Alinea" />
+
+        <TextView android:id="@+id/txtKielLudi2"
+            android:text="@string/txt_kiel_ludi_2"
+            style="@style/TexteNormal.Alinea" />
+
+        <TextView android:id="@+id/txtKielLudi3"
+            android:text="@string/txt_kiel_ludi_3"
+            style="@style/TexteNormal.Alinea" />
+
+        <TextView android:id="@+id/txtKielLudi4"
+            android:text="@string/txt_kiel_ludi_4"
+            style="@style/TexteNormal.Alinea" />
+
+        <TextView android:id="@+id/txtKielLudi5"
+            android:text="@string/txt_kiel_ludi_5"
+            style="@style/TexteNormal.Alinea" />
+
+        <TextView android:id="@+id/txtKielLudi6"
+            android:text="@string/txt_kiel_ludi_6"
+            style="@style/TexteNormal.Alinea" />
+
+
+        <TextView android:id="@+id/txtKielLudi7"
+            android:text="@string/txt_kiel_ludi_7"
+            style="@style/TexteNormal.Alinea" />
+
+        <TextView android:id="@+id/txtKielLudi8"
+            android:text="@string/txt_kiel_ludi_8"
+            style="@style/TexteNormal.Alinea" />
+
+        <TextView android:id="@+id/txtKielLudi9"
+            android:text="@string/txt_kiel_ludi_9"
+            style="@style/TexteNormal.Important.Alinea" />
+
+        <TextView android:id="@+id/txtKielLudi10"
+            android:text="@string/txt_kiel_ludi_10"
+            style="@style/TexteNormal.Important.Alinea" />
+
+    </LinearLayout>
+
+</RelativeLayout>
