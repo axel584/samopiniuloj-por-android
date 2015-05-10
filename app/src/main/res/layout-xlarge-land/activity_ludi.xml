@@ -243,15 +243,10 @@
                 </TableLayout>
 
                 <Button android:id="@+id/btn_sendu"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
                     android:layout_marginTop="@dimen/marge_3"
                     android:text="@string/action_sendu"
                     android:layout_gravity="end|top"
-                    android:clickable="false"
-                    android:focusable="false"
-                    android:background="@color/sam_bouton_fonce"
-                    android:textColor="@color/sam_bouton_txt" />
+                    style="@style/BoutonPrimaire" />
 
             </LinearLayout>
 

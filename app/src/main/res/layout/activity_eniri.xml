@@ -79,7 +79,7 @@
             <Button android:id="@+id/btn_aligxu"
                 android:text="@string/action_aligxu"
                 android:layout_gravity="end"
-                style="@style/BoutonSecondaire"
+                style="@style/BoutonPrimaire"
                 android:layout_marginTop="4dp" />
 
     </LinearLayout>

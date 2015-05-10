@@ -180,16 +180,10 @@
             android:weightSum="1">
 
             <Button android:id="@+id/btn_sendu"
-                android:layout_width="wrap_content"
-                android:layout_height="0dp"
                 android:layout_marginTop="@dimen/marge_3"
                 android:text="@string/action_sendu"
                 android:layout_gravity="end|top"
-                android:layout_weight="0.42"
-                android:clickable="false"
-                android:focusable="false"
-                android:background="@color/sam_bouton_fonce"
-                android:textColor="@color/sam_bouton_txt" />
+                style="@style/BoutonPrimaire" />
         </LinearLayout>
 
     </LinearLayout>

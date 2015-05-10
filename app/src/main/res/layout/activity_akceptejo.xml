@@ -43,24 +43,21 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:id="@+id/img_rezulto"
-                    android:layout_gravity="center_vertical|bottom|left|top"
-                    android:src="@drawable/nimfeo"
-                    android:layout_weight="1"
+                    android:layout_gravity="center_vertical|bottom|start|top"
+                    tools:src="@drawable/nimfeo"
                     android:contentDescription="" />
 
-                <RelativeLayout
+                <RelativeLayout android:id="@+id/info_rezultoj"
                     android:layout_width="fill_parent"
                     android:layout_height="fill_parent"
                     android:layout_toRightOf="@+id/img_rezulto"
-                    android:padding="0dp"
-                    android:id="@+id/info_rezultoj">
+                    android:layout_toEndOf="@+id/img_rezulto"
+                    android:padding="8dp" >
 
                     <TextView
                         android:id="@+id/txt_hieraua_vorto"
                         android:text="@string/la_hieraua_vorto_estis"
-                        style="@style/TexteNormal.Clair"
-                        android:paddingLeft="8dp"
-                        android:paddingTop="8dp" />
+                        style="@style/TexteNormal.Clair" />
 
                     <TextView
                         android:layout_below="@+id/txt_hieraua_vorto"
@@ -68,17 +65,14 @@
                         android:id="@+id/hieraua_vorto"
                         style="@style/Vorto"
                         android:layout_gravity="center_horizontal"
-                        android:layout_marginTop="8dp"
-                        android:layout_marginLeft="8dp" />
+                        android:layout_marginTop="8dp" />
 
-                    <TextView
+                    <TextView android:id="@+id/txt_vigajnis"
                         tools:text="vi gajnis 15 poentojn"
-                        android:id="@+id/txt_vigajnis"
                         android:layout_below="@+id/hieraua_vorto"
                         style="@style/TexteNormal.Clair"
                         android:layout_gravity="center_horizontal|top"
-                        android:layout_marginTop="16dp"
-                        android:paddingLeft="8dp" />
+                        android:layout_marginTop="16dp" />
 
                     <LinearLayout
                         android:orientation="vertical"
@@ -89,20 +83,15 @@
                         android:layout_alignParentTop="false">
 
                         <Button android:id="@+id/btn_rezultoj"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
                             android:text="@string/action_rezultoj"
-                            android:clickable="false"
-                            android:focusable="false"
-                            style="?android:attr/borderlessButtonStyle"
-                            android:textColor="@color/sam_bouton_fonce"
                             android:layout_alignParentEnd="false"
                             android:layout_alignParentRight="false"
                             android:layout_alignParentStart="false"
                             android:layout_alignParentLeft="false"
                             android:layout_toEndOf="@id/info_rezultoj"
                             android:layout_toRightOf="@id/info_rezultoj"
-                            android:gravity="center" />
+                            android:gravity="center"
+                            style="@style/BoutonSecondaire" />
                     </LinearLayout>
 
                 </RelativeLayout>
@@ -131,22 +120,20 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:id="@+id/img_nuna_vorto"
-                    android:layout_gravity="center_vertical|bottom|left|top"
-                    android:src="@drawable/dentradajxo"
-                    android:layout_weight="1" />
+                    android:layout_gravity="center_vertical|bottom|start|top"
+                    tools:src="@drawable/dentradajxo" />
 
-                <RelativeLayout
+                <RelativeLayout android:id="@+id/info_ludo"
                     android:layout_width="fill_parent"
                     android:layout_height="fill_parent"
                     android:layout_toRightOf="@+id/img_nuna_vorto"
-                    android:padding="0dp"
-                    android:id="@+id/info_ludo">
+                    android:layout_toEndOf="@+id/img_nuna_vorto"
+                    android:padding="8dp" >
 
                     <TextView
                         android:text="@string/la_hodiaua_vorto_estas"
                         android:id="@+id/txt_hodiaua_vorto"
                         style="@style/TexteNormal.Clair"
-                        android:paddingLeft="8dp"
                         android:paddingTop="8dp" />
 
                     <TextView
@@ -155,8 +142,7 @@
                         android:id="@+id/hodiaua_vorto"
                         style="@style/Vorto"
                         android:layout_gravity="center_horizontal"
-                        android:layout_marginTop="8dp"
-                        android:layout_marginLeft="8dp" />
+                        android:layout_marginTop="8dp" />
 
                     <LinearLayout
                         android:orientation="vertical"
@@ -164,22 +150,18 @@
                         android:layout_height="wrap_content"
                         android:layout_alignParentBottom="true"
                         android:layout_alignParentRight="true"
+                        android:layout_alignParentEnd="true"
                         android:layout_alignParentTop="false">
 
                         <Button android:id="@+id/btn_ludu"
-                             android:layout_width="wrap_content"
-                             android:layout_height="48dp"
                              android:text="@string/action_ludi"
-                             android:clickable="false"
-                             android:focusable="false"
-                             style="?android:attr/borderlessButtonStyle"
-                             android:textColor="@color/sam_bouton_fonce"
                              android:layout_alignParentEnd="false"
                             android:layout_alignParentRight="false"
                              android:layout_alignParentStart="false"
                             android:layout_alignParentLeft="false"
                              android:layout_toEndOf="@id/info_ludo"
-                            android:layout_toRightOf="@id/info_ludo"/>
+                            android:layout_toRightOf="@id/info_ludo"
+                            style="@style/BoutonSecondaire" />
                     </LinearLayout>
 
                 </RelativeLayout>
