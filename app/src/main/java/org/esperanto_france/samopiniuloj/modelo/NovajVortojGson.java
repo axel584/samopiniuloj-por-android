@@ -1,7 +1,5 @@
 package org.esperanto_france.samopiniuloj.modelo;
 
-import java.util.Arrays;
-
 public class NovajVortojGson {
 
     private String respondo;

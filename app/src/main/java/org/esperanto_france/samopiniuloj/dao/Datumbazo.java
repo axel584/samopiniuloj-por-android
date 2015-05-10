@@ -4,7 +4,6 @@ package org.esperanto_france.samopiniuloj.dao;
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
-import android.database.sqlite.SQLiteDatabase.CursorFactory;
 
 public class Datumbazo extends SQLiteOpenHelper {
 
