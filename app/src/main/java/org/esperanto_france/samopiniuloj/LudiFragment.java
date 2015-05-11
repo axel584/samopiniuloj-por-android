@@ -272,6 +272,7 @@ public class LudiFragment extends Fragment {
         tagaVorto.setText(vorto.getVorto().replaceAll("<rad>", "<u>").replaceAll("</rad>","</u>"));
         Bitmap bitmap = decodeFile(new File(getActivity().getCacheDir()+vorto.getDosiero()));
         tagaBildo.setImageBitmap(bitmap);
+        this.vorto = vorto;
     }
 
     // méthode appelée après avoir envoyé les propositions jouées
@@ -360,8 +361,7 @@ public class LudiFragment extends Fragment {
         @Override
         protected void onPreExecute() {
 
-            progressDialog = new ProgressDialog(
-                    getActivity().getApplicationContext());
+            progressDialog = new ProgressDialog(getActivity());
             progressDialog.setMessage("Konektiĝas...");
             progressDialog.setCancelable(false);
             progressDialog.show();
