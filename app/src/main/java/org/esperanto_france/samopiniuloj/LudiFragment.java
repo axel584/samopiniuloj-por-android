@@ -2,15 +2,11 @@ package org.esperanto_france.samopiniuloj;
 
 import android.app.Fragment;
 import android.app.ProgressDialog;
-import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
-import android.net.ConnectivityManager;
-import android.net.NetworkInfo;
 import android.os.AsyncTask;
 import android.os.Bundle;
-import android.support.v7.widget.Toolbar;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.util.Log;
@@ -276,6 +272,7 @@ public class LudiFragment extends Fragment {
         tagaVorto.setText(vorto.getVorto().replaceAll("<rad>", "<u>").replaceAll("</rad>","</u>"));
         Bitmap bitmap = decodeFile(new File(getActivity().getCacheDir()+vorto.getDosiero()));
         tagaBildo.setImageBitmap(bitmap);
+        this.vorto = vorto;
     }
 
     // méthode appelée après avoir envoyé les propositions jouées
@@ -318,7 +315,7 @@ public class LudiFragment extends Fragment {
     }
 
     public static String GET(String urlWebservice){
-        InputStream inputStream = null;
+        InputStream inputStream;
         String result = "";
         try {
 
@@ -364,8 +361,7 @@ public class LudiFragment extends Fragment {
         @Override
         protected void onPreExecute() {
 
-            progressDialog = new ProgressDialog(
-                    getActivity().getApplicationContext());
+            progressDialog = new ProgressDialog(getActivity());
             progressDialog.setMessage("Konektiĝas...");
             progressDialog.setCancelable(false);
             progressDialog.show();

@@ -65,7 +65,7 @@ public class AlighiActivity extends ActionBarActivity {
 
         landojSpinner = (Spinner) findViewById(R.id.landoj_spinner);
 
-        ArrayList alCountry = new ArrayList();
+        ArrayList<Lando> alCountry = new ArrayList<>();
         alCountry.add(new Lando("","-- Elektu landon --"));
         alCountry.add(new Lando("AD","Andoro"));
         alCountry.add(new Lando("AE","Unuiĝintaj Arabaj Emirlandoj"));
@@ -397,7 +397,7 @@ public class AlighiActivity extends ActionBarActivity {
     }
 
     public static String GET(String urlWebservice){
-        InputStream inputStream = null;
+        InputStream inputStream;
         String result = "";
         try {
 
@@ -420,7 +420,7 @@ public class AlighiActivity extends ActionBarActivity {
 
     private static String convertInputStreamToString(InputStream inputStream) throws IOException {
         BufferedReader bufferedReader = new BufferedReader( new InputStreamReader(inputStream));
-        String line = "";
+        String line;
         String result = "";
         while((line = bufferedReader.readLine()) != null)
             result += line;
@@ -430,6 +430,7 @@ public class AlighiActivity extends ActionBarActivity {
 
     }
 
+    @Deprecated
     public boolean isConnected(){
         ConnectivityManager connMgr = (ConnectivityManager) getSystemService(this.CONNECTIVITY_SERVICE);
         NetworkInfo networkInfo = connMgr.getActiveNetworkInfo();

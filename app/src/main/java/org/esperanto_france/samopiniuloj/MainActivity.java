@@ -5,7 +5,6 @@ import android.app.FragmentManager;
 import android.content.SharedPreferences;
 import android.content.res.Configuration;
 import android.os.Bundle;
-
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarActivity;
 import android.support.v7.app.ActionBarDrawerToggle;
@@ -15,9 +14,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
-import android.widget.Button;
 import android.widget.ListView;
-import android.widget.TextView;
 
 public class MainActivity extends ActionBarActivity {
 
@@ -27,20 +24,10 @@ public class MainActivity extends ActionBarActivity {
     private ActionBarDrawerToggle mDrawerToggle;
     private CharSequence mDrawerTitle;
     private CharSequence mTitle;
-    private String[] navMenuTitles;
 
 
-    private Button bEniri = null;
-    private Button bAlighi = null;
-    private Button bAkceptejo = null;
-    private Button bLudi = null;
-    private Button bRezultoj = null;
-    private Button bLudintoj = null;
-    private Button bVortoj = null;
-    private Button bKontakto = null;
-    private Button bKielLudi = null;
 
-    private TextView textSurtitre=null;
+
 
 
     @Override
