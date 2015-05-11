@@ -102,6 +102,10 @@
                     style="@style/Sendita"
                     android:visibility="invisible" />
 
+                <ImageView android:id="@+id/malbone_1"
+                    style="@style/Malbona"
+                    android:visibility="gone" />
+
                 <EditText android:id="@+id/propono_5"
                     android:hint="@string/txt_propono_5"
                     style="@style/Input.Texte.Propono" />
@@ -109,6 +113,10 @@
                 <ImageView android:id="@+id/done_5"
                     style="@style/Sendita"
                     android:visibility="invisible" />
+
+                <ImageView android:id="@+id/malbone_5"
+                    style="@style/Malbona"
+                    android:visibility="gone" />
 
             </TableRow>
 
@@ -122,6 +130,10 @@
                     style="@style/Sendita"
                     android:visibility="invisible" />
 
+                <ImageView android:id="@+id/malbone_2"
+                    style="@style/Malbona"
+                    android:visibility="gone" />
+
                 <EditText android:id="@+id/propono_6"
                     android:hint="@string/txt_propono_6"
                     style="@style/Input.Texte.Propono" />
@@ -129,6 +141,10 @@
                 <ImageView android:id="@+id/done_6"
                     style="@style/Sendita"
                     android:visibility="invisible" />
+
+                <ImageView android:id="@+id/malbone_6"
+                    style="@style/Malbona"
+                    android:visibility="gone" />
 
             </TableRow>
 
@@ -142,6 +158,10 @@
                     style="@style/Sendita"
                     android:visibility="invisible" />
 
+                <ImageView android:id="@+id/malbone_3"
+                    style="@style/Malbona"
+                    android:visibility="gone" />
+
                 <EditText android:id="@+id/propono_7"
                     android:hint="@string/txt_propono_7"
                     style="@style/Input.Texte.Propono" />
@@ -149,6 +169,10 @@
                 <ImageView android:id="@+id/done_7"
                     style="@style/Sendita"
                     android:visibility="invisible" />
+
+                <ImageView android:id="@+id/malbone_7"
+                    style="@style/Malbona"
+                    android:visibility="gone" />
 
             </TableRow>
 
@@ -162,6 +186,10 @@
                     style="@style/Sendita"
                     android:visibility="invisible" />
 
+                <ImageView android:id="@+id/malbone_4"
+                    style="@style/Malbona"
+                    android:visibility="gone" />
+
                 <EditText android:id="@+id/propono_8"
                     android:hint="@string/txt_propono_8"
                     style="@style/Input.Texte.Propono" />
@@ -169,6 +197,10 @@
                 <ImageView android:id="@+id/done_8"
                     style="@style/Sendita"
                     android:visibility="invisible" />
+
+                <ImageView android:id="@+id/malbone_8"
+                    style="@style/Malbona"
+                    android:visibility="gone" />
 
             </TableRow>
 
