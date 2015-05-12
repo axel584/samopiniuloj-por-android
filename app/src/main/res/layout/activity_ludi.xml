@@ -6,20 +6,15 @@
     tools:context="org.esperanto_france.samopiniuloj.LudiFragment"
     android:background="@color/sam_fond">
 
-    <!--include
-        android:id="@+id/toolbar"
-        layout="@layout/toolbar" /-->
-
     <LinearLayout
-        android:layout_below="@id/toolbar"
         android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:gravity="center_horizontal"
         android:paddingBottom="@dimen/activity_vertical_margin"
         android:paddingLeft="@dimen/activity_horizontal_margin"
         android:paddingRight="@dimen/activity_horizontal_margin"
-        android:paddingTop="@dimen/activity_vertical_margin" >
+        android:paddingTop="@dimen/activity_vertical_margin"
+        android:gravity="center_horizontal">
 
         <TextView android:id="@+id/bonvenon_ludando"
             tools:text="@string/bonvenon_ludanto"

@@ -6,12 +6,7 @@
     tools:context="org.esperanto_france.samopiniuloj.LudiFragment"
     android:background="@color/sam_fond">
 
-    <include
-        android:id="@+id/toolbar"
-        layout="@layout/toolbar" />
-
     <LinearLayout android:id="@+id/parto_1"
-        android:layout_below="@id/toolbar"
         android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
