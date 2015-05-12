@@ -9,6 +9,7 @@ import android.os.AsyncTask;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.Html;
+import android.text.InputType;
 import android.text.TextWatcher;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -151,9 +152,13 @@ public class LudiFragment extends Fragment {
             @Override
             public void beforeTextChanged(CharSequence charSequence, int i, int i2, int i3) {}
             @Override
-            public void onTextChanged(CharSequence charSequence, int i, int i2, int i3) {done1.setVisibility(ImageView.INVISIBLE);}
+            public void onTextChanged(CharSequence charSequence, int i, int i2, int i3) {
+                done1.setVisibility(ImageView.INVISIBLE);
+            }
             @Override
-            public void afterTextChanged(Editable editable) {}
+            public void afterTextChanged(Editable editable) {
+
+            }
         });
         prop2.addTextChangedListener(new TextWatcher() {
             @Override
@@ -211,25 +216,55 @@ public class LudiFragment extends Fragment {
             @Override
             public void afterTextChanged(Editable editable) {}
         });
+        // fait les conversions avec les x
+        setOnFocusChangeListener(prop1);
+        setOnFocusChangeListener(prop2);
+        setOnFocusChangeListener(prop3);
+        setOnFocusChangeListener(prop4);
+        setOnFocusChangeListener(prop5);
+        setOnFocusChangeListener(prop6);
+        setOnFocusChangeListener(prop7);
+        setOnFocusChangeListener(prop8);
+
+        // retire le correcteur orthographique
+        prop1.setInputType(InputType.TYPE_TEXT_FLAG_NO_SUGGESTIONS);
+        prop2.setInputType(InputType.TYPE_TEXT_FLAG_NO_SUGGESTIONS);
+        prop3.setInputType(InputType.TYPE_TEXT_FLAG_NO_SUGGESTIONS);
+        prop4.setInputType(InputType.TYPE_TEXT_FLAG_NO_SUGGESTIONS);
+        prop5.setInputType(InputType.TYPE_TEXT_FLAG_NO_SUGGESTIONS);
+        prop6.setInputType(InputType.TYPE_TEXT_FLAG_NO_SUGGESTIONS);
+        prop7.setInputType(InputType.TYPE_TEXT_FLAG_NO_SUGGESTIONS);
+        prop8.setInputType(InputType.TYPE_TEXT_FLAG_NO_SUGGESTIONS);
 
         // gestion du bouton d'envoie des propositions
         sendu.setOnClickListener(new View.OnClickListener() {
 
-                public void onClick(View view) {
-                    String propono1 = prop1.getText().toString();
-                    String propono2 = prop2.getText().toString();
-                    String propono3 = prop3.getText().toString();
-                    String propono4 = prop4.getText().toString();
-                    String propono5 = prop5.getText().toString();
-                    String propono6 = prop6.getText().toString();
-                    String propono7 = prop7.getText().toString();
-                    String propono8 = prop8.getText().toString();
-                    String requete = "http://samopiniuloj.esperanto-jeunes.org/ws/ws_ludo.php?ludanto_id="+uzantoId+"&vorto_id="+vorto.getId()+"&prop[0]="+propono1+"&prop[1]="+propono2+"&prop[2]="+propono3+"&prop[3]="+propono4+"&prop[4]="+propono5+"&prop[5]="+propono6+"&prop[6]="+propono7+"&prop[7]="+propono8;
-                    new LudiAsyncTask(LudiFragment.this).execute(requete);
-                }
+            public void onClick(View view) {
+                String propono1 = TextUtils.utf2x(prop1.getText().toString());
+                String propono2 = TextUtils.utf2x(prop2.getText().toString());
+                String propono3 = TextUtils.utf2x(prop3.getText().toString());
+                String propono4 = TextUtils.utf2x(prop4.getText().toString());
+                String propono5 = TextUtils.utf2x(prop5.getText().toString());
+                String propono6 = TextUtils.utf2x(prop6.getText().toString());
+                String propono7 = TextUtils.utf2x(prop7.getText().toString());
+                String propono8 = TextUtils.utf2x(prop8.getText().toString());
+                String requete = "http://samopiniuloj.esperanto-jeunes.org/ws/ws_ludo.php?ludanto_id=" + uzantoId + "&vorto_id=" + vorto.getId() + "&prop[0]=" + propono1 + "&prop[1]=" + propono2 + "&prop[2]=" + propono3 + "&prop[3]=" + propono4 + "&prop[4]=" + propono5 + "&prop[5]=" + propono6 + "&prop[6]=" + propono7 + "&prop[7]=" + propono8;
+                new LudiAsyncTask(LudiFragment.this).execute(requete);
+            }
         });
 
         return rootView;
+    }
+
+    private void setOnFocusChangeListener(final TextView textView){
+
+        textView.setOnFocusChangeListener(new View.OnFocusChangeListener() {
+            public void onFocusChange(View v, boolean hasFocus) {
+                if(!hasFocus) {
+                    textView.setText(TextUtils.x2utf(textView.getText().toString()));
+                }
+            }
+        });
     }
 
     // méthode appelée après avoir téléchargé les images ou si on trouve une image du cours
