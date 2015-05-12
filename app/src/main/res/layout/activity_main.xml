@@ -5,9 +5,9 @@
     tools:context="org.esperanto_france.samopiniuloj.MainActivity"
     android:orientation="vertical" >
 
-    <!--include
+    <include
         android:id="@+id/toolbar"
-        layout="@layout/toolbar" /-->
+        layout="@layout/toolbar" />
 
     <android.support.v4.widget.DrawerLayout
         android:id="@+id/drawer_layout"
