@@ -8,6 +8,7 @@ import android.graphics.BitmapFactory;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.text.Editable;
+import android.text.Html;
 import android.text.TextWatcher;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -269,7 +270,7 @@ public class LudiFragment extends Fragment {
 
     // méthode appelée après avoir téléchargé les images ou si on trouve une image du cours
     public void populateNovajVortoj(Vorto vorto) {
-        tagaVorto.setText(vorto.getVorto().replaceAll("<rad>", "<u>").replaceAll("</rad>","</u>"));
+        tagaVorto.setText(Html.fromHtml(vorto.getVorto()));
         Bitmap bitmap = decodeFile(new File(getActivity().getCacheDir()+vorto.getDosiero()));
         tagaBildo.setImageBitmap(bitmap);
         this.vorto = vorto;
@@ -392,6 +393,8 @@ public class LudiFragment extends Fragment {
 
             // Si c'est ok, on récupère les images
             for (Vorto vorto : novajVortojGson.getVortoj()) {
+                // on met le souligné :
+                vorto.setVorto(vorto.getVorto().replaceAll("<rad>", "<u>").replaceAll("</rad>", "</u>"));
                 // On telecharge l'image :
                 InputStream input = null;
                 OutputStream output = null;
