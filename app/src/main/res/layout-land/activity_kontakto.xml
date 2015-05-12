@@ -5,23 +5,34 @@
     tools:context="org.esperanto_france.samopiniuloj.KontaktoActivity">
 
     <LinearLayout
-        android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_centerHorizontal="true"
+        android:orientation="vertical"
         android:paddingBottom="@dimen/activity_vertical_margin"
         android:paddingLeft="@dimen/marge_5"
         android:paddingRight="@dimen/marge_5"
         android:paddingTop="@dimen/marge_4"  >
 
         <TextView android:id="@+id/txtKontakto1"
-            android:text="@string/txt_kontakto1"
-            style="@style/TexteNormal" />
+            style="@style/TexteNormal"
+            android:text="@string/txt_kontakto1" />
+
+        <TextView android:id="@+id/txtRetadreso"
+            style="@style/TexteNormal"
+            android:paddingTop="16dp"
+            android:text="@string/via_retadreso"
+            android:visibility="gone"/>
+
+        <EditText android:id="@+id/inputRetadreso"
+            style="@style/Input.Email"
+            android:layout_marginTop="8dp"
+            android:visibility="gone"/>
 
         <TextView android:id="@+id/txtKontakto2"
-            android:text="@string/via_mesagxo"
             style="@style/TexteNormal"
-            android:paddingTop="16dp"/>
+            android:paddingTop="16dp"
+            android:text="@string/via_mesagxo"/>
 
         <EditText
             android:id="@+id/inputMesagxo"
@@ -34,10 +45,10 @@
             android:weightSum="1">
 
             <Button android:id="@+id/btn_sendu"
-                android:layout_marginTop="16dp"
-                android:text="@string/action_sendu"
+                style="@style/BoutonPrimaire"
                 android:layout_gravity="end|top"
-                style="@style/BoutonPrimaire"/>
+                android:layout_marginTop="16dp"
+                android:text="@string/action_sendu"/>
         </LinearLayout>
 
     </LinearLayout>
