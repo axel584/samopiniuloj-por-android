@@ -4,9 +4,9 @@
     android:orientation="vertical"
     tools:context="org.esperanto_france.samopiniuloj.RezultojFragment">
 
-    <include
+    <!--include
         android:id="@+id/toolbar"
-        layout="@layout/toolbar" />
+        layout="@layout/toolbar" /-->
 
     <LinearLayout
         android:layout_below="@id/toolbar"

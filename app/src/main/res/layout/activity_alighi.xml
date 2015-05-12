@@ -4,9 +4,9 @@
     tools:context="org.esperanto_france.samopiniuloj.AlighiActivity"
     android:orientation="vertical">
 
-    <include
+    <!--include
         android:id="@+id/toolbar"
-        layout="@layout/toolbar" />
+        layout="@layout/toolbar" /-->
 
     <LinearLayout
         android:layout_below="@id/toolbar"

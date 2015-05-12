@@ -4,9 +4,9 @@
     android:layout_height="match_parent"
     tools:context="org.esperanto_france.samopiniuloj.KielLudiFragment">
 
-    <include
+    <!--include
         android:id="@+id/toolbar"
-        layout="@layout/toolbar" />
+        layout="@layout/toolbar" /-->
 
     <LinearLayout
         android:layout_below="@id/toolbar"
