@@ -164,12 +164,18 @@ public class MainActivity extends ActionBarActivity {
                     break;
             case 1 : nouveauFragment = new LudiFragment();
                     break;
-            case 2 :
+            case 2 : SharedPreferences pref = getApplicationContext().getSharedPreferences("SamAgordo", 0); // 0 - for private mode
+                SharedPreferences.Editor editor = pref.edit();
+                editor.putInt("uzanto_id", 0);
+                editor.putString("uzanto_nomo", "");
+                editor.commit();
                     nouveauFragment = new RezultojFragment();
                     break;
             case 3 : nouveauFragment = new KontaktoFragment();
                 break;
-            case 4 : nouveauFragment = new FoririFragment();
+            case 4 :
+
+                nouveauFragment = new EniriFragment();
                 break;
             default :
                   Log.e("Main Activity ","position inconnu dans le menu hamburger");
