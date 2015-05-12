@@ -95,6 +95,8 @@ public class LudiFragment extends Fragment {
         monato = c.get(Calendar.MONTH)+1; // ils sont trop con, ils commencent à numéroter les mois à 0 jusqu'à 11..
         jaro = c.get(Calendar.YEAR);
 
+        Log.i("LudiFragment"," date du system : "+tago+"/"+monato+"/"+jaro);
+
         // on récupère les objets de l'interface
         textBonvonon = (TextView) rootView.findViewById(R.id.bonvenon_ludando);
         tagaVorto = (TextView) rootView.findViewById(R.id.taga_vorto);
@@ -140,47 +142,9 @@ public class LudiFragment extends Fragment {
             new NovajVortojAsyncTask(this).execute("http://samopiniuloj.esperanto-jeunes.org/ws/ws_getNovajVortoj.php?tago=" + tago + "&monato=" + monato+"&jaro="+jaro);
         } else {
             this.populateNovajVortoj(vorto);
-
         }
 
-        proponoDao = new ProponoDao(getActivity().getApplicationContext());
-        proponoDao.open();
-        Log.i("","vorto id : "+vorto.getId().toString());
-        Log.i("","uzanto id : "+uzantoId.toString());
-        List<Propono> endatumbazaProponoj = proponoDao.getProponoj(vorto.getId(),uzantoId);
-        if (endatumbazaProponoj!=null) {
-            for (Propono propono : endatumbazaProponoj) {
-                switch (propono.getVico()) {
-                    case 1: prop1.setText(propono.getPropono());
-                            done1.setVisibility(ImageView.VISIBLE);
-                        break;
-                    case 2: prop2.setText(propono.getPropono());
-                        done2.setVisibility(ImageView.VISIBLE);
-                        break;
-                    case 3: prop3.setText(propono.getPropono());
-                        done3.setVisibility(ImageView.VISIBLE);
-                        break;
-                    case 4: prop4.setText(propono.getPropono());
-                        done4.setVisibility(ImageView.VISIBLE);
-                        break;
-                    case 5: prop5.setText(propono.getPropono());
-                        done5.setVisibility(ImageView.VISIBLE);
-                        break;
-                    case 6: prop6.setText(propono.getPropono());
-                        done6.setVisibility(ImageView.VISIBLE);
-                        break;
-                    case 7: prop7.setText(propono.getPropono());
-                        done7.setVisibility(ImageView.VISIBLE);
-                        break;
-                    case 8: prop8.setText(propono.getPropono());
-                        done8.setVisibility(ImageView.VISIBLE);
-                        break;
-                    default : Log.e("LudiActivity","Information inconnue en base : "+propono.getVico());
-                            break;
 
-                }
-            }
-        }
 
         // on fait en sorte que si on change le contenu des propositions, la coche verte disparaisse
         prop1.addTextChangedListener(new TextWatcher() {
@@ -270,10 +234,51 @@ public class LudiFragment extends Fragment {
 
     // méthode appelée après avoir téléchargé les images ou si on trouve une image du cours
     public void populateNovajVortoj(Vorto vorto) {
+        Log.i("LudiFragment","vorto Populate Novaj Vortoj : date : "+vorto.getTago()+"/"+vorto.getMonato()+"/"+vorto.getJaro());
         tagaVorto.setText(Html.fromHtml(vorto.getVorto()));
         Bitmap bitmap = decodeFile(new File(getActivity().getCacheDir()+vorto.getDosiero()));
         tagaBildo.setImageBitmap(bitmap);
         this.vorto = vorto;
+        // récupère les propositions
+        proponoDao = new ProponoDao(getActivity().getApplicationContext());
+        proponoDao.open();
+        Log.i("","vorto : "+vorto);
+        Log.i("","vorto id : "+vorto.getId().toString());
+        Log.i("","uzanto id : "+uzantoId.toString());
+        List<Propono> endatumbazaProponoj = proponoDao.getProponoj(vorto.getId(),uzantoId);
+        if (endatumbazaProponoj!=null) {
+            for (Propono propono : endatumbazaProponoj) {
+                switch (propono.getVico()) {
+                    case 1: prop1.setText(propono.getPropono());
+                        done1.setVisibility(ImageView.VISIBLE);
+                        break;
+                    case 2: prop2.setText(propono.getPropono());
+                        done2.setVisibility(ImageView.VISIBLE);
+                        break;
+                    case 3: prop3.setText(propono.getPropono());
+                        done3.setVisibility(ImageView.VISIBLE);
+                        break;
+                    case 4: prop4.setText(propono.getPropono());
+                        done4.setVisibility(ImageView.VISIBLE);
+                        break;
+                    case 5: prop5.setText(propono.getPropono());
+                        done5.setVisibility(ImageView.VISIBLE);
+                        break;
+                    case 6: prop6.setText(propono.getPropono());
+                        done6.setVisibility(ImageView.VISIBLE);
+                        break;
+                    case 7: prop7.setText(propono.getPropono());
+                        done7.setVisibility(ImageView.VISIBLE);
+                        break;
+                    case 8: prop8.setText(propono.getPropono());
+                        done8.setVisibility(ImageView.VISIBLE);
+                        break;
+                    default : Log.e("LudiActivity","Information inconnue en base : "+propono.getVico());
+                        break;
+
+                }
+            }
+        }
     }
 
     // méthode appelée après avoir envoyé les propositions jouées
