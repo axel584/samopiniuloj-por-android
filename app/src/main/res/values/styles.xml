@@ -56,7 +56,8 @@
     </style>
 
     <style name="Input.Texte.Multi">
-        <item name="android:maxLines">6</item>
+        <item name="android:minLines">6</item>
+        <item name="android:maxLines">10</item>
         <item name="android:layout_height">wrap_content</item>
     </style>
 

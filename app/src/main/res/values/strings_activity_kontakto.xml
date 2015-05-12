@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="txt_kontakto1">Uzu tiun formularon por sendi mesaĝon al la administrantoj de la ludo. Ankaŭ vi ricevos kopion de tiu mesaĝo.</string>
+    <string name="via_retadreso">Via retadreso:</string>
     <string name="via_mesagxo">Via mesaĝo:</string>
 </resources>
