@@ -68,6 +68,10 @@
         <item name="android:textSize">@dimen/texte_small</item>
     </style>
 
+    <style name="Erreur.Large">
+        <item name="android:textSize">@dimen/texte_xlarge</item>
+    </style>
+
     <style name="Titre">
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>

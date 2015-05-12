@@ -1,41 +1,41 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto" xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/sam_fond"
     android:orientation="vertical"
-    xmlns:card_view="http://schemas.android.com/apk/res-auto"
-    tools:context="org.esperanto_france.samopiniuloj.LudiFragment"
-    android:background="@color/sam_fond">
+    tools:context="org.esperanto_france.samopiniuloj.LudiFragment">
 
     <LinearLayout
-        android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:padding="@dimen/marge_2"
-        android:gravity="center_horizontal">
+        android:gravity="center_horizontal"
+        android:orientation="vertical"
+        android:padding="@dimen/marge_2">
 
         <TextView android:id="@+id/bonvenon_ludando"
-            tools:text="@string/bonvenon_ludanto"
-            android:gravity="end"
             style="@style/TexteNormal"
-            android:layout_width="fill_parent" />
+            android:layout_width="fill_parent"
+            android:gravity="end"
+            tools:text="@string/bonvenon_ludanto" />
 
         <TextView android:id="@+id/nuna_horo"
-            tools:text="Nun estas 8 Majo 2015"
             style="@style/TexteNormal"
+            android:layout_width="fill_parent"
             android:layout_gravity="start"
-            android:layout_width="fill_parent" />
+            tools:text="Nun estas 8 Majo 2015" />
 
         <android.support.v7.widget.CardView
             xmlns:card_view="http://schemas.android.com/apk/res-auto"
             android:id="@+id/card_hodiaua_vorto"
-            android:layout_gravity="center"
             android:layout_width="match_parent"
             android:layout_height="140dp"
-            card_view:cardCornerRadius="4dp"
-            card_view:cardBackgroundColor="@color/sam_carte"
+            android:layout_gravity="center"
             android:layout_marginTop="@dimen/marge_1"
             android:background="@color/sam_carte"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            card_view:cardBackgroundColor="@color/sam_carte"
+            card_view:cardCornerRadius="4dp">
 
             <RelativeLayout
                 android:layout_width="fill_parent"
@@ -44,35 +44,35 @@
                 <ImageView android:id="@+id/img_taga_vorto"
                     android:layout_width="140dp"
                     android:layout_height="140dp"
-                    android:layout_gravity="center_vertical|bottom|start|top"
-                    tools:src="@drawable/dentradajxo"
                     android:layout_alignParentBottom="false"
                     android:layout_alignParentEnd="false"
-                    android:layout_alignParentRight="false"/>
+                    android:layout_alignParentRight="false"
+                    android:layout_gravity="center_vertical|bottom|start|top"
+                    tools:src="@drawable/dentradajxo"/>
 
                 <RelativeLayout
+                    android:id="@+id/info_ludo"
                     android:layout_width="fill_parent"
                     android:layout_height="fill_parent"
-                    android:layout_toRightOf="@+id/img_taga_vorto"
                     android:layout_toEndOf="@+id/img_taga_vorto"
-                    android:padding="8dp"
-                    android:id="@+id/info_ludo">
+                    android:layout_toRightOf="@+id/img_taga_vorto"
+                    android:padding="8dp">
 
                     <TextView android:id="@+id/txt_hodiaua_vorto"
+                        style="@style/TexteNormal.Clair"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="@string/la_hodiaua_vorto_estas"
                         android:layout_gravity="center_horizontal|top"
-                        style="@style/TexteNormal.Clair"/>
+                        android:text="@string/la_hodiaua_vorto_estas"/>
 
                     <TextView android:id="@+id/taga_vorto"
+                        style="@style/Vorto"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:layout_below="@+id/txt_hodiaua_vorto"
                         android:layout_gravity="center_horizontal|top"
                         android:layout_marginTop="8dp"
-                        android:layout_below="@+id/txt_hodiaua_vorto"
-                        tools:text="dendrataĵo"
-                        style="@style/Vorto" />
+                        tools:text="dendrataĵo" />
 
                 </RelativeLayout>
 
@@ -82,13 +82,13 @@
 
         <TableLayout android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/marge_1">
+            android:layout_marginTop="@dimen/marge_3">
 
             <TableRow android:layout_width="fill_parent">
 
                 <EditText android:id="@+id/propono_1"
-                    android:hint="@string/txt_propono_1"
-                    style="@style/Input.Texte.Propono" />
+                    style="@style/Input.Texte.Propono"
+                    android:hint="@string/txt_propono_1" />
 
                 <ImageView android:id="@+id/done_1"
                     style="@style/Sendita"
@@ -99,8 +99,8 @@
                     android:visibility="gone" />
 
                 <EditText android:id="@+id/propono_5"
-                    android:hint="@string/txt_propono_5"
-                    style="@style/Input.Texte.Propono" />
+                    style="@style/Input.Texte.Propono"
+                    android:hint="@string/txt_propono_5" />
 
                 <ImageView android:id="@+id/done_5"
                     style="@style/Sendita"
@@ -115,8 +115,8 @@
             <TableRow>
 
                 <EditText android:id="@+id/propono_2"
-                    android:hint="@string/txt_propono_2"
-                    style="@style/Input.Texte.Propono" />
+                    style="@style/Input.Texte.Propono"
+                    android:hint="@string/txt_propono_2" />
 
                 <ImageView android:id="@+id/done_2"
                     style="@style/Sendita"
@@ -127,8 +127,8 @@
                     android:visibility="gone" />
 
                 <EditText android:id="@+id/propono_6"
-                    android:hint="@string/txt_propono_6"
-                    style="@style/Input.Texte.Propono" />
+                    style="@style/Input.Texte.Propono"
+                    android:hint="@string/txt_propono_6" />
 
                 <ImageView android:id="@+id/done_6"
                     style="@style/Sendita"
@@ -143,8 +143,8 @@
             <TableRow>
 
                 <EditText android:id="@+id/propono_3"
-                    android:hint="@string/txt_propono_3"
-                    style="@style/Input.Texte.Propono" />
+                    style="@style/Input.Texte.Propono"
+                    android:hint="@string/txt_propono_3" />
 
                 <ImageView android:id="@+id/done_3"
                     style="@style/Sendita"
@@ -155,8 +155,8 @@
                     android:visibility="gone" />
 
                 <EditText android:id="@+id/propono_7"
-                    android:hint="@string/txt_propono_7"
-                    style="@style/Input.Texte.Propono" />
+                    style="@style/Input.Texte.Propono"
+                    android:hint="@string/txt_propono_7" />
 
                 <ImageView android:id="@+id/done_7"
                     style="@style/Sendita"
@@ -171,8 +171,8 @@
             <TableRow>
 
                 <EditText android:id="@+id/propono_4"
-                    android:hint="@string/txt_propono_4"
-                    style="@style/Input.Texte.Propono" />
+                    style="@style/Input.Texte.Propono"
+                    android:hint="@string/txt_propono_4" />
 
                 <ImageView android:id="@+id/done_4"
                     style="@style/Sendita"
@@ -183,8 +183,8 @@
                     android:visibility="gone" />
 
                 <EditText android:id="@+id/propono_8"
-                    android:hint="@string/txt_propono_8"
-                    style="@style/Input.Texte.Propono" />
+                    style="@style/Input.Texte.Propono"
+                    android:hint="@string/txt_propono_8" />
 
                 <ImageView android:id="@+id/done_8"
                     style="@style/Sendita"
@@ -204,10 +204,10 @@
             android:weightSum="1">
 
             <Button android:id="@+id/btn_sendu"
-                android:layout_marginTop="@dimen/marge_3"
-                android:text="@string/action_sendu"
+                style="@style/BoutonPrimaire"
                 android:layout_gravity="end|top"
-                style="@style/BoutonPrimaire" />
+                android:layout_marginTop="@dimen/marge_3"
+                android:text="@string/action_sendu" />
         </LinearLayout>
 
     </LinearLayout>
