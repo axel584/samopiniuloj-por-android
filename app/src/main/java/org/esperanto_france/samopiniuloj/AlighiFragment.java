@@ -1,5 +1,7 @@
 package org.esperanto_france.samopiniuloj;
 
+import android.app.Fragment;
+import android.app.FragmentManager;
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -12,7 +14,9 @@ import android.support.v7.widget.Toolbar;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.util.Log;
+import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
@@ -32,9 +36,10 @@ import java.net.URL;
 import java.net.URLConnection;
 import java.util.ArrayList;
 
-public class AlighiActivity extends ActionBarActivity {
+public class AlighiFragment extends Fragment {
 
     Button btnLogin;
+    Button btnEniri;
 
     EditText inputEnirnomo;
     EditText inputPasvorto;
@@ -47,23 +52,20 @@ public class AlighiActivity extends ActionBarActivity {
     Spinner landojSpinner;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_alighi);
+    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+                             Bundle savedInstanceState) {
+        View rootView = inflater.inflate(R.layout.activity_alighi, container, false);
 
-        // Ajout toolbar
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
 
-        inputEnirnomo = (EditText) findViewById(R.id.enirnomo);
-        inputPasvorto = (EditText) findViewById(R.id.pasvorto);
-        inputRetadreso = (EditText) findViewById(R.id.retadreso);
-        eraroEnirnomo = (TextView) findViewById(R.id.eraro_enirnomo);
-        eraroPasvorto = (TextView) findViewById(R.id.eraro_pasvorto);
-        eraroRetadreso = (TextView) findViewById(R.id.eraro_retadreso);
-        eraroLando = (TextView) findViewById(R.id.eraro_lando);
+        inputEnirnomo = (EditText) rootView.findViewById(R.id.enirnomo);
+        inputPasvorto = (EditText) rootView.findViewById(R.id.pasvorto);
+        inputRetadreso = (EditText) rootView.findViewById(R.id.retadreso);
+        eraroEnirnomo = (TextView) rootView.findViewById(R.id.eraro_enirnomo);
+        eraroPasvorto = (TextView) rootView.findViewById(R.id.eraro_pasvorto);
+        eraroRetadreso = (TextView) rootView.findViewById(R.id.eraro_retadreso);
+        eraroLando = (TextView) rootView.findViewById(R.id.eraro_lando);
 
-        landojSpinner = (Spinner) findViewById(R.id.landoj_spinner);
+        landojSpinner = (Spinner) rootView.findViewById(R.id.landoj_spinner);
 
         ArrayList<Lando> alCountry = new ArrayList<>();
         alCountry.add(new Lando("","-- Elektu landon --"));
@@ -306,7 +308,7 @@ public class AlighiActivity extends ActionBarActivity {
         alCountry.add(new Lando("ZM","Zambio"));
         alCountry.add(new Lando("ZW","Zimbabvo"));
 
-        KeyValueSpinner adapter = new KeyValueSpinner(AlighiActivity.this, alCountry);
+        KeyValueSpinner adapter = new KeyValueSpinner(rootView.getContext(), alCountry);
         landojSpinner.setAdapter(adapter);
 
         inputEnirnomo.addTextChangedListener(new TextWatcher() {
@@ -360,7 +362,8 @@ public class AlighiActivity extends ActionBarActivity {
             }
         });
 
-        btnLogin = (Button) findViewById(R.id.btn_aligxu);
+        btnLogin = (Button) rootView.findViewById(R.id.btn_aligxu);
+        btnEniri = (Button) rootView.findViewById(R.id.btn_eniru);
 
         btnLogin.setOnClickListener(new View.OnClickListener() {
 
@@ -393,8 +396,21 @@ public class AlighiActivity extends ActionBarActivity {
 
         });
 
+        btnEniri.setOnClickListener(new View.OnClickListener() {
 
+
+            public void onClick(View view) {
+                // Renvoie sur le fragment "alighi"
+                FragmentManager fragmentManager = getFragmentManager();
+                fragmentManager.beginTransaction()
+                        .replace(R.id.content_frame, new AlighiFragment())
+                        .commit();
+            }
+        });
+
+        return rootView;
     }
+
 
     public static String GET(String urlWebservice){
         InputStream inputStream;
@@ -430,15 +446,6 @@ public class AlighiActivity extends ActionBarActivity {
 
     }
 
-    @Deprecated
-    public boolean isConnected(){
-        ConnectivityManager connMgr = (ConnectivityManager) getSystemService(this.CONNECTIVITY_SERVICE);
-        NetworkInfo networkInfo = connMgr.getActiveNetworkInfo();
-        if (networkInfo != null && networkInfo.isConnected())
-            return true;
-        else
-            return false;
-    }
     private class HttpAsyncTask extends AsyncTask<String, Void, String> {
 
         ProgressDialog progressDialog;
@@ -446,8 +453,7 @@ public class AlighiActivity extends ActionBarActivity {
         @Override
         protected void onPreExecute() {
 
-            progressDialog = new ProgressDialog(
-                    AlighiActivity.this);
+            progressDialog = new ProgressDialog(getActivity());
             progressDialog.setMessage("Konektiĝas...");
             progressDialog.setCancelable(false);
             progressDialog.show();
@@ -476,13 +482,16 @@ public class AlighiActivity extends ActionBarActivity {
             }
             if ("ok".equals(aligiGson.getRespondo())) {
                 // on enregistre dans sharedpreference l'id du joueur
-                SharedPreferences pref = getApplicationContext().getSharedPreferences("SamAgordo", 0); // 0 - for private mode
+                SharedPreferences pref = getActivity().getApplicationContext().getSharedPreferences("SamAgordo", 0); // 0 - for private mode
                 SharedPreferences.Editor editor = pref.edit();
                 editor.putInt("uzanto_id", aligiGson.getId());
                 editor.putString("uzanto_nomo", aligiGson.getNomo());
                 editor.commit();
-                Intent ludiActivity = new Intent(AlighiActivity.this, LudiFragment.class);
-                startActivity(ludiActivity);
+                // Renvoie sur le fragment "ludi"
+                FragmentManager fragmentManager = getFragmentManager();
+                fragmentManager.beginTransaction()
+                        .replace(R.id.content_frame, new LudiFragment())
+                        .commit();
             }
 
         }

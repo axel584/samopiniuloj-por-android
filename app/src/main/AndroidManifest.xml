@@ -25,7 +25,7 @@
             android:label="@string/title_activity_eniri" >
         </activity>
         <activity
-            android:name=".AlighiActivity"
+            android:name=".AlighiFragment"
             android:label="@string/title_activity_alighi" >
         </activity>
         <activity
