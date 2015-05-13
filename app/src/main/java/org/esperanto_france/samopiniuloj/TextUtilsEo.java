@@ -1,6 +1,6 @@
 package org.esperanto_france.samopiniuloj;
 
-public class TextUtils {
+public class TextUtilsEo {
 
     final static String[][] replacements = {{"cx", "ĉ"},{"sx", "ŝ"},{"gx", "ĝ"},{"jx", "ĵ"},{"hx", "ĥ"},{"ux", "ŭ"},{"Cx", "Ĉ"},{"Sx", "Ŝ"},{"Gx", "Ĝ"},{"Jx", "Ĵ"},{"Hx", "Ĥ"},{"Ux", "Ŭ"}};
 

@@ -1,6 +1,7 @@
 package org.esperanto_france.samopiniuloj;
 
 import android.app.Fragment;
+import android.app.FragmentManager;
 import android.app.ProgressDialog;
 import android.content.SharedPreferences;
 import android.graphics.Bitmap;
@@ -9,7 +10,10 @@ import android.os.AsyncTask;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.Html;
+import android.text.InputFilter;
 import android.text.InputType;
+import android.text.Spanned;
+import android.text.TextUtils;
 import android.text.TextWatcher;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -43,6 +47,7 @@ import java.io.OutputStream;
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.net.URLConnection;
+import java.util.Arrays;
 import java.util.Calendar;
 import java.util.List;
 
@@ -78,6 +83,15 @@ public class LudiFragment extends Fragment {
     ImageView done6;
     ImageView done7;
     ImageView done8;
+    // Croix rouge
+    ImageView malbone1;
+    ImageView malbone2;
+    ImageView malbone3;
+    ImageView malbone4;
+    ImageView malbone5;
+    ImageView malbone6;
+    ImageView malbone7;
+    ImageView malbone8;
 
 
     Vorto vorto;
@@ -120,6 +134,14 @@ public class LudiFragment extends Fragment {
         done6 = (ImageView) rootView.findViewById(R.id.done_6);
         done7 = (ImageView) rootView.findViewById(R.id.done_7);
         done8 = (ImageView) rootView.findViewById(R.id.done_8);
+        malbone1 = (ImageView) rootView.findViewById(R.id.malbone_1);
+        malbone2 = (ImageView) rootView.findViewById(R.id.malbone_2);
+        malbone3 = (ImageView) rootView.findViewById(R.id.malbone_3);
+        malbone4 = (ImageView) rootView.findViewById(R.id.malbone_4);
+        malbone5 = (ImageView) rootView.findViewById(R.id.malbone_5);
+        malbone6 = (ImageView) rootView.findViewById(R.id.malbone_6);
+        malbone7 = (ImageView) rootView.findViewById(R.id.malbone_7);
+        malbone8 = (ImageView) rootView.findViewById(R.id.malbone_8);
 
 
 
@@ -128,7 +150,11 @@ public class LudiFragment extends Fragment {
         uzantoId = pref.getInt("uzanto_id",0);
         String uzantoNomo = pref.getString("uzanto_nomo","");
         if (uzantoId==0) {
-            // TODO : il faut renvoyer l'utilisateur sur le fragment de connection (eniriFragment)
+            // Renvoie sur le fragment "alighi"
+            FragmentManager fragmentManager = getFragmentManager();
+            fragmentManager.beginTransaction()
+                    .replace(R.id.content_frame, new EniriFragment())
+                    .commit();
         } else {
             Log.i("LudiFragment","textBonvenon : "+textBonvonon);
             textBonvonon.setText("Bonvenon "+uzantoNomo+" !");
@@ -240,14 +266,14 @@ public class LudiFragment extends Fragment {
         sendu.setOnClickListener(new View.OnClickListener() {
 
             public void onClick(View view) {
-                String propono1 = TextUtils.utf2x(prop1.getText().toString());
-                String propono2 = TextUtils.utf2x(prop2.getText().toString());
-                String propono3 = TextUtils.utf2x(prop3.getText().toString());
-                String propono4 = TextUtils.utf2x(prop4.getText().toString());
-                String propono5 = TextUtils.utf2x(prop5.getText().toString());
-                String propono6 = TextUtils.utf2x(prop6.getText().toString());
-                String propono7 = TextUtils.utf2x(prop7.getText().toString());
-                String propono8 = TextUtils.utf2x(prop8.getText().toString());
+                String propono1 = TextUtilsEo.utf2x(prop1.getText().toString());
+                String propono2 = TextUtilsEo.utf2x(prop2.getText().toString());
+                String propono3 = TextUtilsEo.utf2x(prop3.getText().toString());
+                String propono4 = TextUtilsEo.utf2x(prop4.getText().toString());
+                String propono5 = TextUtilsEo.utf2x(prop5.getText().toString());
+                String propono6 = TextUtilsEo.utf2x(prop6.getText().toString());
+                String propono7 = TextUtilsEo.utf2x(prop7.getText().toString());
+                String propono8 = TextUtilsEo.utf2x(prop8.getText().toString());
                 String requete = "http://samopiniuloj.esperanto-jeunes.org/ws/ws_ludo.php?ludanto_id=" + uzantoId + "&vorto_id=" + vorto.getId() + "&prop[0]=" + propono1 + "&prop[1]=" + propono2 + "&prop[2]=" + propono3 + "&prop[3]=" + propono4 + "&prop[4]=" + propono5 + "&prop[5]=" + propono6 + "&prop[6]=" + propono7 + "&prop[7]=" + propono8;
                 new LudiAsyncTask(LudiFragment.this).execute(requete);
             }
@@ -256,12 +282,26 @@ public class LudiFragment extends Fragment {
         return rootView;
     }
 
+
+    InputFilter x2utf = new InputFilter() {
+        public CharSequence filter(CharSequence source, int start, int end,
+                                   Spanned dest, int dstart, int dend) {
+
+            if ("x".equals(source)) {
+                Log.i("LudiFragment","InputFilter ; source : "+source.toString()+" : "+start+" : "+end+" / "+dest.toString()+" : "+dstart+" : "+dend);
+                return TextUtilsEo.x2utf(dest.toString() + "x");
+            } else {
+                return null;
+            }
+        }
+    };
+
     private void setOnFocusChangeListener(final TextView textView){
 
         textView.setOnFocusChangeListener(new View.OnFocusChangeListener() {
             public void onFocusChange(View v, boolean hasFocus) {
                 if(!hasFocus) {
-                    textView.setText(TextUtils.x2utf(textView.getText().toString()));
+                    textView.setText(TextUtilsEo.x2utf(textView.getText().toString()));
                 }
             }
         });
@@ -286,24 +326,31 @@ public class LudiFragment extends Fragment {
                 switch (propono.getVico()) {
                     case 1: prop1.setText(propono.getPropono());
                         done1.setVisibility(ImageView.VISIBLE);
+                        malbone1.setVisibility(ImageView.GONE);
                         break;
                     case 2: prop2.setText(propono.getPropono());
                         done2.setVisibility(ImageView.VISIBLE);
+                        malbone2.setVisibility(ImageView.GONE);
                         break;
                     case 3: prop3.setText(propono.getPropono());
                         done3.setVisibility(ImageView.VISIBLE);
+                        malbone3.setVisibility(ImageView.GONE);
                         break;
                     case 4: prop4.setText(propono.getPropono());
                         done4.setVisibility(ImageView.VISIBLE);
+                        malbone4.setVisibility(ImageView.GONE);
                         break;
                     case 5: prop5.setText(propono.getPropono());
                         done5.setVisibility(ImageView.VISIBLE);
+                        malbone5.setVisibility(ImageView.GONE);
                         break;
                     case 6: prop6.setText(propono.getPropono());
                         done6.setVisibility(ImageView.VISIBLE);
+                        malbone6.setVisibility(ImageView.GONE);
                         break;
                     case 7: prop7.setText(propono.getPropono());
                         done7.setVisibility(ImageView.VISIBLE);
+                        malbone7.setVisibility(ImageView.GONE);
                         break;
                     case 8: prop8.setText(propono.getPropono());
                         done8.setVisibility(ImageView.VISIBLE);
@@ -321,24 +368,65 @@ public class LudiFragment extends Fragment {
         for (Integer i : ludiGson.getRegistritaj()) {
             switch (i) {
                 case 0: done1.setVisibility(ImageView.VISIBLE);
+                    malbone1.setVisibility(ImageView.GONE);
                     break;
                 case 1: done2.setVisibility(ImageView.VISIBLE);
+                    malbone2.setVisibility(ImageView.GONE);
                     break;
                 case 2: done3.setVisibility(ImageView.VISIBLE);
+                    malbone3.setVisibility(ImageView.GONE);
                     break;
                 case 3: done4.setVisibility(ImageView.VISIBLE);
+                    malbone4.setVisibility(ImageView.GONE);
                     break;
                 case 4: done5.setVisibility(ImageView.VISIBLE);
+                    malbone5.setVisibility(ImageView.GONE);
                     break;
                 case 5: done6.setVisibility(ImageView.VISIBLE);
+                    malbone6.setVisibility(ImageView.GONE);
                     break;
                 case 6: done7.setVisibility(ImageView.VISIBLE);
+                    malbone7.setVisibility(ImageView.GONE);
                     break;
                 case 7: done8.setVisibility(ImageView.VISIBLE);
+                    malbone8.setVisibility(ImageView.GONE);
                     break;
                 default : Log.e("LudiActivity", " numéro inconu de registrita :" + String.valueOf(i));
                     break;
             }
+        }
+        // On verifie si certaines valeurs sont en erreur
+        for (int eraraProponoId : ludiGson.getEraraj_proponoj()) {
+            switch (eraraProponoId) {
+                case (0) : done1.setVisibility(View.GONE);
+                    malbone1.setVisibility(View.VISIBLE);
+                    break;
+                case (1) : done2.setVisibility(View.GONE);
+                    malbone2.setVisibility(View.VISIBLE);
+                    break;
+                case (2) : done3.setVisibility(View.GONE);
+                    malbone3.setVisibility(View.VISIBLE);
+                    break;
+                case (3) : done4.setVisibility(View.GONE);
+                    malbone4.setVisibility(View.VISIBLE);
+                    break;
+                case (4) : done5.setVisibility(View.GONE);
+                    malbone5.setVisibility(View.VISIBLE);
+                    break;
+                case (5) : done6.setVisibility(View.GONE);
+                    malbone6.setVisibility(View.VISIBLE);
+                    break;
+                case (6) : done7.setVisibility(View.GONE);
+                    malbone7.setVisibility(View.VISIBLE);
+                    break;
+                case (7) : done8.setVisibility(View.GONE);
+                    malbone8.setVisibility(View.VISIBLE);
+                    break;
+            }
+        }
+        // on fait des toasts avec les erreurs trouvées
+        for (String erreur : ludiGson.getKialoj()) {
+            Toast.makeText(getActivity().getApplicationContext(), erreur, Toast.LENGTH_LONG).show();
         }
 
     }
@@ -545,6 +633,14 @@ public class LudiFragment extends Fragment {
             // On sauvegarde en base
             int i = 0 ; // vico
             for (String propono : ludiGson.getProponoj()) {
+
+                Log.i("LudiFragment","i : "+i);
+                Log.i("LudiFragment", "eraraj_proponoj : " + TextUtils.join(";", ludiGson.getEraraj_proponoj()));
+                Log.i("LudiFragment","binarySearch : "+Arrays.binarySearch(ludiGson.getEraraj_proponoj(), i));
+                if (Arrays.binarySearch(ludiGson.getEraraj_proponoj(),i)>=0) { // on a trouvé cette proposition dans la liste des propositions en erreur, on ne sauvegarde pas en base
+                    i++; // on incremente pour qu'au prochain tour il ait la valeur suivante
+                    continue;
+                }
                 i++;
                 if (!"".equals(propono) && propono!=null) {
                     Propono p = new Propono();
@@ -566,7 +662,6 @@ public class LudiFragment extends Fragment {
             // traite la réponse
 
             if ("eraro".equals(ludiGson.getRespondo())) {
-                // TODO : faut regarder si le problème vient de l'ensemble de la réponse ou juste d'une des propositions
                 Toast.makeText(getActivity().getApplicationContext(), ludiGson.getKialo(), Toast.LENGTH_LONG).show();
             } else {
                 this.ludiFragment.populateLudi(ludiGson);
