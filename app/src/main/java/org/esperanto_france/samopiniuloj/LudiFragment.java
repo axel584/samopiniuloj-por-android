@@ -110,8 +110,6 @@ public class LudiFragment extends Fragment {
         monato = c.get(Calendar.MONTH)+1; // ils sont trop con, ils commencent à numéroter les mois à 0 jusqu'à 11..
         jaro = c.get(Calendar.YEAR);
 
-        Log.i("LudiFragment"," date du system : "+tago+"/"+monato+"/"+jaro);
-
         // on récupère les objets de l'interface
         textBonvonon = (TextView) rootView.findViewById(R.id.bonvenon_ludando);
         tagaVorto = (TextView) rootView.findViewById(R.id.taga_vorto);
@@ -156,7 +154,6 @@ public class LudiFragment extends Fragment {
                     .replace(R.id.content_frame, new EniriFragment())
                     .commit();
         } else {
-            Log.i("LudiFragment","textBonvenon : "+textBonvonon);
             textBonvonon.setText("Bonvenon "+uzantoNomo+" !");
         }
 
@@ -288,7 +285,6 @@ public class LudiFragment extends Fragment {
                                    Spanned dest, int dstart, int dend) {
 
             if ("x".equals(source)) {
-                Log.i("LudiFragment","InputFilter ; source : "+source.toString()+" : "+start+" : "+end+" / "+dest.toString()+" : "+dstart+" : "+dend);
                 return TextUtilsEo.x2utf(dest.toString() + "x");
             } else {
                 return null;
@@ -317,9 +313,6 @@ public class LudiFragment extends Fragment {
         // récupère les propositions
         proponoDao = new ProponoDao(getActivity().getApplicationContext());
         proponoDao.open();
-        Log.i("","vorto : "+vorto);
-        Log.i("","vorto id : "+vorto.getId().toString());
-        Log.i("","uzanto id : "+uzantoId.toString());
         List<Propono> endatumbazaProponoj = proponoDao.getProponoj(vorto.getId(),uzantoId);
         if (endatumbazaProponoj!=null) {
             for (Propono propono : endatumbazaProponoj) {
@@ -396,39 +389,50 @@ public class LudiFragment extends Fragment {
             }
         }
         // On verifie si certaines valeurs sont en erreur
-        for (int eraraProponoId : ludiGson.getEraraj_proponoj()) {
-            switch (eraraProponoId) {
-                case (0) : done1.setVisibility(View.GONE);
-                    malbone1.setVisibility(View.VISIBLE);
-                    break;
-                case (1) : done2.setVisibility(View.GONE);
-                    malbone2.setVisibility(View.VISIBLE);
-                    break;
-                case (2) : done3.setVisibility(View.GONE);
-                    malbone3.setVisibility(View.VISIBLE);
-                    break;
-                case (3) : done4.setVisibility(View.GONE);
-                    malbone4.setVisibility(View.VISIBLE);
-                    break;
-                case (4) : done5.setVisibility(View.GONE);
-                    malbone5.setVisibility(View.VISIBLE);
-                    break;
-                case (5) : done6.setVisibility(View.GONE);
-                    malbone6.setVisibility(View.VISIBLE);
-                    break;
-                case (6) : done7.setVisibility(View.GONE);
-                    malbone7.setVisibility(View.VISIBLE);
-                    break;
-                case (7) : done8.setVisibility(View.GONE);
-                    malbone8.setVisibility(View.VISIBLE);
-                    break;
+        if (ludiGson.getEraraj_proponoj()!=null) {
+            for (int eraraProponoId : ludiGson.getEraraj_proponoj()) {
+                switch (eraraProponoId) {
+                    case (0):
+                        done1.setVisibility(View.GONE);
+                        malbone1.setVisibility(View.VISIBLE);
+                        break;
+                    case (1):
+                        done2.setVisibility(View.GONE);
+                        malbone2.setVisibility(View.VISIBLE);
+                        break;
+                    case (2):
+                        done3.setVisibility(View.GONE);
+                        malbone3.setVisibility(View.VISIBLE);
+                        break;
+                    case (3):
+                        done4.setVisibility(View.GONE);
+                        malbone4.setVisibility(View.VISIBLE);
+                        break;
+                    case (4):
+                        done5.setVisibility(View.GONE);
+                        malbone5.setVisibility(View.VISIBLE);
+                        break;
+                    case (5):
+                        done6.setVisibility(View.GONE);
+                        malbone6.setVisibility(View.VISIBLE);
+                        break;
+                    case (6):
+                        done7.setVisibility(View.GONE);
+                        malbone7.setVisibility(View.VISIBLE);
+                        break;
+                    case (7):
+                        done8.setVisibility(View.GONE);
+                        malbone8.setVisibility(View.VISIBLE);
+                        break;
+                }
             }
         }
         // on fait des toasts avec les erreurs trouvées
-        for (String erreur : ludiGson.getKialoj()) {
-            Toast.makeText(getActivity().getApplicationContext(), erreur, Toast.LENGTH_LONG).show();
+        if (ludiGson.getKialoj()!=null) {
+            for (String erreur : ludiGson.getKialoj()) {
+                Toast.makeText(getActivity().getApplicationContext(), erreur, Toast.LENGTH_LONG).show();
+            }
         }
-
     }
 
     private Bitmap decodeFile(File f) {
@@ -529,7 +533,6 @@ public class LudiFragment extends Fragment {
                 HttpURLConnection connection = null;
                 try {
                     URL url = new URL("http://samopiniuloj.esperanto-jeunes.org"+vorto.getDosiero());
-                    Log.i("LudiActivity","http://samopiniuloj.esperanto-jeunes.org"+vorto.getDosiero());
                     connection = (HttpURLConnection) url.openConnection();
                     connection.connect();
 
@@ -576,7 +579,6 @@ public class LudiFragment extends Fragment {
                 }
                 // Une fois télécharger, on s'occupe de la base de données
                 long resInsertVorto = vortoDao.insertVorto(vorto);
-                Log.i("LudiActivity","resultat de l'insertion : "+resInsertVorto);
             }
             vortoDao.close();
             return novajVortojGson;
@@ -633,13 +635,11 @@ public class LudiFragment extends Fragment {
             // On sauvegarde en base
             int i = 0 ; // vico
             for (String propono : ludiGson.getProponoj()) {
-
-                Log.i("LudiFragment","i : "+i);
-                Log.i("LudiFragment", "eraraj_proponoj : " + TextUtils.join(";", ludiGson.getEraraj_proponoj()));
-                Log.i("LudiFragment","binarySearch : "+Arrays.binarySearch(ludiGson.getEraraj_proponoj(), i));
-                if (Arrays.binarySearch(ludiGson.getEraraj_proponoj(),i)>=0) { // on a trouvé cette proposition dans la liste des propositions en erreur, on ne sauvegarde pas en base
-                    i++; // on incremente pour qu'au prochain tour il ait la valeur suivante
-                    continue;
+                if (ludiGson.getEraraj_proponoj()!=null) {
+                    if (ludiGson.getEraraj_proponoj().length > 0 && Arrays.binarySearch(ludiGson.getEraraj_proponoj(), i) >= 0) { // on a trouvé cette proposition dans la liste des propositions en erreur, on ne sauvegarde pas en base
+                        i++; // on incremente pour qu'au prochain tour il ait la valeur suivante
+                        continue;
+                    }
                 }
                 i++;
                 if (!"".equals(propono) && propono!=null) {
