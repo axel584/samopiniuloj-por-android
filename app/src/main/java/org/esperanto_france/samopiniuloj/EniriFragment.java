@@ -34,6 +34,7 @@ import java.net.URLConnection;
 public class EniriFragment  extends Fragment {
 
     Button btnLogin;
+    Button btnAlighi;
 
     EditText inputEnirnomo;
     EditText inputPasvorto;
@@ -76,6 +77,7 @@ public class EniriFragment  extends Fragment {
         });
 
         btnLogin = (Button) rootView.findViewById(R.id.btn_eniru);
+        btnAlighi = (Button) rootView.findViewById(R.id.btn_aligxu);
 
         btnLogin.setOnClickListener(new View.OnClickListener() {
 
@@ -99,6 +101,19 @@ public class EniriFragment  extends Fragment {
 
 
         });
+
+        btnAlighi.setOnClickListener(new View.OnClickListener() {
+
+
+            public void onClick(View view) {
+                // Renvoie sur le fragment "alighi"
+                FragmentManager fragmentManager = getFragmentManager();
+                fragmentManager.beginTransaction()
+                        .replace(R.id.content_frame, new AlighiFragment())
+                        .commit();
+            }
+        });
+
         return rootView;
     }
 

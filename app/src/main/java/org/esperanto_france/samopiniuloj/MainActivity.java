@@ -169,14 +169,9 @@ public class MainActivity extends ActionBarActivity {
                 editor.putInt("uzanto_id", 0);
                 editor.putString("uzanto_nomo", "");
                 editor.commit();
-                    nouveauFragment = new RezultojFragment();
+                    nouveauFragment = new EniriFragment();
                     break;
-            case 3 : nouveauFragment = new KontaktoFragment();
-                break;
-            case 4 :
-
-                nouveauFragment = new EniriFragment();
-                break;
+            // TODO : ajouter la page de contact et la page de résultat (v2)
             default :
                   Log.e("Main Activity ","position inconnu dans le menu hamburger");
                 break;
