@@ -7,13 +7,13 @@
     tools:context="org.esperanto_france.samopiniuloj.EniriActivity" >
 
     <LinearLayout android:id="@+id/email_login_form"
-        android:layout_width="500dp"
+        android:layout_width="600dp"
         android:layout_height="match_parent"
         android:orientation="vertical"
         android:paddingBottom="@dimen/activity_vertical_margin"
         android:paddingLeft="@dimen/activity_horizontal_margin"
         android:paddingRight="@dimen/activity_horizontal_margin"
-        android:paddingTop="@dimen/marge_2">
+        android:paddingTop="@dimen/activity_vertical_margin" >
 
         <TextView android:id="@+id/txt_enkonduko"
             style="@style/TexteNormal"

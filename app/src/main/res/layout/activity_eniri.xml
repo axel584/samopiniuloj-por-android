@@ -2,45 +2,39 @@
         xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context="org.esperanto_france.samopiniuloj.EniriActivity"
+        android:gravity="center_horizontal"
         android:orientation="vertical"
-        android:gravity="center_horizontal" >
-
-        <!--include
-            android:id="@+id/toolbar"
-            layout="@layout/toolbar" /-->
+        tools:context="org.esperanto_france.samopiniuloj.EniriActivity" >
 
         <LinearLayout android:id="@+id/email_login_form"
-            android:layout_below="@id/toolbar"
-            android:orientation="vertical"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-
+            android:orientation="vertical"
             android:paddingBottom="@dimen/activity_vertical_margin"
-            android:paddingLeft="@dimen/activity_horizontal_margin"
-            android:paddingRight="@dimen/activity_horizontal_margin"
-            android:paddingTop="@dimen/activity_vertical_margin" >
+            android:paddingLeft="@dimen/marge_2"
+            android:paddingRight="@dimen/marge_2"
+            android:paddingTop="@dimen/marge_4" >
 
             <TextView android:id="@+id/txt_enkonduko"
                 style="@style/TexteNormal"
                 android:text="@string/txt_eniri1" />
 
             <AutoCompleteTextView android:id="@+id/enirnomo"
-                android:hint="@string/prompt_enirnomo"
-                style="@style/Input.Texte" />
+                style="@style/Input.Texte"
+                android:hint="@string/prompt_enirnomo" />
 
             <TextView android:id="@+id/eraro_enirnomo"
-                tools:text="erreur sur le nom"
-                style="@style/Erreur"/>
+                style="@style/Erreur"
+                tools:text="erreur sur le nom"/>
 
             <EditText android:id="@+id/pasvorto"
-                android:hint="@string/prompt_pasvorto"
-                style="@style/Input.Passe"/>
+                style="@style/Input.Passe"
+                android:hint="@string/prompt_pasvorto"/>
 
             <TextView
                 android:id="@+id/eraro_pasvorto"
-                tools:text="erreur sur le mot de passe"
-                style="@style/Erreur"/>
+                style="@style/Erreur"
+                tools:text="erreur sur le mot de passe"/>
 
             <RelativeLayout
                 android:layout_width="fill_parent"
@@ -48,14 +42,14 @@
                 android:layout_marginTop="8dp">
 
                 <Button android:id="@+id/btn_eniru"
-                    android:text="@string/action_eniru"
-                    android:layout_gravity="end|top"
-                    android:layout_alignParentRight="true"
+                    style="@style/BoutonPrimaire"
                     android:layout_alignParentEnd="true"
+                    android:layout_alignParentRight="true"
                     android:layout_alignParentTop="true"
-                    style="@style/BoutonPrimaire"/>
+                    android:layout_gravity="end|top"
+                    android:text="@string/action_eniru"/>
 
-                <TextView android:id="@+id/txt_forgesita_pasvorto"
+                <!--)TextView android:id="@+id/txt_forgesita_pasvorto"
                     android:text="@string/txt_forgesita_pasvorto"
                     android:layout_gravity="start"
                     android:layout_alignParentStart="false"
@@ -64,23 +58,23 @@
                     android:layout_alignBottom="@+id/btn_eniru"
                     android:layout_toLeftOf="@+id/btn_eniru"
                     android:layout_toStartOf="@+id/btn_eniru"
-                    style="@style/TexteNormal.Important" />
+                    style="@style/TexteNormal.Important" /-->
 
             </RelativeLayout>
 
             <TextView
+                android:id="@+id/textView"
+                style="@style/TexteNormal"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
-                style="@style/TexteNormal"
-                android:text="@string/txt_eniri_nova_ludanto"
-                android:id="@+id/textView"
-                android:layout_marginTop="48dp" />
+                android:layout_marginTop="48dp"
+                android:text="@string/txt_eniri_nova_ludanto" />
 
             <Button android:id="@+id/btn_aligxu"
-                android:text="@string/action_aligxu"
-                android:layout_gravity="end"
                 style="@style/BoutonPrimaire"
-                android:layout_marginTop="4dp" />
+                android:layout_gravity="end"
+                android:layout_marginTop="4dp"
+                android:text="@string/action_aligxu" />
 
     </LinearLayout>
 

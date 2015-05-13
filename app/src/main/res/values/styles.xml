@@ -56,7 +56,8 @@
     </style>
 
     <style name="Input.Texte.Multi">
-        <item name="android:maxLines">6</item>
+        <item name="android:minLines">6</item>
+        <item name="android:maxLines">10</item>
         <item name="android:layout_height">wrap_content</item>
     </style>
 
@@ -65,6 +66,10 @@
         <item name="android:layout_height">wrap_content</item>
         <item name="android:textColor">@color/sam_erreur</item>
         <item name="android:textSize">@dimen/texte_small</item>
+    </style>
+
+    <style name="Erreur.Large">
+        <item name="android:textSize">@dimen/texte_xlarge</item>
     </style>
 
     <style name="Titre">

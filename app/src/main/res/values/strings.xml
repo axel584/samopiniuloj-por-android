@@ -25,6 +25,7 @@
     <string name="error_enirnomo">Enirnomo ne konata</string>
     <string name="error_pasvorto">Malĝusta pasvorto</string>
     <string name="error_deviga">Tiu informo estas deviga</string>
+    <string name="error_radiko_trovita">Radiko trovita!</string>
 
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
