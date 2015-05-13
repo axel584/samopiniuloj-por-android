@@ -29,6 +29,7 @@ import java.io.InputStreamReader;
 import java.net.URL;
 import java.net.URLConnection;
 
+@Deprecated
 public class EniriActivity extends ActionBarActivity {
 
     Button btnLogin;
