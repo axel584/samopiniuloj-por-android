@@ -12,8 +12,8 @@ import android.text.Editable;
 import android.text.Html;
 import android.text.InputFilter;
 import android.text.InputType;
+import android.text.Selection;
 import android.text.Spanned;
-import android.text.TextUtils;
 import android.text.TextWatcher;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -177,6 +177,11 @@ public class LudiFragment extends Fragment {
             @Override
             public void onTextChanged(CharSequence charSequence, int i, int i2, int i3) {
                 done1.setVisibility(ImageView.INVISIBLE);
+                String propositionUtf8 = TextUtilsEo.x2utf(charSequence.toString());
+                if (!propositionUtf8.equals(charSequence.toString())) {
+                    prop1.setText(propositionUtf8);
+                    Selection.setSelection(prop1.getText(), propositionUtf8.length()); // on positionne le curseur à la fin de la chaine
+                }
             }
             @Override
             public void afterTextChanged(Editable editable) {
@@ -187,7 +192,14 @@ public class LudiFragment extends Fragment {
             @Override
             public void beforeTextChanged(CharSequence charSequence, int i, int i2, int i3) {}
             @Override
-            public void onTextChanged(CharSequence charSequence, int i, int i2, int i3) {done2.setVisibility(ImageView.INVISIBLE);}
+            public void onTextChanged(CharSequence charSequence, int i, int i2, int i3) {
+                done2.setVisibility(ImageView.INVISIBLE);
+                String propositionUtf8 = TextUtilsEo.x2utf(charSequence.toString());
+                if (!propositionUtf8.equals(charSequence.toString())) {
+                    prop2.setText(propositionUtf8);
+                    Selection.setSelection(prop2.getText(), propositionUtf8.length()); // on positionne le curseur à la fin de la chaine
+                }
+            }
             @Override
             public void afterTextChanged(Editable editable) {}
         });
@@ -195,7 +207,14 @@ public class LudiFragment extends Fragment {
             @Override
             public void beforeTextChanged(CharSequence charSequence, int i, int i2, int i3) {}
             @Override
-            public void onTextChanged(CharSequence charSequence, int i, int i2, int i3) {done3.setVisibility(ImageView.INVISIBLE);}
+            public void onTextChanged(CharSequence charSequence, int i, int i2, int i3) {
+                done3.setVisibility(ImageView.INVISIBLE);
+                String propositionUtf8 = TextUtilsEo.x2utf(charSequence.toString());
+                if (!propositionUtf8.equals(charSequence.toString())) {
+                    prop3.setText(propositionUtf8);
+                    Selection.setSelection(prop3.getText(), propositionUtf8.length()); // on positionne le curseur à la fin de la chaine
+                }
+            }
             @Override
             public void afterTextChanged(Editable editable) {}
         });
@@ -203,7 +222,14 @@ public class LudiFragment extends Fragment {
             @Override
             public void beforeTextChanged(CharSequence charSequence, int i, int i2, int i3) {}
             @Override
-            public void onTextChanged(CharSequence charSequence, int i, int i2, int i3) {done4.setVisibility(ImageView.INVISIBLE);}
+            public void onTextChanged(CharSequence charSequence, int i, int i2, int i3) {
+                done4.setVisibility(ImageView.INVISIBLE);
+                String propositionUtf8 = TextUtilsEo.x2utf(charSequence.toString());
+                if (!propositionUtf8.equals(charSequence.toString())) {
+                    prop4.setText(propositionUtf8);
+                    Selection.setSelection(prop4.getText(), propositionUtf8.length()); // on positionne le curseur à la fin de la chaine
+                }
+            }
             @Override
             public void afterTextChanged(Editable editable) {}
         });
@@ -211,7 +237,14 @@ public class LudiFragment extends Fragment {
             @Override
             public void beforeTextChanged(CharSequence charSequence, int i, int i2, int i3) {}
             @Override
-            public void onTextChanged(CharSequence charSequence, int i, int i2, int i3) {done5.setVisibility(ImageView.INVISIBLE);}
+            public void onTextChanged(CharSequence charSequence, int i, int i2, int i3) {
+                done5.setVisibility(ImageView.INVISIBLE);
+                String propositionUtf8 = TextUtilsEo.x2utf(charSequence.toString());
+                if (!propositionUtf8.equals(charSequence.toString())) {
+                    prop5.setText(propositionUtf8);
+                    Selection.setSelection(prop5.getText(), propositionUtf8.length()); // on positionne le curseur à la fin de la chaine
+                }
+            }
             @Override
             public void afterTextChanged(Editable editable) {}
         });
@@ -219,7 +252,14 @@ public class LudiFragment extends Fragment {
             @Override
             public void beforeTextChanged(CharSequence charSequence, int i, int i2, int i3) {}
             @Override
-            public void onTextChanged(CharSequence charSequence, int i, int i2, int i3) {done6.setVisibility(ImageView.INVISIBLE);}
+            public void onTextChanged(CharSequence charSequence, int i, int i2, int i3) {
+                done6.setVisibility(ImageView.INVISIBLE);
+                String propositionUtf8 = TextUtilsEo.x2utf(charSequence.toString());
+                if (!propositionUtf8.equals(charSequence.toString())) {
+                    prop6.setText(propositionUtf8);
+                    Selection.setSelection(prop6.getText(), propositionUtf8.length()); // on positionne le curseur à la fin de la chaine
+                }
+            }
             @Override
             public void afterTextChanged(Editable editable) {}
         });
@@ -227,7 +267,14 @@ public class LudiFragment extends Fragment {
             @Override
             public void beforeTextChanged(CharSequence charSequence, int i, int i2, int i3) {}
             @Override
-            public void onTextChanged(CharSequence charSequence, int i, int i2, int i3) {done7.setVisibility(ImageView.INVISIBLE);}
+            public void onTextChanged(CharSequence charSequence, int i, int i2, int i3) {
+                done7.setVisibility(ImageView.INVISIBLE);
+                String propositionUtf8 = TextUtilsEo.x2utf(charSequence.toString());
+                if (!propositionUtf8.equals(charSequence.toString())) {
+                    prop7.setText(propositionUtf8);
+                    Selection.setSelection(prop7.getText(), propositionUtf8.length()); // on positionne le curseur à la fin de la chaine
+                }
+            }
             @Override
             public void afterTextChanged(Editable editable) {}
         });
@@ -235,19 +282,26 @@ public class LudiFragment extends Fragment {
             @Override
             public void beforeTextChanged(CharSequence charSequence, int i, int i2, int i3) {}
             @Override
-            public void onTextChanged(CharSequence charSequence, int i, int i2, int i3) {done8.setVisibility(ImageView.INVISIBLE);}
+            public void onTextChanged(CharSequence charSequence, int i, int i2, int i3) {
+                done8.setVisibility(ImageView.INVISIBLE);
+                String propositionUtf8 = TextUtilsEo.x2utf(charSequence.toString());
+                if (!propositionUtf8.equals(charSequence.toString())) {
+                    prop8.setText(propositionUtf8);
+                    Selection.setSelection(prop8.getText(), propositionUtf8.length()); // on positionne le curseur à la fin de la chaine
+                }
+            }
             @Override
             public void afterTextChanged(Editable editable) {}
         });
         // fait les conversions avec les x
-        setOnFocusChangeListener(prop1);
-        setOnFocusChangeListener(prop2);
-        setOnFocusChangeListener(prop3);
-        setOnFocusChangeListener(prop4);
-        setOnFocusChangeListener(prop5);
-        setOnFocusChangeListener(prop6);
-        setOnFocusChangeListener(prop7);
-        setOnFocusChangeListener(prop8);
+        //setOnFocusChangeListener(prop1);
+//        setOnFocusChangeListener(prop2);
+//        setOnFocusChangeListener(prop3);
+//        setOnFocusChangeListener(prop4);
+//        setOnFocusChangeListener(prop5);
+//        setOnFocusChangeListener(prop6);
+//        setOnFocusChangeListener(prop7);
+//        setOnFocusChangeListener(prop8);
 
         // retire le correcteur orthographique
         prop1.setInputType(InputType.TYPE_TEXT_FLAG_NO_SUGGESTIONS);
@@ -279,7 +333,7 @@ public class LudiFragment extends Fragment {
         return rootView;
     }
 
-
+    @Deprecated
     InputFilter x2utf = new InputFilter() {
         public CharSequence filter(CharSequence source, int start, int end,
                                    Spanned dest, int dstart, int dend) {
@@ -292,6 +346,7 @@ public class LudiFragment extends Fragment {
         }
     };
 
+    @Deprecated
     private void setOnFocusChangeListener(final TextView textView){
 
         textView.setOnFocusChangeListener(new View.OnFocusChangeListener() {
@@ -317,35 +372,35 @@ public class LudiFragment extends Fragment {
         if (endatumbazaProponoj!=null) {
             for (Propono propono : endatumbazaProponoj) {
                 switch (propono.getVico()) {
-                    case 1: prop1.setText(propono.getPropono());
+                    case 1: prop1.setText(TextUtilsEo.x2utf(propono.getPropono()));
                         done1.setVisibility(ImageView.VISIBLE);
                         malbone1.setVisibility(ImageView.GONE);
                         break;
-                    case 2: prop2.setText(propono.getPropono());
+                    case 2: prop2.setText(TextUtilsEo.x2utf(propono.getPropono()));
                         done2.setVisibility(ImageView.VISIBLE);
                         malbone2.setVisibility(ImageView.GONE);
                         break;
-                    case 3: prop3.setText(propono.getPropono());
+                    case 3: prop3.setText(TextUtilsEo.x2utf(propono.getPropono()));
                         done3.setVisibility(ImageView.VISIBLE);
                         malbone3.setVisibility(ImageView.GONE);
                         break;
-                    case 4: prop4.setText(propono.getPropono());
+                    case 4: prop4.setText(TextUtilsEo.x2utf(propono.getPropono()));
                         done4.setVisibility(ImageView.VISIBLE);
                         malbone4.setVisibility(ImageView.GONE);
                         break;
-                    case 5: prop5.setText(propono.getPropono());
+                    case 5: prop5.setText(TextUtilsEo.x2utf(propono.getPropono()));
                         done5.setVisibility(ImageView.VISIBLE);
                         malbone5.setVisibility(ImageView.GONE);
                         break;
-                    case 6: prop6.setText(propono.getPropono());
+                    case 6: prop6.setText(TextUtilsEo.x2utf(propono.getPropono()));
                         done6.setVisibility(ImageView.VISIBLE);
                         malbone6.setVisibility(ImageView.GONE);
                         break;
-                    case 7: prop7.setText(propono.getPropono());
+                    case 7: prop7.setText(TextUtilsEo.x2utf(propono.getPropono()));
                         done7.setVisibility(ImageView.VISIBLE);
                         malbone7.setVisibility(ImageView.GONE);
                         break;
-                    case 8: prop8.setText(propono.getPropono());
+                    case 8: prop8.setText(TextUtilsEo.x2utf(propono.getPropono()));
                         done8.setVisibility(ImageView.VISIBLE);
                         break;
                     default : Log.e("LudiActivity","Information inconnue en base : "+propono.getVico());
