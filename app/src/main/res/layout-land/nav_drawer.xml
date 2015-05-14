@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- android:layout_gravity="start" tells DrawerLayout to treat
+     this as a sliding drawer on the left side for left-to-right
+     languages and on the right side for right-to-left languages.
+     The drawer is given a fixed width in dp and extends the full height of
+     the container. A solid background is used for contrast
+     with the content view. -->
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/scrollView"
+    android:layout_width="260dp"
+    android:layout_height="match_parent"
+    android:layout_gravity="start"
+    android:background="@color/sam_fond_blanc"
+    android:orientation="vertical">
+
+        <FrameLayout
+            android:id="@+id/nav_top"
+            android:layout_width="match_parent"
+            android:layout_height="146dp"
+            android:background="@color/sam_principale" >
+        </FrameLayout>
+
+        <RelativeLayout android:id="@+id/nav_header"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="start"
+            android:background="@color/sam_fond_fonce"
+            android:orientation="vertical" >
+
+            <ImageView android:id="@+id/nav_logo"
+                android:layout_width="wrap_content"
+                android:layout_height="0dp"
+                android:layout_gravity="start" />
+
+            <ListView
+                android:id="@+id/nav_list"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_below="@+id/nav_logo"
+                android:background="@color/sam_fond_blanc"
+                android:entries="@array/nav_drawer_items"
+                android:textColor="@color/sam_txt_0" />
+
+        </RelativeLayout>
+</RelativeLayout>
