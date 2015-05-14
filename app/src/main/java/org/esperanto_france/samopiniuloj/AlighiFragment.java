@@ -3,14 +3,9 @@ package org.esperanto_france.samopiniuloj;
 import android.app.Fragment;
 import android.app.FragmentManager;
 import android.app.ProgressDialog;
-import android.content.Intent;
 import android.content.SharedPreferences;
-import android.net.ConnectivityManager;
-import android.net.NetworkInfo;
 import android.os.AsyncTask;
 import android.os.Bundle;
-import android.support.v7.app.ActionBarActivity;
-import android.support.v7.widget.Toolbar;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.util.Log;
@@ -400,10 +395,10 @@ public class AlighiFragment extends Fragment {
 
 
             public void onClick(View view) {
-                // Renvoie sur le fragment "alighi"
+                // Renvoie sur le fragment "eniri"
                 FragmentManager fragmentManager = getFragmentManager();
                 fragmentManager.beginTransaction()
-                        .replace(R.id.content_frame, new AlighiFragment())
+                        .replace(R.id.content_frame, new EniriFragment())
                         .commit();
             }
         });
