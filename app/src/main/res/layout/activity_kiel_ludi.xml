@@ -56,6 +56,12 @@
             style="@style/TexteNormal.Important.Alinea"
             android:text="@string/txt_kiel_ludi_10" />
 
+        <Button android:id="@+id/btn_ludu"
+            style="@style/BoutonPrimaire"
+            android:layout_gravity="end"
+            android:layout_marginTop="@dimen/marge_4"
+            android:text="@string/action_ludi"/>
+
     </LinearLayout>
 
 </ScrollView>
