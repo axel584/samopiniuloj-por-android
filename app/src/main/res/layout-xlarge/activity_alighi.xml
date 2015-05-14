@@ -1,19 +1,17 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/sam_fond"
     android:orientation="vertical"
-    tools:context="org.esperanto_france.samopiniuloj.AlighiActivity">
+    tools:context="org.esperanto_france.samopiniuloj.AlighiFragment">
 
     <LinearLayout
         android:layout_width="600dp"
         android:layout_height="match_parent"
         android:layout_centerHorizontal="true"
-        android:gravity="center_vertical|center_horizontal"
+        android:layout_gravity="center_horizontal"
         android:orientation="vertical"
-        android:paddingBottom="@dimen/activity_vertical_margin"
-        android:paddingLeft="@dimen/activity_horizontal_margin"
-        android:paddingRight="@dimen/activity_horizontal_margin"
-        android:paddingTop="@dimen/marge_4">
+        android:padding="@dimen/marge_3"  >
 
             <TextView android:id="@+id/txt_alighi1"
                 style="@style/TexteNormal"
@@ -21,12 +19,12 @@
 
             <TextView android:id="@+id/txt_alighi2"
                 style="@style/TexteNormal.Clair"
-                android:layout_marginTop="8dp"
+                android:layout_marginTop="@dimen/marge_2"
                 android:text="@string/txt_alighi2" />
 
             <EditText android:id="@+id/enirnomo"
                 style="@style/Input.Texte"
-                android:layout_marginTop="8dp"
+                android:layout_marginTop="@dimen/marge_2"
                 android:hint="@string/prompt_enirnomo" />
 
             <TextView android:id="@+id/eraro_enirnomo"
@@ -59,7 +57,7 @@
                 android:prompt="@string/prompt_lando"
                 android:spinnerMode="dropdown"
                 android:textColor="@color/sam_txt_1"
-                android:textSize="12sp" />
+                android:textSize="@dimen/texte_small" />
 
             <!--TextView android:id="@+id/txt_forgesita_pasvorto"
                 android:text="@string/txt_forgesita_pasvorto"
@@ -68,22 +66,20 @@
 
         <Button android:id="@+id/btn_aligxu"
                 style="@style/BoutonPrimaire"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
                 android:layout_gravity="end|top"
-                android:layout_marginTop="8dp"
+                android:layout_marginTop="@dimen/marge_2"
             android:text="@string/action_aligxu" />
 
             <TextView android:id="@+id/txt_alighi3"
                 style="@style/TexteNormal"
-                android:layout_marginTop="@dimen/marge_3"
+                android:layout_marginTop="@dimen/marge_4"
+                android:gravity="end"
                 android:text="@string/txt_alighi3" />
 
         <Button android:id="@+id/btn_eniru"
                 style="@style/BoutonPrimaire"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
                 android:layout_gravity="end"
+                android:layout_marginTop="@dimen/marge_2"
                 android:text="@string/action_eniru" />
 
     </LinearLayout>
