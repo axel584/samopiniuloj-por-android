@@ -11,4 +11,5 @@
     <dimen name="marge_3">16dp</dimen>
     <dimen name="marge_4">32dp</dimen>
     <dimen name="marge_5">64dp</dimen>
+    <dimen name="coche">18dp</dimen>
 </resources>

@@ -2,61 +2,62 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="org.esperanto_france.samopiniuloj.KielLudiActivity">
+    android:background="@color/sam_fond"
+    tools:context="org.esperanto_france.samopiniuloj.KielLudiFragment">
 
     <LinearLayout
-        android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:paddingBottom="@dimen/activity_vertical_margin"
+        android:orientation="vertical"
+        android:paddingBottom="@dimen/marge_3"
         android:paddingLeft="@dimen/marge_4"
         android:paddingRight="@dimen/marge_4"
-        android:paddingTop="@dimen/marge_4" >
+        android:paddingTop="@dimen/marge_3" >
 
         <TextView android:id="@+id/txtKielLudi0"
-            android:text="@string/txt_kiel_ludi_0"
-            style="@style/Titre" />
+            style="@style/Titre"
+            android:text="@string/txt_kiel_ludi_0" />
 
         <TextView android:id="@+id/txtKielLudi1"
-            android:text="@string/txt_kiel_ludi_1"
-            style="@style/TexteNormal.Alinea" />
+            style="@style/TexteNormal.Alinea"
+            android:text="@string/txt_kiel_ludi_1" />
 
         <TextView android:id="@+id/txtKielLudi2"
-            android:text="@string/txt_kiel_ludi_2"
-            style="@style/TexteNormal.Alinea" />
+            style="@style/TexteNormal.Alinea"
+            android:text="@string/txt_kiel_ludi_2" />
 
         <TextView android:id="@+id/txtKielLudi3"
-            android:text="@string/txt_kiel_ludi_3"
-            style="@style/TexteNormal.Alinea" />
+            style="@style/TexteNormal.Alinea"
+            android:text="@string/txt_kiel_ludi_3" />
 
         <TextView android:id="@+id/txtKielLudi4"
-            android:text="@string/txt_kiel_ludi_4"
-            style="@style/TexteNormal.Alinea" />
+            style="@style/TexteNormal.Alinea"
+            android:text="@string/txt_kiel_ludi_4" />
 
         <TextView android:id="@+id/txtKielLudi5"
-            android:text="@string/txt_kiel_ludi_5"
-            style="@style/TexteNormal.Alinea" />
+            style="@style/TexteNormal.Alinea"
+            android:text="@string/txt_kiel_ludi_5" />
 
         <TextView android:id="@+id/txtKielLudi6"
-            android:text="@string/txt_kiel_ludi_6"
-            style="@style/TexteNormal.Alinea" />
+            style="@style/TexteNormal.Alinea"
+            android:text="@string/txt_kiel_ludi_6" />
 
 
         <TextView android:id="@+id/txtKielLudi7"
-            android:text="@string/txt_kiel_ludi_7"
-            style="@style/TexteNormal.Alinea" />
+            style="@style/TexteNormal.Alinea"
+            android:text="@string/txt_kiel_ludi_7" />
 
         <TextView android:id="@+id/txtKielLudi8"
-            android:text="@string/txt_kiel_ludi_8"
-            style="@style/TexteNormal.Alinea" />
+            style="@style/TexteNormal.Alinea"
+            android:text="@string/txt_kiel_ludi_8" />
 
         <TextView android:id="@+id/txtKielLudi9"
-            android:text="@string/txt_kiel_ludi_9"
-            style="@style/TexteNormal.Important.Alinea" />
+            style="@style/TexteNormal.Important.Alinea"
+            android:text="@string/txt_kiel_ludi_9" />
 
         <TextView android:id="@+id/txtKielLudi10"
-            android:text="@string/txt_kiel_ludi_10"
-            style="@style/TexteNormal.Important.Alinea" />
+            style="@style/TexteNormal.Important.Alinea"
+            android:text="@string/txt_kiel_ludi_10" />
 
     </LinearLayout>
 

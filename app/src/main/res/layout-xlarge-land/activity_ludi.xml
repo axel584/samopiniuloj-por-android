@@ -11,10 +11,8 @@
         android:layout_height="match_parent"
         android:gravity="center_horizontal"
         android:orientation="vertical"
-        android:paddingBottom="@dimen/activity_vertical_margin"
-        android:paddingLeft="@dimen/activity_horizontal_margin"
-        android:paddingRight="@dimen/activity_horizontal_margin"
-        android:paddingTop="@dimen/activity_vertical_margin" >
+        android:padding="@dimen/marge_3"
+        android:paddingTop="@dimen/marge_2">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -268,6 +266,8 @@
                 <Button android:id="@+id/btn_sendu"
                     style="@style/BoutonPrimaire"
                     android:layout_gravity="end|top"
+                    android:layout_marginEnd="@dimen/coche"
+                    android:layout_marginRight="@dimen/coche"
                     android:layout_marginTop="@dimen/marge_3"
                     android:text="@string/action_sendu" />
 
