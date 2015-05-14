@@ -24,7 +24,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="start|top"
                 android:layout_weight="1"
-                tools:text="Nun estas 8 Majo 2015" />
+                tools:text="Nun estas 12:34" />
 
             <TextView android:id="@+id/bonvenon_ludando"
                 style="@style/TexteNormal"
@@ -48,6 +48,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_marginEnd="@dimen/marge_2"
+                android:layout_marginRight="@dimen/marge_2"
                 android:layout_weight="4"
                 android:orientation="vertical">
 

@@ -1,4 +1,4 @@
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -8,10 +8,10 @@
     tools:context="org.esperanto_france.samopiniuloj.EniriFragment" >
 
     <LinearLayout android:id="@+id/email_login_form"
-        android:layout_width="500dp"
-        android:layout_height="match_parent"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:paddingTop="@dimen/marge_3">
+        android:padding="@dimen/marge_3">
 
         <TextView android:id="@+id/txt_enkonduko"
             style="@style/TexteNormal"
@@ -76,6 +76,6 @@
 
     </LinearLayout>
 
-</RelativeLayout>
+</ScrollView>
 
 

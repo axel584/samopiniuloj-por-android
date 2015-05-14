@@ -1,4 +1,4 @@
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/sam_fond"
@@ -6,12 +6,11 @@
     tools:context="org.esperanto_france.samopiniuloj.AlighiFragment">
 
     <LinearLayout
-        android:layout_width="600dp"
-        android:layout_height="match_parent"
-        android:layout_centerHorizontal="true"
+        android:layout_width="400dp"
+        android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
         android:orientation="vertical"
-        android:padding="@dimen/marge_3"  >
+        android:paddingTop="@dimen/marge_4">
 
             <TextView android:id="@+id/txt_alighi1"
                 style="@style/TexteNormal"
@@ -84,4 +83,4 @@
 
     </LinearLayout>
 
-</RelativeLayout>
+</ScrollView>
