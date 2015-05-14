@@ -177,6 +177,7 @@ public class LudiFragment extends Fragment {
             @Override
             public void onTextChanged(CharSequence charSequence, int i, int i2, int i3) {
                 done1.setVisibility(ImageView.INVISIBLE);
+                malbone1.setVisibility(ImageView.GONE);
                 String propositionUtf8 = TextUtilsEo.x2utf(charSequence.toString());
                 if (!propositionUtf8.equals(charSequence.toString())) {
                     prop1.setText(propositionUtf8);
@@ -194,6 +195,7 @@ public class LudiFragment extends Fragment {
             @Override
             public void onTextChanged(CharSequence charSequence, int i, int i2, int i3) {
                 done2.setVisibility(ImageView.INVISIBLE);
+                malbone2.setVisibility(ImageView.GONE);
                 String propositionUtf8 = TextUtilsEo.x2utf(charSequence.toString());
                 if (!propositionUtf8.equals(charSequence.toString())) {
                     prop2.setText(propositionUtf8);
@@ -209,6 +211,7 @@ public class LudiFragment extends Fragment {
             @Override
             public void onTextChanged(CharSequence charSequence, int i, int i2, int i3) {
                 done3.setVisibility(ImageView.INVISIBLE);
+                malbone3.setVisibility(ImageView.GONE);
                 String propositionUtf8 = TextUtilsEo.x2utf(charSequence.toString());
                 if (!propositionUtf8.equals(charSequence.toString())) {
                     prop3.setText(propositionUtf8);
@@ -224,6 +227,7 @@ public class LudiFragment extends Fragment {
             @Override
             public void onTextChanged(CharSequence charSequence, int i, int i2, int i3) {
                 done4.setVisibility(ImageView.INVISIBLE);
+                malbone4.setVisibility(ImageView.GONE);
                 String propositionUtf8 = TextUtilsEo.x2utf(charSequence.toString());
                 if (!propositionUtf8.equals(charSequence.toString())) {
                     prop4.setText(propositionUtf8);
@@ -239,6 +243,7 @@ public class LudiFragment extends Fragment {
             @Override
             public void onTextChanged(CharSequence charSequence, int i, int i2, int i3) {
                 done5.setVisibility(ImageView.INVISIBLE);
+                malbone5.setVisibility(ImageView.GONE);
                 String propositionUtf8 = TextUtilsEo.x2utf(charSequence.toString());
                 if (!propositionUtf8.equals(charSequence.toString())) {
                     prop5.setText(propositionUtf8);
@@ -254,6 +259,7 @@ public class LudiFragment extends Fragment {
             @Override
             public void onTextChanged(CharSequence charSequence, int i, int i2, int i3) {
                 done6.setVisibility(ImageView.INVISIBLE);
+                malbone6.setVisibility(ImageView.GONE);
                 String propositionUtf8 = TextUtilsEo.x2utf(charSequence.toString());
                 if (!propositionUtf8.equals(charSequence.toString())) {
                     prop6.setText(propositionUtf8);
@@ -269,6 +275,7 @@ public class LudiFragment extends Fragment {
             @Override
             public void onTextChanged(CharSequence charSequence, int i, int i2, int i3) {
                 done7.setVisibility(ImageView.INVISIBLE);
+                malbone7.setVisibility(ImageView.GONE);
                 String propositionUtf8 = TextUtilsEo.x2utf(charSequence.toString());
                 if (!propositionUtf8.equals(charSequence.toString())) {
                     prop7.setText(propositionUtf8);
@@ -284,6 +291,7 @@ public class LudiFragment extends Fragment {
             @Override
             public void onTextChanged(CharSequence charSequence, int i, int i2, int i3) {
                 done8.setVisibility(ImageView.INVISIBLE);
+                malbone8.setVisibility(ImageView.GONE);
                 String propositionUtf8 = TextUtilsEo.x2utf(charSequence.toString());
                 if (!propositionUtf8.equals(charSequence.toString())) {
                     prop8.setText(propositionUtf8);
@@ -351,7 +359,7 @@ public class LudiFragment extends Fragment {
 
         textView.setOnFocusChangeListener(new View.OnFocusChangeListener() {
             public void onFocusChange(View v, boolean hasFocus) {
-                if(!hasFocus) {
+                if (!hasFocus) {
                     textView.setText(TextUtilsEo.x2utf(textView.getText().toString()));
                 }
             }
