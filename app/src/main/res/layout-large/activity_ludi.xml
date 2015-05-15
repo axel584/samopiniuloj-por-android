@@ -43,10 +43,7 @@
             android:layout_height="140dp"
             android:layout_gravity="center"
             android:layout_marginTop="@dimen/marge_3"
-            android:background="@color/sam_carte"
-            android:orientation="horizontal"
-            card_view:cardBackgroundColor="@color/sam_carte"
-            card_view:cardCornerRadius="4dp">
+            style="@style/Carte">
 
             <RelativeLayout
                 android:layout_width="fill_parent"
@@ -55,10 +52,7 @@
                 <ImageView android:id="@+id/img_taga_vorto"
                     android:layout_width="140dp"
                     android:layout_height="140dp"
-                    android:layout_alignParentBottom="false"
-                    android:layout_alignParentEnd="false"
-                    android:layout_alignParentRight="false"
-                    android:layout_gravity="center_vertical|bottom|start|top"
+                    android:layout_gravity="start"
                     tools:src="@drawable/dentradajxo"/>
 
                 <RelativeLayout

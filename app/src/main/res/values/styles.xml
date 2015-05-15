@@ -232,6 +232,14 @@
         <item name="android:textColor">@color/sam_bouton_fonce</item>
     </style>
 
+    <style name="Carte" parent="CardView.Light">
+        <item name="android:orientation">horizontal</item>
+        <item name="cardBackgroundColor">@color/sam_carte</item>
+        <item name="cardPreventCornerOverlap">false</item>
+        <item name="cardCornerRadius">0dp</item>
+        <item name="contentPadding">0dp</item>
+    </style>
+
 </resources>
 
 
