@@ -21,7 +21,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".EniriActivity"
+            android:name=".EniriFragment"
             android:label="@string/title_activity_eniri" >
         </activity>
         <activity
