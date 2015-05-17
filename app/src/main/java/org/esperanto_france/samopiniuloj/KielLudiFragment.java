@@ -14,6 +14,12 @@ public class KielLudiFragment extends Fragment {
     Button btnLudi;
 
     @Override
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setRetainInstance(true);
+    }
+
+    @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                                 Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.activity_kiel_ludi, container, false);

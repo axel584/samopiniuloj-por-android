@@ -41,7 +41,11 @@ public class EniriFragment  extends Fragment {
     TextView eraroEnirnomo;
     TextView eraroPasvorto;
 
-    public EniriFragment() {
+
+    @Override
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setRetainInstance(true);
     }
 
     @Override

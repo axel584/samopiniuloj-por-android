@@ -88,14 +88,15 @@ public class MainActivity extends ActionBarActivity {
         Integer uzantoId = pref.getInt("uzanto_id",0);
         String uzantoNomo = pref.getString("uzanto_nomo","");
         // TODO : placer le nom de l'utilisateur dans le menu
-        if (uzantoId==0) {
-            Fragment fragment = new EniriFragment();
-            FragmentManager fragmentManager = getFragmentManager();
-            fragmentManager.beginTransaction().replace(R.id.content_frame, fragment).commit();
-        } else {
-            Fragment fragment = new LudiFragment();
-            FragmentManager fragmentManager = getFragmentManager();
-            fragmentManager.beginTransaction().replace(R.id.content_frame, fragment).commit();
+        FragmentManager fragmentManager = getFragmentManager();
+        if (fragmentManager.findFragmentById(R.id.content_frame)==null) { // on verifie si le fragment est null avant de lui imposer un nouveau fragment
+            if (uzantoId == 0) {
+                Fragment fragment = new EniriFragment();
+                fragmentManager.beginTransaction().replace(R.id.content_frame, fragment).commit();
+            } else {
+                Fragment fragment = new LudiFragment();
+                fragmentManager.beginTransaction().replace(R.id.content_frame, fragment).commit();
+            }
         }
 
 
