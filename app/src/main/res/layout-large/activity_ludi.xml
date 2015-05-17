@@ -230,6 +230,9 @@
                         style="@style/Sendita"
                         android:visibility="invisible" />
 
+                    <ImageView android:id="@+id/malbone_6"
+                        style="@style/Malbona"
+                        android:visibility="gone" />
 
                 </TableRow>
 
@@ -241,6 +244,11 @@
                     <ImageView android:id="@+id/done_7"
                         style="@style/Sendita"
                         android:visibility="invisible" />
+
+                    <ImageView android:id="@+id/malbone_7"
+                        style="@style/Malbona"
+                        android:visibility="gone" />
+
                 </TableRow>
 
                 <TableRow android:layout_width="fill_parent">
@@ -251,6 +259,11 @@
                     <ImageView android:id="@+id/done_8"
                         style="@style/Sendita"
                         android:visibility="invisible" />
+
+                    <ImageView android:id="@+id/malbone_8"
+                        style="@style/Malbona"
+                        android:visibility="gone" />
+
                 </TableRow>
 
             </TableLayout>
