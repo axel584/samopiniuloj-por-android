@@ -347,31 +347,6 @@ public class LudiFragment extends Fragment {
         return rootView;
     }
 
-    @Deprecated
-    InputFilter x2utf = new InputFilter() {
-        public CharSequence filter(CharSequence source, int start, int end,
-                                   Spanned dest, int dstart, int dend) {
-
-            if ("x".equals(source)) {
-                return TextUtilsEo.x2utf(dest.toString() + "x");
-            } else {
-                return null;
-            }
-        }
-    };
-
-    @Deprecated
-    private void setOnFocusChangeListener(final TextView textView){
-
-        textView.setOnFocusChangeListener(new View.OnFocusChangeListener() {
-            public void onFocusChange(View v, boolean hasFocus) {
-                if (!hasFocus) {
-                    textView.setText(TextUtilsEo.x2utf(textView.getText().toString()));
-                }
-            }
-        });
-    }
-
     // méthode appelée après avoir téléchargé les images ou si on trouve une image du cours
     public void populateNovajVortoj(Vorto vorto) {
         Log.i("LudiFragment","vorto Populate Novaj Vortoj : date : "+vorto.getTago()+"/"+vorto.getMonato()+"/"+vorto.getJaro());
@@ -699,6 +674,13 @@ public class LudiFragment extends Fragment {
 
             // On recupere le résultat du web service et on le renvoit
             String rezulto = GET(urls[0]);
+            // on verifie si on a un résultat, dans le cas contraire, c'est qu'on n'est pas connecté
+            if (rezulto==null || "".equals(rezulto)) {
+                LudiGson ludiGson = new LudiGson();
+                ludiGson.setRespondo("eraro");
+                ludiGson.setKialo("Ne eblas konektiĝi");
+                return ludiGson;
+            }
             Gson gson = new Gson();
             LudiGson ludiGson = gson.fromJson(rezulto,LudiGson.class);
             // On sauvegarde en base

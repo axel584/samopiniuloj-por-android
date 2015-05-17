@@ -18,6 +18,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.gson.Gson;
 
@@ -190,6 +191,10 @@ public class EniriFragment  extends Fragment {
             // traite la réponse
             Gson gson = new Gson();
             EniriGson eniriGson = gson.fromJson(result,EniriGson.class);
+            if (eniriGson==null) {
+                Toast.makeText(getActivity().getApplicationContext(),"Ne eblas konektiĝi",Toast.LENGTH_LONG).show();
+                return;
+            }
             if ("eraro".equals(eniriGson.getRespondo())) {
                 if (eniriGson.getEraro_id()==1) {
                     eraroEnirnomo.setText(R.string.eraro_enirnomo_nekonata);

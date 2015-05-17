@@ -16,6 +16,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.gson.Gson;
 
@@ -467,6 +468,10 @@ public class AlighiFragment extends Fragment {
             // traite la réponse
             Gson gson = new Gson();
             AlighiGson aligiGson = gson.fromJson(result,AlighiGson.class);
+            if (aligiGson==null) {
+                Toast.makeText(getActivity().getApplicationContext(), "Ne eblas konektiĝi", Toast.LENGTH_LONG).show();
+                return;
+            }
             if ("eraro".equals(aligiGson.getRespondo())) {
                 if (aligiGson.getEraro_id()==1) {
                     eraroEnirnomo.setText(R.string.eraro_enirnomo_uzita);
