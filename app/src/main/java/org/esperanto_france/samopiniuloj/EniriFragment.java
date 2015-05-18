@@ -12,6 +12,7 @@ import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.util.Log;
+import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -192,7 +193,9 @@ public class EniriFragment  extends Fragment {
             Gson gson = new Gson();
             EniriGson eniriGson = gson.fromJson(result,EniriGson.class);
             if (eniriGson==null) {
-                Toast.makeText(getActivity().getApplicationContext(),"Ne eblas konektiĝi",Toast.LENGTH_LONG).show();
+                Toast toast = Toast.makeText(getActivity().getApplicationContext(),"Ne eblas konektiĝi",Toast.LENGTH_LONG);
+                toast.setGravity(Gravity.CENTER, 0, 0);
+                toast.show();
                 return;
             }
             if ("eraro".equals(eniriGson.getRespondo())) {
