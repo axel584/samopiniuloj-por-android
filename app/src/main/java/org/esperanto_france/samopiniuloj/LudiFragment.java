@@ -10,10 +10,8 @@ import android.os.AsyncTask;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.Html;
-import android.text.InputFilter;
 import android.text.InputType;
 import android.text.Selection;
-import android.text.Spanned;
 import android.text.TextWatcher;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -391,6 +389,7 @@ public class LudiFragment extends Fragment {
                         break;
                     case 8: prop8.setText(TextUtilsEo.x2utf(propono.getPropono()));
                         done8.setVisibility(ImageView.VISIBLE);
+                        malbone8.setVisibility(ImageView.GONE);
                         break;
                     default : Log.e("LudiActivity","Information inconnue en base : "+propono.getVico());
                         break;
