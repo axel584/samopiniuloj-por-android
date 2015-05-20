@@ -2,7 +2,7 @@
     xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context="org.esperanto_france.samopiniuloj.LudintojFragment">
+    tools:context="org.esperanto_france.samopiniuloj.RezultojFragment">
 
     <LinearLayout android:id="@+id/entete"
         android:layout_height="112dp"
@@ -23,18 +23,12 @@
             style="@style/Vorto" />
 
     </LinearLayout>
-    <View
-        android:layout_width="fill_parent"
-        android:layout_height="4dip"
-        android:background="@drawable/ombre_bas">
-    </View>
 
     <LinearLayout
         android:id="@+id/bloc2"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="horizontal"
-        style="@style/MenuResultats" >
+        android:orientation="horizontal" >
 
         <LinearLayout
             android:id="@+id/menu"
@@ -43,8 +37,8 @@
             style="@style/MenuResultats" >
 
             <ImageButton android:id="@+id/button_rezultoj"
-            android:src="@mipmap/ic_person_black_18dp"
-            style="@style/BtnRezulto.Actif" />
+                android:src="@mipmap/ic_person_black_18dp"
+                style="@style/BtnRezulto.Actif" />
 
             <ImageButton android:id="@+id/button_ludintoj"
                 android:src="@mipmap/ic_group_black_18dp"
@@ -56,19 +50,13 @@
 
         </LinearLayout>
 
-        <View
-            android:layout_width="2dip"
-            android:layout_height="fill_parent"
-            android:background="@drawable/ombre_gauche" >
-        </View>
-
         <LinearLayout
             android:id="@+id/bloc_result"
             android:orientation="vertical"
             style="@style/BlocResultats" >
 
-                <TextView android:id="@+id/titolo_ludintoj"
-                    android:text="@string/ludintoj"
+                <TextView android:id="@+id/titolo_vortoj"
+                    android:text="@string/vortoj"
                     style="@style/Titre" />
 
                 <TableLayout android:id="@+id/tab_rezultoj"
@@ -77,20 +65,21 @@
                     <TableRow android:id="@+id/ligne0"
                         style="@style/LigneTableau" >
 
-                        <TextView android:id="@+id/col_ludintoj"
-                            android:text="@string/col_ludintoj"
+                        <TextView android:id="@+id/col_vortoj"
+                            android:text="@string/col_vortoj"
                             style="@style/EnteteTableau" />
 
                         <TextView android:id="@+id/col_poentoj"
                             android:text="@string/col_poentoj"
-                            style="@style/EnteteTableau.Nombre" />
+                            style="@style/EltTableau" />
+
                     </TableRow>
 
-                    <TableRow android:id="@+id/id_ligne1"
+                    <TableRow android:id="@+id/ligne1"
                         style="@style/LigneTableau" >
 
-                        <TextView android:id="@+id/ludinto_1"
-                            tools:text="ludinto 1"
+                        <TextView android:id="@+id/vorto1"
+                            tools:text="vorto 1"
                             style="@style/EltTableau" />
 
                         <TextView android:id="@+id/poentoj1"
@@ -98,11 +87,11 @@
                             style="@style/EltTableau.Nombre" />
                     </TableRow>
 
-                    <TableRow android:id="@+id/id_ligne2"
+                    <TableRow android:id="@+id/ligne2"
                         style="@style/LigneTableau" >
 
-                        <TextView android:id="@+id/ludinto_2"
-                            tools:text="ludinto 2"
+                        <TextView android:id="@+id/vorto2"
+                            tools:text="vorto 2"
                             style="@style/EltTableau" />
 
                         <TextView android:id="@+id/poentoj2"
@@ -110,11 +99,11 @@
                             style="@style/EltTableau.Nombre" />
                     </TableRow>
 
-                    <TableRow android:id="@+id/id_ligne3"
+                    <TableRow android:id="@+id/ligne3"
                         style="@style/LigneTableau" >
 
-                        <TextView android:id="@+id/ludinto_3"
-                            tools:text="ludinto 3"
+                        <TextView android:id="@+id/vorto3"
+                            tools:text="vorto 3"
                             style="@style/EltTableau" />
 
                         <TextView android:id="@+id/poentoj3"
@@ -122,7 +111,19 @@
                             style="@style/EltTableau.Nombre" />
                     </TableRow>
 
-            </TableLayout>
+                    <TableRow android:id="@+id/ligne4"
+                        style="@style/LigneTableau" >
+
+                        <TextView android:id="@+id/vorto4"
+                            tools:text="vorto 4"
+                            style="@style/EltTableau.Inactif" />
+
+                        <TextView android:id="@+id/poentoj4"
+                            tools:text="1"
+                            style="@style/EltTableau.Nombre.Inactif" />
+                    </TableRow>
+
+                </TableLayout>
 
         </LinearLayout>
 

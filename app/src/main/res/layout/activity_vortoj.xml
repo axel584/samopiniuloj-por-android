@@ -1,59 +1,70 @@
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context="org.esperanto_france.samopiniuloj.VortojActivity">
+    tools:context="org.esperanto_france.samopiniuloj.RezultojFragment">
+
+    <LinearLayout android:id="@+id/entete"
+        android:layout_height="112dp"
+        android:orientation="vertical"
+        style="@style/EnteteResultats">
+
+        <TextView android:id="@+id/rezultoj_dato"
+            tools:text="15 Aprilo 2015"
+            style="@style/TitreDate" />
+
+        <TextView android:id="@+id/rezultoj_txt1"
+            android:text="@string/taga_vorto"
+            android:layout_marginTop="@dimen/marge_2"
+            style="@style/TexteNormal" />
+
+        <TextView android:id="@+id/rezultoj_vorto"
+            tools:text="@string/vorto2"
+            style="@style/Vorto" />
+
+    </LinearLayout>
+    <View
+        android:layout_width="fill_parent"
+        android:layout_height="4dip"
+        android:background="@drawable/ombre_bas">
+    </View>
 
     <LinearLayout
-        android:orientation="vertical"
+        android:id="@+id/bloc2"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:gravity="center_horizontal" >
+        android:orientation="horizontal" >
 
         <LinearLayout
-            style="@style/EnteteResultats">
+            android:id="@+id/menu"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            style="@style/MenuResultats" >
 
-            <TextView android:id="@+id/rezultoj_dato"
-                tools:text="15 Aprilo 2015"
-                style="@style/TitreDate" />
+            <ImageButton android:id="@+id/button_rezultoj"
+                android:src="@mipmap/ic_person_black_18dp"
+                style="@style/BtnRezulto.Actif" />
 
-            <TextView android:id="@+id/rezultoj_txt1"
-                android:text="@string/taga_vorto"
-                android:layout_marginTop="8dp"
-                style="@style/TexteNormal" />
+            <ImageButton android:id="@+id/button_ludintoj"
+                android:src="@mipmap/ic_group_black_18dp"
+                style="@style/BtnRezulto" />
 
-            <TextView android:id="@+id/rezultoj_vorto"
-                tools:text="@string/vorto2"
-                style="@style/Vorto" />
+            <ImageButton android:id="@+id/button_vortoj"
+                android:src="@mipmap/ic_message_black_18dp"
+                style="@style/BtnRezulto" />
 
         </LinearLayout>
 
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_gravity="center_horizontal">
+        <View
+            android:layout_width="2dip"
+            android:layout_height="fill_parent"
+            android:background="@drawable/ombre_gauche" >
+        </View>
 
-            <LinearLayout android:id="@+id/linearLayout3"
-                style="@style/MenuResultats" >
-
-                <ImageButton android:id="@+id/button_rezultoj"
-                    android:src="@mipmap/ic_person_black_18dp"
-                    style="@style/BtnRezulto" />
-
-                <ImageButton android:id="@+id/button_ludintoj"
-                    android:src="@mipmap/ic_group_black_18dp"
-                    style="@style/BtnRezulto" />
-
-                <ImageButton android:id="@+id/button_vortoj"
-                    android:src="@mipmap/ic_message_black_18dp"
-                    style="@style/BtnRezulto.Actif" />
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_toRightOf="@+id/linearLayout3"
-                android:layout_toEndOf="@+id/linearLayout3"
-                style="@style/BlocResultats" >
+        <LinearLayout
+            android:id="@+id/bloc_result"
+            android:orientation="vertical"
+            style="@style/BlocResultats" >
 
                 <TextView android:id="@+id/titolo_vortoj"
                     android:text="@string/vortoj"
@@ -125,10 +136,8 @@
 
                 </TableLayout>
 
-            </LinearLayout>
-
-        </RelativeLayout>
+        </LinearLayout>
 
     </LinearLayout>
 
-</RelativeLayout>
+</LinearLayout>
