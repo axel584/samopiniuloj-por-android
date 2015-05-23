@@ -7,6 +7,7 @@ import android.content.SharedPreferences;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.text.Editable;
+import android.text.InputType;
 import android.text.TextWatcher;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -60,6 +61,11 @@ public class AlighiFragment extends Fragment {
         eraroPasvorto = (TextView) rootView.findViewById(R.id.eraro_pasvorto);
         eraroRetadreso = (TextView) rootView.findViewById(R.id.eraro_retadreso);
         eraroLando = (TextView) rootView.findViewById(R.id.eraro_lando);
+
+        // retire le correcteur orthographique
+        inputEnirnomo.setInputType(InputType.TYPE_TEXT_FLAG_NO_SUGGESTIONS);
+        inputPasvorto.setInputType(InputType.TYPE_TEXT_FLAG_NO_SUGGESTIONS);
+        inputRetadreso.setInputType(InputType.TYPE_TEXT_FLAG_NO_SUGGESTIONS);
 
         landojSpinner = (Spinner) rootView.findViewById(R.id.landoj_spinner);
 
@@ -367,9 +373,9 @@ public class AlighiFragment extends Fragment {
 
 
             public void onClick(View view) {
-                String sEnirnomo = inputEnirnomo.getText().toString();
-                String sPasvorto = inputPasvorto.getText().toString();
-                String sRetadreso = inputRetadreso.getText().toString();
+                String sEnirnomo = inputEnirnomo.getText().toString().trim();
+                String sPasvorto = inputPasvorto.getText().toString().trim();
+                String sRetadreso = inputRetadreso.getText().toString().trim();
                 String sLando = ((Lando)landojSpinner.getSelectedItem()).getKodo();
                 //Log.i("AlighiActivity","pays : "+idLando);
 

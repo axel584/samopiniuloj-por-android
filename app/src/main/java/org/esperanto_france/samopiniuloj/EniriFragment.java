@@ -10,6 +10,7 @@ import android.net.NetworkInfo;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.text.Editable;
+import android.text.InputType;
 import android.text.TextWatcher;
 import android.util.Log;
 import android.view.Gravity;
@@ -60,6 +61,10 @@ public class EniriFragment  extends Fragment {
         eraroEnirnomo = (TextView) rootView.findViewById(R.id.eraro_enirnomo);
         eraroPasvorto = (TextView) rootView.findViewById(R.id.eraro_pasvorto);
 
+        // retire le correcteur orthographique
+        inputEnirnomo.setInputType(InputType.TYPE_TEXT_FLAG_NO_SUGGESTIONS);
+        inputPasvorto.setInputType(InputType.TYPE_TEXT_FLAG_NO_SUGGESTIONS);
+
         inputEnirnomo.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence charSequence, int i, int i2, int i3) {}
@@ -89,8 +94,8 @@ public class EniriFragment  extends Fragment {
 
 
             public void onClick(View view) {
-                String sEnirnomo = inputEnirnomo.getText().toString();
-                String sPasvorto = inputPasvorto.getText().toString();
+                String sEnirnomo = inputEnirnomo.getText().toString().trim();
+                String sPasvorto = inputPasvorto.getText().toString().trim();
                 if (
                         (!sEnirnomo.equals("")) && (!sPasvorto.equals(""))) {
                     new HttpAsyncTask().execute("http://samopiniuloj.esperanto-jeunes.org/ws/ws_eniri.php?nomo=" + sEnirnomo + "&pasvorto=" + sPasvorto);
