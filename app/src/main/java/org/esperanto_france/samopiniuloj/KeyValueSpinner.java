@@ -68,7 +68,10 @@ public class KeyValueSpinner implements SpinnerAdapter {
 
     @Override
     public int getViewTypeCount() {
-        return android.R.layout.simple_spinner_item;
+
+        //return android.R.layout.simple_spinner_item;
+        return 1;
+
     }
 
     @Override
