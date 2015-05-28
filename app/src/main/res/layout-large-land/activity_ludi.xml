@@ -1,5 +1,5 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:card_view="http://schemas.android.com/apk/res-auto" xmlns:tools="http://schemas.android.com/tools"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/sam_fond"
@@ -53,7 +53,6 @@
                 android:orientation="vertical">
 
                 <android.support.v7.widget.CardView
-                    xmlns:card_view="http://schemas.android.com/apk/res-auto"
                     android:id="@+id/card_hodiaua_vorto"
                     android:layout_width="match_parent"
                     android:layout_height="140dp"
@@ -125,139 +124,163 @@
                 android:layout_weight="3"
                 android:orientation="vertical">
 
-                <TextView android:id="@+id/titolo"
-                    style="@style/Titre"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="@string/txt_proponoj" />
+                <ScrollView
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:layout_weight="1"
+                    android:fillViewport="true" >
 
-                <TextView android:id="@+id/klarigo_1"
-                    style="@style/TexteNormal"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="@dimen/marge_1"
-                    android:text="@string/ludi_klarigo_1" />
+                    <LinearLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="fill_parent"
+                        android:orientation="vertical" >
 
-                <TextView android:id="@+id/klarigo_2"
-                    style="@style/TexteNormal.Important"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="@dimen/marge_2"
-                    android:text="@string/ludi_klarigo_2" />
+                        <TextView android:id="@+id/titolo"
+                            style="@style/Titre"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/txt_proponoj" />
 
-                <TableLayout android:layout_width="fill_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="@dimen/marge_2">
+                        <LinearLayout
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
 
-                    <TableRow android:layout_width="fill_parent">
+                            <TextView android:id="@+id/klarigo_1"
+                                style="@style/TexteNormal"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/marge_1"
+                                android:text="@string/ludi_klarigo_1"
+                                android:layout_weight="1" />
 
-                        <EditText android:id="@+id/propono_1"
-                            style="@style/Input.Texte.Propono"
-                            android:hint="@string/txt_propono_1" />
+                            <TextView android:id="@+id/klarigo_2"
+                                style="@style/TexteNormal.Important"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/marge_2"
+                                android:text="@string/ludi_klarigo_2"
+                                android:layout_weight="1"/>
 
-                        <ImageView android:id="@+id/done_1"
-                            style="@style/Sendita"
-                            android:visibility="invisible" />
+                        </LinearLayout>
 
-                        <ImageView android:id="@+id/malbone_1"
-                            style="@style/Malbona"
-                            android:visibility="gone" />
+                        <TableLayout android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/marge_2">
 
-                        <EditText android:id="@+id/propono_5"
-                            style="@style/Input.Texte.Propono"
-                            android:hint="@string/txt_propono_5" />
+                            <TableRow android:layout_width="fill_parent">
 
-                        <ImageView android:id="@+id/done_5"
-                            style="@style/Sendita"
-                            android:visibility="invisible" />
+                                <EditText android:id="@+id/propono_1"
+                                    style="@style/Input.Texte.Propono"
+                                    android:hint="@string/txt_propono_1" />
 
-                        <ImageView android:id="@+id/malbone_5"
-                            style="@style/Malbona"
-                            android:visibility="gone" />
-                    </TableRow>
+                                <ImageView android:id="@+id/done_1"
+                                    style="@style/Sendita"
+                                    android:visibility="invisible" />
 
-                    <TableRow>
+                                <ImageView android:id="@+id/malbone_1"
+                                    style="@style/Malbona"
+                                    android:visibility="gone" />
 
-                        <EditText android:id="@+id/propono_2"
-                            style="@style/Input.Texte.Propono"
-                            android:hint="@string/txt_propono_2" />
+                                <EditText android:id="@+id/propono_5"
+                                    style="@style/Input.Texte.Propono"
+                                    android:hint="@string/txt_propono_5" />
 
-                        <ImageView android:id="@+id/done_2"
-                            style="@style/Sendita"
-                            android:visibility="invisible" />
+                                <ImageView android:id="@+id/done_5"
+                                    style="@style/Sendita"
+                                    android:visibility="invisible" />
 
-                        <ImageView android:id="@+id/malbone_2"
-                            style="@style/Malbona"
-                            android:visibility="gone" />
+                                <ImageView android:id="@+id/malbone_5"
+                                    style="@style/Malbona"
+                                    android:visibility="gone" />
+                            </TableRow>
 
-                        <EditText android:id="@+id/propono_6"
-                            style="@style/Input.Texte.Propono"
-                            android:hint="@string/txt_propono_6" />
+                            <TableRow>
 
-                        <ImageView android:id="@+id/done_6"
-                            style="@style/Sendita"
-                            android:visibility="invisible" />
+                                <EditText android:id="@+id/propono_2"
+                                    style="@style/Input.Texte.Propono"
+                                    android:hint="@string/txt_propono_2" />
 
-                        <ImageView android:id="@+id/malbone_6"
-                            style="@style/Malbona"
-                            android:visibility="gone" />
-                    </TableRow>
+                                <ImageView android:id="@+id/done_2"
+                                    style="@style/Sendita"
+                                    android:visibility="invisible" />
 
-                    <TableRow>
+                                <ImageView android:id="@+id/malbone_2"
+                                    style="@style/Malbona"
+                                    android:visibility="gone" />
 
-                        <EditText android:id="@+id/propono_3"
-                            style="@style/Input.Texte.Propono"
-                            android:hint="@string/txt_propono_3" />
+                                <EditText android:id="@+id/propono_6"
+                                    style="@style/Input.Texte.Propono"
+                                    android:hint="@string/txt_propono_6" />
 
-                        <ImageView android:id="@+id/done_3"
-                            style="@style/Sendita"
-                            android:visibility="invisible" />
+                                <ImageView android:id="@+id/done_6"
+                                    style="@style/Sendita"
+                                    android:visibility="invisible" />
 
-                        <ImageView android:id="@+id/malbone_3"
-                            style="@style/Malbona"
-                            android:visibility="gone" />
+                                <ImageView android:id="@+id/malbone_6"
+                                    style="@style/Malbona"
+                                    android:visibility="gone" />
+                            </TableRow>
 
-                        <EditText android:id="@+id/propono_7"
-                            style="@style/Input.Texte.Propono"
-                            android:hint="@string/txt_propono_7" />
+                            <TableRow>
 
-                        <ImageView android:id="@+id/done_7"
-                            style="@style/Sendita"
-                            android:visibility="invisible" />
+                                <EditText android:id="@+id/propono_3"
+                                    style="@style/Input.Texte.Propono"
+                                    android:hint="@string/txt_propono_3" />
 
-                        <ImageView android:id="@+id/malbone_7"
-                            style="@style/Malbona"
-                            android:visibility="gone" />
-                    </TableRow>
+                                <ImageView android:id="@+id/done_3"
+                                    style="@style/Sendita"
+                                    android:visibility="invisible" />
 
-                    <TableRow>
+                                <ImageView android:id="@+id/malbone_3"
+                                    style="@style/Malbona"
+                                    android:visibility="gone" />
 
-                        <EditText android:id="@+id/propono_4"
-                            style="@style/Input.Texte.Propono"
-                            android:hint="@string/txt_propono_4" />
+                                <EditText android:id="@+id/propono_7"
+                                    style="@style/Input.Texte.Propono"
+                                    android:hint="@string/txt_propono_7" />
 
-                        <ImageView android:id="@+id/done_4"
-                            style="@style/Sendita"
-                            android:visibility="invisible" />
+                                <ImageView android:id="@+id/done_7"
+                                    style="@style/Sendita"
+                                    android:visibility="invisible" />
 
-                        <ImageView android:id="@+id/malbone_4"
-                            style="@style/Malbona"
-                            android:visibility="gone" />
+                                <ImageView android:id="@+id/malbone_7"
+                                    style="@style/Malbona"
+                                    android:visibility="gone" />
+                            </TableRow>
 
-                        <EditText android:id="@+id/propono_8"
-                            style="@style/Input.Texte.Propono"
-                            android:hint="@string/txt_propono_8" />
+                            <TableRow>
 
-                        <ImageView android:id="@+id/done_8"
-                            style="@style/Sendita"
-                            android:visibility="invisible" />
+                                <EditText android:id="@+id/propono_4"
+                                    style="@style/Input.Texte.Propono"
+                                    android:hint="@string/txt_propono_4" />
 
-                        <ImageView android:id="@+id/malbone_8"
-                            style="@style/Malbona"
-                            android:visibility="gone" />
-                    </TableRow>
+                                <ImageView android:id="@+id/done_4"
+                                    style="@style/Sendita"
+                                    android:visibility="invisible" />
 
-                </TableLayout>
+                                <ImageView android:id="@+id/malbone_4"
+                                    style="@style/Malbona"
+                                    android:visibility="gone" />
+
+                                <EditText android:id="@+id/propono_8"
+                                    style="@style/Input.Texte.Propono"
+                                    android:hint="@string/txt_propono_8" />
+
+                                <ImageView android:id="@+id/done_8"
+                                    style="@style/Sendita"
+                                    android:visibility="invisible" />
+
+                                <ImageView android:id="@+id/malbone_8"
+                                    style="@style/Malbona"
+                                    android:visibility="gone" />
+                            </TableRow>
+
+                        </TableLayout>
+
+                    </LinearLayout>
+
+                </ScrollView>
 
                 <Button android:id="@+id/btn_sendu"
                     style="@style/BoutonPrimaire"
