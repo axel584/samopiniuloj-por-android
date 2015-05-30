@@ -348,7 +348,7 @@ public class LudiFragment extends Fragment {
     // méthode appelée après avoir téléchargé les images ou si on trouve une image du cours
     public void populateNovajVortoj(Vorto vorto) {
         Log.i("LudiFragment","vorto Populate Novaj Vortoj : date : "+vorto.getTago()+"/"+vorto.getMonato()+"/"+vorto.getJaro());
-        tagaVorto.setText(Html.fromHtml(vorto.getVorto()));
+        tagaVorto.setText(Html.fromHtml(TextUtilsEo.x2utf(vorto.getVorto())));
         Bitmap bitmap = decodeFile(new File(getActivity().getCacheDir()+vorto.getDosiero()));
         tagaBildo.setImageBitmap(bitmap);
         this.vorto = vorto;
