@@ -64,7 +64,8 @@ public class AlighiFragment extends Fragment {
 
         // retire le correcteur orthographique
         inputEnirnomo.setInputType(InputType.TYPE_TEXT_FLAG_NO_SUGGESTIONS);
-        inputPasvorto.setInputType(InputType.TYPE_TEXT_FLAG_NO_SUGGESTIONS);
+        // pas pour le mot de passe, sinon ça l'affiche en clair
+        //inputPasvorto.setInputType(InputType.TYPE_TEXT_FLAG_NO_SUGGESTIONS);
         inputRetadreso.setInputType(InputType.TYPE_TEXT_FLAG_NO_SUGGESTIONS);
 
         landojSpinner = (Spinner) rootView.findViewById(R.id.landoj_spinner);

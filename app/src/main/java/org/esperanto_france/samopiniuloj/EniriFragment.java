@@ -3,10 +3,7 @@ package org.esperanto_france.samopiniuloj;
 import android.app.Fragment;
 import android.app.FragmentManager;
 import android.app.ProgressDialog;
-import android.content.Intent;
 import android.content.SharedPreferences;
-import android.net.ConnectivityManager;
-import android.net.NetworkInfo;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.text.Editable;
@@ -63,7 +60,8 @@ public class EniriFragment  extends Fragment {
 
         // retire le correcteur orthographique
         inputEnirnomo.setInputType(InputType.TYPE_TEXT_FLAG_NO_SUGGESTIONS);
-        inputPasvorto.setInputType(InputType.TYPE_TEXT_FLAG_NO_SUGGESTIONS);
+        // pas pour le mot de passe, sinon ça l'affiche en clair
+        //inputPasvorto.setInputType(InputType.TYPE_TEXT_FLAG_NO_SUGGESTIONS);
 
         inputEnirnomo.addTextChangedListener(new TextWatcher() {
             @Override
