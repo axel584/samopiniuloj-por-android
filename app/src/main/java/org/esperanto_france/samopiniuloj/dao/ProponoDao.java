@@ -5,6 +5,7 @@ import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
+import android.util.Log;
 
 import org.esperanto_france.samopiniuloj.modelo.Propono;
 
@@ -64,6 +65,18 @@ public class ProponoDao {
         }
     }
 
+    /**
+     * Kontrolas chu ni jam elshutis (kaj registris en la datumbazon) rezultojn por tiu tago
+     * @param vorto
+     * @param ludanto
+     * @return boolean
+     */
+    public boolean hasRezultojn(int vorto,int ludanto) {
+        Log.i("DAO","vorto : "+vorto);
+        Log.i("DAO","ludanto : "+ludanto);
+        Cursor c = bdd.query(TABLE_PROPONOJ, new String[]{COL_ID, COL_VORTO, COL_LUDANTO, COL_PROPONO, COL_POENTO, COL_VICO}, COL_VORTO+ " = ? and "+COL_LUDANTO + "!= ?", new String[] { String.valueOf(vorto),String.valueOf(ludanto)}, null, null, null);
+        return c.getCount() != 0;
+    }
 
     public Propono getPropono(int vorto,int ludanto,int vico) {
         //Récupère dans un Cursor les valeur correspondant à un livre contenu dans la BDD (ici on sélectionne le livre grâce à son titre)

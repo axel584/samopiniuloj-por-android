@@ -393,7 +393,9 @@ public class AlighiFragment extends Fragment {
                 }
 
                 if (!sEnirnomo.equals("") && !sPasvorto.equals("") && !sRetadreso.equals("") && !sLando.equals("")) {
-                    new HttpAsyncTask().execute("http://samopiniuloj.esperanto-jeunes.org/ws/ws_alighilo.php?nomo=" + sEnirnomo + "&pasvorto=" + sPasvorto + "&retadreso=" + sRetadreso + "&lando=" + sLando);
+                    String requete = "http://samopiniuloj.esperanto-jeunes.org/ws/ws_alighilo.php?nomo=" + sEnirnomo + "&pasvorto=" + sPasvorto + "&retadreso=" + sRetadreso + "&lando=" + sLando;
+                    Log.i("AlighiFragment","requete : "+requete);
+                    new HttpAsyncTask().execute(requete);
                 }
             }
 

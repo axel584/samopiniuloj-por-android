@@ -57,7 +57,7 @@
     <string-array name="nav_drawer_items">
         <item>Kiel ludi?</item>
         <item>Ludi</item>
-        <!--item>Rezultoj</item-->
+        <item>Rezultoj</item>
         <!--item>Kontakti nin</item-->
         <item>Foriri</item>
     </string-array>

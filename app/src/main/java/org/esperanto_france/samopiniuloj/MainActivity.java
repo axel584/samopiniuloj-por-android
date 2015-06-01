@@ -165,7 +165,9 @@ public class MainActivity extends ActionBarActivity {
                     break;
             case 1 : nouveauFragment = new LudiFragment();
                     break;
-            case 2 : SharedPreferences pref = getApplicationContext().getSharedPreferences("SamAgordo", 0); // 0 - for private mode
+            case 2 : nouveauFragment = new RezultojFragment();
+                break;
+            case 3 : SharedPreferences pref = getApplicationContext().getSharedPreferences("SamAgordo", 0); // 0 - for private mode
                 SharedPreferences.Editor editor = pref.edit();
                 editor.putInt("uzanto_id", 0);
                 editor.putString("uzanto_nomo", "");
