@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/bloc_result"
+    style="@style/BlocResultats" >
+
+        <TextView android:id="@+id/titolo_vortoj"
+            android:text="@string/vortoj"
+            style="@style/Titre" />
+
+        <TableLayout android:id="@+id/tab_rezultoj"
+            style="@style/TableauResultats" >
+
+            <TableRow android:id="@+id/ligne0"
+                style="@style/LigneTableau" >
+
+                <TextView android:id="@+id/col_vortoj"
+                    android:text="@string/col_vortoj"
+                    style="@style/EnteteTableau" />
+
+                <TextView android:id="@+id/col_poentoj"
+                    android:text="@string/col_poentoj"
+                    style="@style/EltTableau" />
+
+            </TableRow>
+
+            <TableRow android:id="@+id/ligne1"
+                style="@style/LigneTableau" >
+
+                <TextView android:id="@+id/vorto1"
+                    tools:text="vorto 1"
+                    style="@style/EltTableau" />
+
+                <TextView android:id="@+id/poentoj1"
+                    tools:text="3"
+                    style="@style/EltTableau.Nombre" />
+            </TableRow>
+
+            <TableRow android:id="@+id/ligne2"
+                style="@style/LigneTableau" >
+
+                <TextView android:id="@+id/vorto2"
+                    tools:text="vorto 2"
+                    style="@style/EltTableau" />
+
+                <TextView android:id="@+id/poentoj2"
+                    tools:text="24"
+                    style="@style/EltTableau.Nombre" />
+            </TableRow>
+
+            <TableRow android:id="@+id/ligne3"
+                style="@style/LigneTableau" >
+
+                <TextView android:id="@+id/vorto3"
+                    tools:text="vorto 3"
+                    style="@style/EltTableau" />
+
+                <TextView android:id="@+id/poentoj3"
+                    tools:text="12"
+                    style="@style/EltTableau.Nombre" />
+            </TableRow>
+
+            <TableRow android:id="@+id/ligne4"
+                style="@style/LigneTableau" >
+
+                <TextView android:id="@+id/vorto4"
+                    tools:text="vorto 4"
+                    style="@style/EltTableau.Inactif" />
+
+                <TextView android:id="@+id/poentoj4"
+                    tools:text="1"
+                    style="@style/EltTableau.Nombre.Inactif" />
+            </TableRow>
+
+        </TableLayout>
+
+</LinearLayout>

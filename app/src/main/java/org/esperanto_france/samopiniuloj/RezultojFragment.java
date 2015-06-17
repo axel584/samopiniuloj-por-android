@@ -1,19 +1,28 @@
 package org.esperanto_france.samopiniuloj;
 
+import android.annotation.TargetApi;
 import android.app.Fragment;
+import android.app.FragmentManager;
+import android.app.FragmentTransaction;
 import android.app.ProgressDialog;
+import android.content.Intent;
 import android.content.SharedPreferences;
+import android.content.res.Resources;
 import android.os.AsyncTask;
+import android.os.Build;
 import android.os.Bundle;
+import android.support.v4.app.FragmentTabHost;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageButton;
+import android.widget.TabHost;
 import android.widget.Toast;
 
 import com.google.gson.Gson;
 
+import org.esperanto_france.samopiniuloj.dao.LudantoDao;
 import org.esperanto_france.samopiniuloj.dao.ProponoDao;
 import org.esperanto_france.samopiniuloj.dao.VortoDao;
 import org.esperanto_france.samopiniuloj.modelo.Ludanto;
@@ -39,6 +48,9 @@ import java.util.GregorianCalendar;
 
 public class RezultojFragment extends Fragment {
 
+
+    private FragmentTabHost tabHost;
+
     private ImageButton bLudintoj = null;
     private ImageButton bVortoj = null;
 
@@ -49,7 +61,11 @@ public class RezultojFragment extends Fragment {
     Vorto vorto;
     VortoDao vortoDao;
     ProponoDao proponoDao;
+    LudantoDao ludantoDao;
 
+
+
+    @TargetApi(Build.VERSION_CODES.JELLY_BEAN_MR1)
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                          Bundle savedInstanceState) {
@@ -59,6 +75,12 @@ public class RezultojFragment extends Fragment {
         bLudintoj = (ImageButton) getActivity().findViewById(R.id.button_ludintoj);
         bVortoj = (ImageButton) getActivity().findViewById(R.id.button_vortoj);
 
+        // affichage des onglets :
+        Fragment tabMiaRezultoFragment = new TabMiaRezultoFragment();
+        FragmentTransaction transaction = getChildFragmentManager().beginTransaction();
+        transaction.add(R.id.rezultoj_frame, tabMiaRezultoFragment).commit();
+
+        // calcul de la date pour récupérer les résultats
         Calendar c=new GregorianCalendar();
         c.add(Calendar.DATE, -1);
         tago = c.get(Calendar.DAY_OF_MONTH);
@@ -66,17 +88,23 @@ public class RezultojFragment extends Fragment {
         jaro = c.get(Calendar.YEAR);
         vortoDao = new VortoDao(getActivity().getApplicationContext());
         vortoDao.open();
+        Log.i("RezultojFragment","tago : "+tago+":"+monato+":"+jaro);
         vorto = vortoDao.getVortoPerTago(tago,monato,jaro);
         proponoDao = new ProponoDao(getActivity().getApplicationContext());
         proponoDao.open();
+        ludantoDao = new LudantoDao(getActivity().getApplicationContext());
+        ludantoDao.open();
         // Récupère les infos de l'utilisateur
         SharedPreferences pref = getActivity().getApplicationContext().getSharedPreferences("SamAgordo", 0); // 0 - for private mode
         Integer uzantoId = pref.getInt("uzanto_id",0);
-        boolean hasProponojn = proponoDao.hasRezultojn(vorto.getId(),uzantoId);
-        if (!hasProponojn) {
+        //Log.i("RezultojFragment","vorto"+vorto);
+        //Log.i("RezultojFragment","vorto id "+vorto.getId());
+        //Log.i("RezultojFragment","uzanto id "+uzantoId);
+        //boolean hasProponojn = proponoDao.hasRezultojn(vorto.getId(),uzantoId);
+        //if (!hasProponojn) {
             String requete = "http://samopiniuloj.esperanto-jeunes.org/ws/ws_getRezulto.php?tago=" + tago + "&monato=" + monato + "&jaro=" + jaro;
             new GetProponojAsyncTask(RezultojFragment.this).execute(requete);
-        }
+        //}
 
 
 
@@ -123,6 +151,7 @@ public class RezultojFragment extends Fragment {
         ProgressDialog progressDialog;
         private RezultojFragment rezultojFragment;
 
+
         private GetProponojAsyncTask(RezultojFragment rezultojFragment) {
             this.rezultojFragment = rezultojFragment;
         }
@@ -156,9 +185,11 @@ public class RezultojFragment extends Fragment {
                 Log.i("RezultojFragment","Kromnomo : "+ludanto.getKromnomo());
                 // Une fois télécharger, on s'occupe de la base de données
                // long resInsertVorto = vortoDao.insertVorto(vorto);
+                ludantoDao.insertLudanto(ludanto);
             }
             for (Propono propono : rezultojGson.getProponoj()) {
                 Log.i("RezultojFragment","Propono : "+propono.getPropono());
+                proponoDao.insertPropono(propono);
                 // Une fois télécharger, on s'occupe de la base de données
                 // long resInsertVorto = vortoDao.insertVorto(vorto);
             }

@@ -166,8 +166,11 @@ public class LudiFragment extends Fragment {
         vortoDao = new VortoDao(getActivity().getApplicationContext());
         vortoDao.open();
         vorto = vortoDao.getVortoPerTago(tago,monato,jaro);
+
         if (vorto==null) {
-            new NovajVortojAsyncTask(this).execute("http://samopiniuloj.esperanto-jeunes.org/ws/ws_getNovajVortoj.php?tago=" + tago + "&monato=" + monato+"&jaro="+jaro);
+            Log.i("LudiFragment ","vorto null");
+            // on passe "versio = 2" pour avoir la nouvelle version du webservice qui renvoit par mois
+            new NovajVortojAsyncTask(this).execute("http://samopiniuloj.esperanto-jeunes.org/ws/ws_getNovajVortoj.php?versio=2&monato=" + monato+"&jaro="+jaro);
         } else {
             this.populateNovajVortoj(vorto);
         }
@@ -621,6 +624,7 @@ public class LudiFragment extends Fragment {
                         connection.disconnect();
                 }
                 // Une fois télécharger, on s'occupe de la base de données
+                Log.i("LudiFragment ","on enregistre "+vorto.getTago()+":"+vorto.getMonato()+":"+vorto.getJaro());
                 long resInsertVorto = vortoDao.insertVorto(vorto);
             }
             vortoDao.close();

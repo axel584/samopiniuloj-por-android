@@ -5,6 +5,7 @@ import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
+import android.util.Log;
 
 import org.esperanto_france.samopiniuloj.modelo.Vorto;
 
@@ -60,6 +61,7 @@ public class VortoDao {
     public Vorto getVortoPerTago(int tago,int monato,int jaro) {
         //Récupère dans un Cursor les valeur correspondant à un livre contenu dans la BDD (ici on sélectionne le livre grâce à son titre)
         Cursor c = bdd.query(TABLE_VORTOJ, new String[]{COL_ID, COL_TAGO, COL_MONATO, COL_JARO, COL_VORTO, COL_DOSIERO}, COL_TAGO + " = " + tago + " and "+COL_MONATO + "= "+monato+" and "+COL_JARO+" = "+jaro, null, null, null, null);
+        Log.i("VortoDao","curseur : "+c);
         return cursorToVorto(c);
     }
 
@@ -72,6 +74,7 @@ public class VortoDao {
     //Cette méthode permet de convertir un cursor en un livre
     private Vorto cursorToVorto(Cursor c) {
         //si aucun élément n'a été retourné dans la requête, on renvoie null
+        Log.i("VortoDao","getCount : "+c.getCount());
         if (c.getCount() == 0)
             return null;
 

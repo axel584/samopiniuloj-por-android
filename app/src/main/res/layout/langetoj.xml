@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/langetoj"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    style="@style/MenuResultats" >
+
+    <ImageButton android:id="@+id/button_rezultoj"
+        android:src="@mipmap/ic_person_black_18dp"
+        style="@style/BtnRezulto.Actif" />
+
+    <ImageButton android:id="@+id/button_ludintoj"
+        android:src="@mipmap/ic_group_black_18dp"
+        style="@style/BtnRezulto" />
+
+    <ImageButton android:id="@+id/button_vortoj"
+        android:src="@mipmap/ic_message_black_18dp"
+        style="@style/BtnRezulto" />
+
+</LinearLayout>
