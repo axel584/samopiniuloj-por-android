@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="txt_kalendaro_ludo">Tuŝetu bildeton por ludi.</string>
+    <string name="txt_kalendaro_rezultoj">Tuŝetu bildeton por vidi rezultojn.</string>
+    <string name="titolo_kalendaro_ludo">"Ludontaj vortoj : "</string>
+    <string name="titolo_kalendaro_rezultoj">"Luditaj vortoj : "</string>
+</resources>

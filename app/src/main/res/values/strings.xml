@@ -9,6 +9,7 @@
     <string name="title_activity_vortoj">Rezultoj</string>
     <string name="title_activity_kontakto">Kontakti nin</string>
     <string name="title_activity_kiel_ludi">Kiel ludi?</string>
+    <string name="title_activity_kalendaro_ludo">KalendaroLudoActivity</string>
 
     <!-- Strings related to login -->
     <string name="prompt_enirnomo">enirnomo</string>

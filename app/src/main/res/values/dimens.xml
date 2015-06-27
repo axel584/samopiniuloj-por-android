@@ -12,4 +12,7 @@
     <dimen name="marge_4">32dp</dimen>
     <dimen name="marge_5">64dp</dimen>
     <dimen name="coche">18dp</dimen>
+    <dimen name="bildeto_grandeco">90dp</dimen>
+    <dimen name="bildeto_margxeno">8dp</dimen>
+    <dimen name="vorto_margxeno">2dp</dimen>
 </resources>

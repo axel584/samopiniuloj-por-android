@@ -1,0 +1,791 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent" android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:orientation="vertical"
+    tools:context="org.esperanto_france.samopiniuloj.KalendaroLudoActivity">
+
+    <TextView android:id="@+id/bonvenon_ludando"
+        style="@style/TexteNormal"
+        android:layout_width="fill_parent"
+        android:gravity="end"
+        tools:text="Bonvenon, emmanuelle"/>
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_horizontal"
+        android:layout_marginTop="@dimen/marge_2"
+        android:layout_marginBottom="@dimen/marge_1">
+
+        <Button android:id="@+id/btn_antauxa_monato"
+            style="@style/BoutonSecondaire"
+            android:layout_gravity="top"
+            android:text="antaŭe"
+            android:layout_width="wrap_content"
+            android:layout_weight="1" />
+
+        <TextView android:id="@+id/monato_1"
+            style="@style/TitreDate"
+            android:text="Junio 2015"
+            android:layout_height="fill_parent"
+            android:layout_width="wrap_content"
+            android:gravity="center_vertical|center_horizontal"
+            android:layout_weight="3" />
+
+        <Button android:id="@+id/btn_posta_monato"
+            style="@style/BoutonSecondaire"
+            android:layout_gravity="right|end"
+            android:text="poste"
+            android:layout_width="wrap_content"
+            android:layout_weight="1" />
+
+    </LinearLayout>
+
+    <TextView android:id="@+id/txt_kalendaro_1"
+        style="@style/TexteNormal"
+        android:layout_width="fill_parent"
+        android:text="@string/txt_kalendaro_ludo"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal" />
+
+    <ScrollView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content" >
+
+    <GridLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:columnWidth="90dp"
+        android:columnCount="3"
+        android:rowCount="2"
+        android:stretchMode="columnWidth"
+        android:verticalSpacing="@dimen/bildeto_margxeno"
+        android:horizontalSpacing="@dimen/bildeto_margxeno"
+        android:gravity="center_horizontal"
+        android:layout_gravity="center_horizontal">
+
+        <LinearLayout android:id="@+id/junio1"
+            android:layout_width="90dp"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginEnd="@dimen/bildeto_margxeno"
+            android:layout_marginBottom="@dimen/bildeto_margxeno" >
+
+            <FrameLayout
+                android:layout_width="90dp"
+                android:layout_height="90dp">
+
+                <ImageView android:id="@+id/junio1_bildo"
+                    android:layout_width="90dp"
+                    android:layout_height="90dp"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/sxnuro"/>
+
+                <ImageView android:id="@+id/junio1_grizo"
+                    android:layout_width="90dp"
+                    android:layout_height="90dp"
+                    android:background="#80FFFFFF"
+                    android:backgroundTintMode="multiply"/>
+            </FrameLayout>
+
+            <TextView android:id="@+id/junio1_vorto"
+                android:layout_width="90dp"
+                android:layout_height="wrap_content"
+                style="@style/BildetoTitolo.Griza"
+                android:text="sxnuro" />
+
+        </LinearLayout>
+
+        <LinearLayout android:id="@+id/junio2"
+            android:layout_width="90dp"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginEnd="@dimen/bildeto_margxeno"
+            android:layout_marginBottom="@dimen/bildeto_margxeno" >
+
+            <FrameLayout
+                android:layout_width="90dp"
+                android:layout_height="90dp">
+
+                <ImageView android:id="@+id/junio2_bildo"
+                    android:layout_width="90dp"
+                    android:layout_height="90dp"
+                    android:scaleType="centerCrop"
+                    android:layout_marginEnd="@dimen/bildeto_margxeno"
+                    android:src="@drawable/akcidento"  />
+
+                <ImageView android:id="@+id/junio2_grizo"
+                    android:layout_width="90dp"
+                    android:layout_height="90dp"
+                    android:background="#80FFFFFF"
+                    android:backgroundTintMode="multiply"/>
+            </FrameLayout>
+
+            <TextView android:id="@+id/junio2_vorto"
+                android:layout_width="90dp"
+                android:layout_height="wrap_content"
+                style="@style/BildetoTitolo.Griza"
+                android:text="akcidento" />
+
+        </LinearLayout>
+
+        <LinearLayout android:id="@+id/junio3"
+            android:layout_width="90dp"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginEnd="@dimen/bildeto_margxeno"
+            android:layout_marginBottom="@dimen/bildeto_margxeno" >
+
+            <FrameLayout
+                android:layout_width="90dp"
+                android:layout_height="90dp">
+
+                <ImageView android:id="@+id/junio3_bildo"
+                    android:layout_width="90dp"
+                    android:layout_height="90dp"
+                    android:scaleType="centerCrop"
+                    android:layout_marginEnd="@dimen/bildeto_margxeno"
+                    android:src="@drawable/ornamajxo"/>
+
+                <ImageView android:id="@+id/junio3_grizo"
+                    android:layout_width="90dp"
+                    android:layout_height="90dp"
+                    android:background="#80FFFFFF"
+                    android:backgroundTintMode="multiply"/>
+            </FrameLayout>
+
+            <TextView android:id="@+id/junio3_vorto"
+                android:layout_width="90dp"
+                android:layout_height="wrap_content"
+                style="@style/BildetoTitolo.Griza"
+                android:text="ornamajxo" />
+
+        </LinearLayout>
+
+        <LinearLayout android:id="@+id/junio4"
+            android:layout_width="90dp"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginEnd="@dimen/bildeto_margxeno"
+            android:layout_marginBottom="@dimen/bildeto_margxeno" >
+
+            <FrameLayout
+                android:layout_width="90dp"
+                android:layout_height="90dp">
+
+                <ImageView android:id="@+id/junio4_bildo"
+                    android:layout_width="90dp"
+                    android:layout_height="90dp"
+                    android:scaleType="centerCrop"
+                    android:layout_marginEnd="@dimen/bildeto_margxeno"
+                    android:src="@drawable/paco"/>
+
+                <ImageView android:id="@+id/junio4_grizo"
+                    android:layout_width="90dp"
+                    android:layout_height="90dp"
+                    android:background="#80FFFFFF"
+                    android:backgroundTintMode="multiply"/>
+
+            </FrameLayout>
+
+            <TextView android:id="@+id/junio4_vorto"
+                android:layout_width="90dp"
+                android:layout_height="wrap_content"
+                style="@style/BildetoTitolo.Griza"
+                android:text="paco" />
+
+        </LinearLayout>
+
+        <LinearLayout android:id="@+id/junio5"
+            android:layout_width="90dp"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginEnd="@dimen/bildeto_margxeno"
+            android:layout_marginBottom="@dimen/bildeto_margxeno" >
+
+            <FrameLayout
+                android:layout_width="90dp"
+                android:layout_height="90dp">
+
+                <ImageView android:id="@+id/junio5_bildo"
+                    android:layout_width="90dp"
+                    android:layout_height="90dp"
+                    android:scaleType="centerCrop"
+                    android:layout_marginEnd="@dimen/bildeto_margxeno"
+                    android:src="@drawable/flago"/>
+
+                <ImageView android:id="@+id/junio5_grizo"
+                    android:layout_width="90dp"
+                    android:layout_height="90dp"
+                    android:background="#80FFFFFF"
+                    android:backgroundTintMode="multiply"/>
+
+            </FrameLayout>
+
+            <TextView android:id="@+id/junio5_vorto"
+                android:layout_width="90dp"
+                android:layout_height="wrap_content"
+                style="@style/BildetoTitolo.Griza"
+                android:text="flago" />
+
+        </LinearLayout>
+
+        <LinearLayout android:id="@+id/junio6"
+            android:layout_width="90dp"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginEnd="@dimen/bildeto_margxeno"
+            android:layout_marginBottom="@dimen/bildeto_margxeno" >
+
+            <ImageView android:id="@+id/junio6_bildo"
+                android:layout_width="90dp"
+                android:layout_height="90dp"
+                android:scaleType="centerCrop"
+                android:layout_marginEnd="@dimen/bildeto_margxeno"
+                android:src="@drawable/pneuxo"/>
+
+            <TextView android:id="@+id/junio6_vorto"
+                android:layout_width="90dp"
+                android:layout_height="wrap_content"
+                style="@style/BildetoTitolo"
+                android:text="pneuxo" />
+
+        </LinearLayout>
+
+        <LinearLayout android:id="@+id/junio7"
+            android:layout_width="90dp"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginEnd="@dimen/bildeto_margxeno"
+            android:layout_marginBottom="@dimen/bildeto_margxeno" >
+
+            <ImageView android:id="@+id/junio7_bildo"
+                android:layout_width="90dp"
+                android:layout_height="90dp"
+                android:scaleType="centerCrop"
+                android:layout_marginEnd="@dimen/bildeto_margxeno"
+                android:src="@drawable/vosto"/>
+
+            <TextView android:id="@+id/junio7_vorto"
+                android:layout_width="90dp"
+                android:layout_height="wrap_content"
+                style="@style/BildetoTitolo"
+                android:text="vosto" />
+
+        </LinearLayout>
+
+        <LinearLayout android:id="@+id/junio8"
+            android:layout_width="90dp"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginEnd="@dimen/bildeto_margxeno"
+            android:layout_marginBottom="@dimen/bildeto_margxeno" >
+
+            <ImageView android:id="@+id/junio8_bildo"
+                android:layout_width="90dp"
+                android:layout_height="90dp"
+                android:scaleType="centerCrop"
+                android:layout_marginEnd="@dimen/bildeto_margxeno"
+                android:src="@drawable/sukero"/>
+
+            <TextView android:id="@+id/junio8_vorto"
+                android:layout_width="90dp"
+                android:layout_height="wrap_content"
+                style="@style/BildetoTitolo"
+                android:text="sukero" />
+
+        </LinearLayout>
+
+        <LinearLayout android:id="@+id/junio9"
+            android:layout_width="90dp"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginEnd="@dimen/bildeto_margxeno"
+            android:layout_marginBottom="@dimen/bildeto_margxeno" >
+
+            <ImageView android:id="@+id/junio9_bildo"
+                android:layout_width="90dp"
+                android:layout_height="90dp"
+                android:scaleType="centerCrop"
+                android:layout_marginEnd="@dimen/bildeto_margxeno"
+                android:src="@drawable/literoj"/>
+
+            <TextView android:id="@+id/junio9_vorto"
+                android:layout_width="90dp"
+                android:layout_height="wrap_content"
+                style="@style/BildetoTitolo"
+                android:text="literoj" />
+
+        </LinearLayout>
+
+        <LinearLayout android:id="@+id/junio10"
+            android:layout_width="90dp"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginEnd="@dimen/bildeto_margxeno"
+            android:layout_marginBottom="@dimen/bildeto_margxeno" >
+
+            <ImageView android:id="@+id/junio10_bildo"
+                android:layout_width="90dp"
+                android:layout_height="90dp"
+                android:scaleType="centerCrop"
+                android:layout_marginEnd="@dimen/bildeto_margxeno"
+                android:src="@drawable/sxuoj"/>
+
+            <TextView android:id="@+id/junio10_vorto"
+                android:layout_width="90dp"
+                android:layout_height="wrap_content"
+                style="@style/BildetoTitolo"
+                android:text="sxuoj" />
+
+        </LinearLayout>
+
+        <LinearLayout android:id="@+id/junio11"
+            android:layout_width="90dp"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginEnd="@dimen/bildeto_margxeno"
+            android:layout_marginBottom="@dimen/bildeto_margxeno" >
+
+            <ImageView android:id="@+id/junio11_bildo"
+                android:layout_width="90dp"
+                android:layout_height="90dp"
+                android:scaleType="centerCrop"
+                android:layout_marginEnd="@dimen/bildeto_margxeno"
+                android:src="@drawable/auxdi"/>
+
+            <TextView android:id="@+id/junio11_vorto"
+                android:layout_width="90dp"
+                android:layout_height="wrap_content"
+                style="@style/BildetoTitolo"
+                android:text="auxdi" />
+
+        </LinearLayout>
+
+        <LinearLayout android:id="@+id/junio12"
+            android:layout_width="90dp"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginEnd="@dimen/bildeto_margxeno"
+            android:layout_marginBottom="@dimen/bildeto_margxeno" >
+
+            <ImageView android:id="@+id/junio12_bildo"
+                android:layout_width="90dp"
+                android:layout_height="90dp"
+                android:scaleType="centerCrop"
+                android:layout_marginEnd="@dimen/bildeto_margxeno"
+                android:src="@drawable/revi"/>
+
+            <TextView android:id="@+id/junio12_vorto"
+                android:layout_width="90dp"
+                android:layout_height="wrap_content"
+                style="@style/BildetoTitolo"
+                android:text="revi" />
+
+        </LinearLayout>
+
+        <LinearLayout android:id="@+id/junio13"
+            android:layout_width="90dp"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginEnd="@dimen/bildeto_margxeno"
+            android:layout_marginBottom="@dimen/bildeto_margxeno" >
+
+            <ImageView android:id="@+id/junio13_bildo"
+                android:layout_width="90dp"
+                android:layout_height="90dp"
+                android:scaleType="centerCrop"
+                android:layout_marginEnd="@dimen/bildeto_margxeno"
+                android:src="@drawable/observi"/>
+
+            <TextView android:id="@+id/junio13_vorto"
+                android:layout_width="90dp"
+                android:layout_height="wrap_content"
+                style="@style/BildetoTitolo"
+                android:text="observi" />
+
+        </LinearLayout>
+
+        <LinearLayout android:id="@+id/junio14"
+            android:layout_width="90dp"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginEnd="@dimen/bildeto_margxeno"
+            android:layout_marginBottom="@dimen/bildeto_margxeno" >
+
+            <ImageView android:id="@+id/junio_bildo14"
+                android:layout_width="90dp"
+                android:layout_height="90dp"
+                android:scaleType="centerCrop"
+                android:layout_marginEnd="@dimen/bildeto_margxeno"
+                android:src="@drawable/matematiko"/>
+
+            <TextView android:id="@+id/junio_vorto14"
+                android:layout_width="90dp"
+                android:layout_height="wrap_content"
+                style="@style/BildetoTitolo"
+                android:text="matematiko" />
+
+        </LinearLayout>
+
+        <LinearLayout android:id="@+id/junio15"
+            android:layout_width="90dp"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginEnd="@dimen/bildeto_margxeno"
+            android:layout_marginBottom="@dimen/bildeto_margxeno" >
+
+            <ImageView android:id="@+id/junio15_bildo"
+                android:layout_width="90dp"
+                android:layout_height="90dp"
+                android:scaleType="centerCrop"
+                android:layout_marginEnd="@dimen/bildeto_margxeno"
+                android:src="@drawable/cxemizo"/>
+
+            <TextView android:id="@+id/junio15_vorto"
+                android:layout_width="90dp"
+                android:layout_height="wrap_content"
+                style="@style/BildetoTitolo"
+                android:text="cxemizo" />
+
+        </LinearLayout>
+
+        <LinearLayout android:id="@+id/junio16"
+            android:layout_width="90dp"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginEnd="@dimen/bildeto_margxeno"
+            android:layout_marginBottom="@dimen/bildeto_margxeno" >
+
+            <ImageView android:id="@+id/junio16_bildo"
+                android:layout_width="90dp"
+                android:layout_height="90dp"
+                android:scaleType="centerCrop"
+                android:layout_marginEnd="@dimen/bildeto_margxeno"
+                android:src="@drawable/dolcxa"/>
+
+            <TextView android:id="@+id/junio16_vorto"
+                android:layout_width="90dp"
+                android:layout_height="wrap_content"
+                style="@style/BildetoTitolo"
+                android:text="dolcxa" />
+
+        </LinearLayout>
+
+        <LinearLayout android:id="@+id/junio17"
+            android:layout_width="90dp"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginEnd="@dimen/bildeto_margxeno"
+            android:layout_marginBottom="@dimen/bildeto_margxeno" >
+
+            <ImageView android:id="@+id/junio17_bildo"
+                android:layout_width="90dp"
+                android:layout_height="90dp"
+                android:scaleType="centerCrop"
+                android:layout_marginEnd="@dimen/bildeto_margxeno"
+                android:src="@drawable/kolo"/>
+
+            <TextView android:id="@+id/junio17_vorto"
+                android:layout_width="90dp"
+                android:layout_height="wrap_content"
+                style="@style/BildetoTitolo"
+                android:text="kolo" />
+
+        </LinearLayout>
+
+        <LinearLayout android:id="@+id/junio18"
+            android:layout_width="90dp"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginEnd="@dimen/bildeto_margxeno"
+            android:layout_marginBottom="@dimen/bildeto_margxeno" >
+
+            <ImageView android:id="@+id/junio18_bildo"
+                android:layout_width="90dp"
+                android:layout_height="90dp"
+                android:scaleType="centerCrop"
+                android:layout_marginEnd="@dimen/bildeto_margxeno"
+                android:src="@drawable/ejo"/>
+
+            <TextView android:id="@+id/junio18_vorto"
+                android:layout_width="90dp"
+                android:layout_height="wrap_content"
+                style="@style/BildetoTitolo"
+                android:text="ejo" />
+
+        </LinearLayout>
+
+        <LinearLayout android:id="@+id/junio19"
+            android:layout_width="90dp"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginEnd="@dimen/bildeto_margxeno"
+            android:layout_marginBottom="@dimen/bildeto_margxeno" >
+
+            <ImageView android:id="@+id/junio19_bildo"
+                android:layout_width="90dp"
+                android:layout_height="90dp"
+                android:scaleType="centerCrop"
+                android:layout_marginEnd="@dimen/bildeto_margxeno"
+                android:src="@drawable/viroj"/>
+
+            <TextView android:id="@+id/junio19_vorto"
+                android:layout_width="90dp"
+                android:layout_height="wrap_content"
+                style="@style/BildetoTitolo"
+                android:text="viroj" />
+
+        </LinearLayout>
+
+        <LinearLayout android:id="@+id/junio20"
+            android:layout_width="90dp"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginEnd="@dimen/bildeto_margxeno"
+            android:layout_marginBottom="@dimen/bildeto_margxeno" >
+
+            <ImageView android:id="@+id/junio20_bildo"
+                android:layout_width="90dp"
+                android:layout_height="90dp"
+                android:scaleType="centerCrop"
+                android:layout_marginEnd="@dimen/bildeto_margxeno"
+                android:src="@drawable/vojagxi"/>
+
+            <TextView android:id="@+id/junio20_vorto"
+                android:layout_width="90dp"
+                android:layout_height="wrap_content"
+                style="@style/BildetoTitolo"
+                android:text="vojagxi" />
+
+        </LinearLayout>
+
+        <LinearLayout android:id="@+id/junio21"
+            android:layout_width="90dp"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginEnd="@dimen/bildeto_margxeno"
+            android:layout_marginBottom="@dimen/bildeto_margxeno" >
+
+            <ImageView android:id="@+id/junio21_bildo"
+                android:layout_width="90dp"
+                android:layout_height="90dp"
+                android:scaleType="centerCrop"
+                android:layout_marginEnd="@dimen/bildeto_margxeno"
+                android:src="@drawable/auxto"/>
+
+            <TextView android:id="@+id/junio21_vorto"
+                android:layout_width="90dp"
+                android:layout_height="wrap_content"
+                style="@style/BildetoTitolo"
+                android:text="auxto" />
+
+        </LinearLayout>
+
+        <LinearLayout android:id="@+id/junio22"
+            android:layout_width="90dp"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginEnd="@dimen/bildeto_margxeno"
+            android:layout_marginBottom="@dimen/bildeto_margxeno" >
+
+            <ImageView android:id="@+id/junio22_bildo"
+                android:layout_width="90dp"
+                android:layout_height="90dp"
+                android:scaleType="centerCrop"
+                android:layout_marginEnd="@dimen/bildeto_margxeno"
+                android:src="@drawable/kabrioleto"/>
+
+            <TextView android:id="@+id/junio22_vorto"
+                android:layout_width="90dp"
+                android:layout_height="wrap_content"
+                style="@style/BildetoTitolo"
+                android:text="kabrioleto" />
+
+        </LinearLayout>
+
+        <LinearLayout android:id="@+id/junio23"
+            android:layout_width="90dp"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginEnd="@dimen/bildeto_margxeno"
+            android:layout_marginBottom="@dimen/bildeto_margxeno" >
+
+            <ImageView android:id="@+id/junio23_bildo"
+                android:layout_width="90dp"
+                android:layout_height="90dp"
+                android:scaleType="centerCrop"
+                android:layout_marginEnd="@dimen/bildeto_margxeno"
+                android:src="@drawable/stelo"/>
+
+            <TextView android:id="@+id/junio23_vorto"
+                android:layout_width="90dp"
+                android:layout_height="wrap_content"
+                style="@style/BildetoTitolo"
+                android:text="stelo" />
+
+        </LinearLayout>
+
+        <LinearLayout android:id="@+id/junio24"
+            android:layout_width="90dp"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginEnd="@dimen/bildeto_margxeno"
+            android:layout_marginBottom="@dimen/bildeto_margxeno" >
+
+            <ImageView android:id="@+id/junio24_bildo"
+                android:layout_width="90dp"
+                android:layout_height="90dp"
+                android:scaleType="centerCrop"
+                android:layout_marginEnd="@dimen/bildeto_margxeno"
+                android:src="@drawable/pasxi"/>
+
+            <TextView android:id="@+id/junio24_vorto"
+                android:layout_width="90dp"
+                android:layout_height="wrap_content"
+                style="@style/BildetoTitolo"
+                android:text="pasxi" />
+
+        </LinearLayout>
+
+        <LinearLayout android:id="@+id/junio"
+            android:layout_width="90dp"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginEnd="@dimen/bildeto_margxeno"
+            android:layout_marginBottom="@dimen/bildeto_margxeno" >
+
+            <ImageView android:id="@+id/junio25_bildo"
+                android:layout_width="90dp"
+                android:layout_height="90dp"
+                android:scaleType="centerCrop"
+                android:layout_marginEnd="@dimen/bildeto_margxeno"
+                android:src="@drawable/hontema"/>
+
+            <TextView android:id="@+id/junio25_vorto"
+                android:layout_width="90dp"
+                android:layout_height="wrap_content"
+                style="@style/BildetoTitolo"
+                android:text="hontema" />
+
+        </LinearLayout>
+
+        <LinearLayout android:id="@+id/junio26"
+            android:layout_width="90dp"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginEnd="@dimen/bildeto_margxeno"
+            android:layout_marginBottom="@dimen/bildeto_margxeno" >
+
+            <ImageView android:id="@+id/junio26_bildo"
+                android:layout_width="90dp"
+                android:layout_height="90dp"
+                android:scaleType="centerCrop"
+                android:layout_marginEnd="@dimen/bildeto_margxeno"
+                android:src="@drawable/satelito"/>
+
+            <TextView android:id="@+id/junio26_vorto"
+                android:layout_width="90dp"
+                android:layout_height="wrap_content"
+                style="@style/BildetoTitolo"
+                android:text="satelito" />
+
+        </LinearLayout>
+
+        <LinearLayout android:id="@+id/junio27"
+            android:layout_width="90dp"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginEnd="@dimen/bildeto_margxeno"
+            android:layout_marginBottom="@dimen/bildeto_margxeno" >
+
+            <ImageView android:id="@+id/junio27_bildo"
+                android:layout_width="90dp"
+                android:layout_height="90dp"
+                android:scaleType="centerCrop"
+                android:layout_marginEnd="@dimen/bildeto_margxeno"
+                android:src="@drawable/scivolema"/>
+
+            <TextView android:id="@+id/junio27_vorto"
+                android:layout_width="90dp"
+                android:layout_height="wrap_content"
+                style="@style/BildetoTitolo"
+                android:text="scivolema" />
+
+        </LinearLayout>
+
+        <LinearLayout android:id="@+id/junio28"
+            android:layout_width="90dp"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginEnd="@dimen/bildeto_margxeno"
+            android:layout_marginBottom="@dimen/bildeto_margxeno" >
+
+            <ImageView android:id="@+id/junio28_bildo"
+                android:layout_width="90dp"
+                android:layout_height="90dp"
+                android:scaleType="centerCrop"
+                android:layout_marginEnd="@dimen/bildeto_margxeno"
+                android:src="@drawable/rigardi"/>
+
+            <TextView android:id="@+id/junio28_vorto"
+                android:layout_width="90dp"
+                android:layout_height="wrap_content"
+                style="@style/BildetoTitolo"
+                android:text="rigardi" />
+
+        </LinearLayout>
+
+        <LinearLayout android:id="@+id/junio29"
+            android:layout_width="90dp"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginEnd="@dimen/bildeto_margxeno"
+            android:layout_marginBottom="@dimen/bildeto_margxeno" >
+
+            <ImageView android:id="@+id/junio29_bildo"
+                android:layout_width="90dp"
+                android:layout_height="90dp"
+                android:scaleType="centerCrop"
+                android:layout_marginEnd="@dimen/bildeto_margxeno"
+                android:src="@drawable/okuloj"/>
+
+            <TextView android:id="@+id/junio29_vorto"
+                android:layout_width="90dp"
+                android:layout_height="wrap_content"
+                style="@style/BildetoTitolo"
+                android:text="okuloj" />
+
+        </LinearLayout>
+
+        <LinearLayout android:id="@+id/junio30"
+            android:layout_width="90dp"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginEnd="@dimen/bildeto_margxeno"
+            android:layout_marginBottom="@dimen/bildeto_margxeno" >
+
+            <ImageView android:id="@+id/junio30_bildo"
+                android:layout_width="90dp"
+                android:layout_height="90dp"
+                android:scaleType="centerCrop"
+                android:layout_marginEnd="@dimen/bildeto_margxeno"
+                android:src="@drawable/plumoj"/>
+
+            <TextView android:id="@+id/junio30_vorto"
+                android:layout_width="90dp"
+                android:layout_height="wrap_content"
+                style="@style/BildetoTitolo"
+                android:text="plumoj" />
+
+        </LinearLayout>
+
+    </GridLayout>
+
+    </ScrollView>
+
+</LinearLayout>
