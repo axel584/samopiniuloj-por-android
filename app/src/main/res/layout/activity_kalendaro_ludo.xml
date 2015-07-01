@@ -460,7 +460,7 @@
                     android:layout_marginEnd="@dimen/bildeto_margxeno"
                     android:src="@drawable/revi"/>
 
-                <TextView android:id="@+id/junio11_tago"
+                <TextView android:id="@+id/junio12_tago"
                     style="@style/KalendaroTago"
                     android:scaleType="centerCrop"
                     android:text="12" />

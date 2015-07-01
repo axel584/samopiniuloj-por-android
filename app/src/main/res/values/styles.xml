@@ -275,9 +275,9 @@
         <item name="android:layout_margin">2dp</item>
     </style>
 
-    <style name="KalendaroTago.blua">
+    <style name="KalendaroTago.orangxa">
         <item name="android:textColor">@color/sam_blanka</item>
-        <item name="android:background">@color/sam_blua</item>
+        <item name="android:background">@color/sam_orangxa</item>
     </style>
 
     <style name="KalendaroTago.verda">

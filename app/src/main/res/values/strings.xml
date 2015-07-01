@@ -62,6 +62,7 @@
         <!--item>Kontakti nin</item-->
         <item>Foriri</item>
     </string-array>
+        <string name="title_activity_kalendaro_rezultoj">KalendaroRezultojActivity</string>
 
 
 </resources>
