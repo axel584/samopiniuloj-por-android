@@ -77,19 +77,22 @@
 
             <FrameLayout
                 android:layout_width="90dp"
-                android:layout_height="90dp">
+                android:layout_height="90dp" >
 
                 <ImageView android:id="@+id/junio1_bildo"
                     android:layout_width="90dp"
                     android:layout_height="90dp"
                     android:scaleType="centerCrop"
-                    android:src="@drawable/sxnuro"/>
+                    android:src="@drawable/sxnuro"
+                    android:tint="#80FFFFFF"
+                    />
 
-                <ImageView android:id="@+id/junio1_grizo"
-                    android:layout_width="90dp"
-                    android:layout_height="90dp"
-                    android:background="#80FFFFFF"
-                    android:backgroundTintMode="multiply"/>
+                <TextView android:id="@+id/junio1_tago"
+                    style="@style/KalendaroTago"
+                    android:scaleType="centerCrop"
+                    android:text="1"
+                    />
+
             </FrameLayout>
 
             <TextView android:id="@+id/junio1_vorto"
@@ -116,13 +119,16 @@
                     android:layout_height="90dp"
                     android:scaleType="centerCrop"
                     android:layout_marginEnd="@dimen/bildeto_margxeno"
-                    android:src="@drawable/akcidento"  />
+                    android:src="@drawable/akcidento"
+                    android:tint="#80FFFFFF"
+                    />
 
-                <ImageView android:id="@+id/junio2_grizo"
-                    android:layout_width="90dp"
-                    android:layout_height="90dp"
-                    android:background="#80FFFFFF"
-                    android:backgroundTintMode="multiply"/>
+                <TextView android:id="@+id/junio2_tago"
+                    style="@style/KalendaroTago"
+                    android:scaleType="centerCrop"
+                    android:text="2"
+                    />
+
             </FrameLayout>
 
             <TextView android:id="@+id/junio2_vorto"
@@ -149,13 +155,15 @@
                     android:layout_height="90dp"
                     android:scaleType="centerCrop"
                     android:layout_marginEnd="@dimen/bildeto_margxeno"
-                    android:src="@drawable/ornamajxo"/>
+                    android:src="@drawable/ornamajxo"
+                    android:tint="#80FFFFFF"/>
 
-                <ImageView android:id="@+id/junio3_grizo"
-                    android:layout_width="90dp"
-                    android:layout_height="90dp"
-                    android:background="#80FFFFFF"
-                    android:backgroundTintMode="multiply"/>
+                <TextView android:id="@+id/junio3_tago"
+                    style="@style/KalendaroTago"
+                    android:scaleType="centerCrop"
+                    android:text="3"
+                    />
+
             </FrameLayout>
 
             <TextView android:id="@+id/junio3_vorto"
@@ -184,11 +192,11 @@
                     android:layout_marginEnd="@dimen/bildeto_margxeno"
                     android:src="@drawable/paco"/>
 
-                <ImageView android:id="@+id/junio4_grizo"
-                    android:layout_width="90dp"
-                    android:layout_height="90dp"
-                    android:background="#80FFFFFF"
-                    android:backgroundTintMode="multiply"/>
+                <TextView android:id="@+id/junio4_tago"
+                    style="@style/KalendaroTago"
+                    android:scaleType="centerCrop"
+                    android:text="4"
+                    />
 
             </FrameLayout>
 
@@ -216,13 +224,14 @@
                     android:layout_height="90dp"
                     android:scaleType="centerCrop"
                     android:layout_marginEnd="@dimen/bildeto_margxeno"
-                    android:src="@drawable/flago"/>
+                    android:src="@drawable/flago"
+                    android:tint="#80FFFFFF"/>
 
-                <ImageView android:id="@+id/junio5_grizo"
-                    android:layout_width="90dp"
-                    android:layout_height="90dp"
-                    android:background="#80FFFFFF"
-                    android:backgroundTintMode="multiply"/>
+                <TextView android:id="@+id/junio5_tago"
+                    style="@style/KalendaroTago"
+                    android:scaleType="centerCrop"
+                    android:text="5"
+                    />
 
             </FrameLayout>
 
@@ -241,18 +250,30 @@
             android:layout_marginEnd="@dimen/bildeto_margxeno"
             android:layout_marginBottom="@dimen/bildeto_margxeno" >
 
-            <ImageView android:id="@+id/junio6_bildo"
+            <FrameLayout
                 android:layout_width="90dp"
-                android:layout_height="90dp"
-                android:scaleType="centerCrop"
-                android:layout_marginEnd="@dimen/bildeto_margxeno"
-                android:src="@drawable/pneuxo"/>
+                android:layout_height="90dp">
+
+                <ImageView android:id="@+id/junio6_bildo"
+                    android:layout_width="90dp"
+                    android:layout_height="90dp"
+                    android:scaleType="centerCrop"
+                    android:layout_marginEnd="@dimen/bildeto_margxeno"
+                    android:src="@drawable/pneuxo"/>
+
+                 <TextView android:id="@+id/junio6_tago"
+                    style="@style/KalendaroTago"
+                    android:scaleType="centerCrop"
+                    android:text="6"
+                    />
+            </FrameLayout>
 
             <TextView android:id="@+id/junio6_vorto"
                 android:layout_width="90dp"
                 android:layout_height="wrap_content"
                 style="@style/BildetoTitolo"
-                android:text="pneuxo" />
+                android:text="pneŭo" />
+
 
         </LinearLayout>
 
@@ -263,12 +284,24 @@
             android:layout_marginEnd="@dimen/bildeto_margxeno"
             android:layout_marginBottom="@dimen/bildeto_margxeno" >
 
-            <ImageView android:id="@+id/junio7_bildo"
+
+            <FrameLayout
                 android:layout_width="90dp"
-                android:layout_height="90dp"
-                android:scaleType="centerCrop"
-                android:layout_marginEnd="@dimen/bildeto_margxeno"
-                android:src="@drawable/vosto"/>
+                android:layout_height="90dp">
+
+                <ImageView android:id="@+id/junio7_bildo"
+                    android:layout_width="90dp"
+                    android:layout_height="90dp"
+                    android:scaleType="centerCrop"
+                    android:layout_marginEnd="@dimen/bildeto_margxeno"
+                    android:src="@drawable/vosto"/>
+
+                <TextView android:id="@+id/junio7_tago"
+                    style="@style/KalendaroTago"
+                    android:scaleType="centerCrop"
+                    android:text="7"
+                    />
+            </FrameLayout>
 
             <TextView android:id="@+id/junio7_vorto"
                 android:layout_width="90dp"
@@ -285,12 +318,23 @@
             android:layout_marginEnd="@dimen/bildeto_margxeno"
             android:layout_marginBottom="@dimen/bildeto_margxeno" >
 
-            <ImageView android:id="@+id/junio8_bildo"
+            <FrameLayout
                 android:layout_width="90dp"
-                android:layout_height="90dp"
-                android:scaleType="centerCrop"
-                android:layout_marginEnd="@dimen/bildeto_margxeno"
-                android:src="@drawable/sukero"/>
+                android:layout_height="90dp">
+
+                <ImageView android:id="@+id/junio8_bildo"
+                    android:layout_width="90dp"
+                    android:layout_height="90dp"
+                    android:scaleType="centerCrop"
+                    android:layout_marginEnd="@dimen/bildeto_margxeno"
+                    android:src="@drawable/sukero"/>
+
+                <TextView android:id="@+id/junio8_tago"
+                    style="@style/KalendaroTago.verda"
+                    android:scaleType="centerCrop"
+                    android:text="8"
+                    />
+            </FrameLayout>
 
             <TextView android:id="@+id/junio8_vorto"
                 android:layout_width="90dp"
@@ -307,12 +351,23 @@
             android:layout_marginEnd="@dimen/bildeto_margxeno"
             android:layout_marginBottom="@dimen/bildeto_margxeno" >
 
-            <ImageView android:id="@+id/junio9_bildo"
+            <FrameLayout
                 android:layout_width="90dp"
-                android:layout_height="90dp"
-                android:scaleType="centerCrop"
-                android:layout_marginEnd="@dimen/bildeto_margxeno"
-                android:src="@drawable/literoj"/>
+                android:layout_height="90dp">
+
+                <ImageView android:id="@+id/junio9_bildo"
+                    android:layout_width="90dp"
+                    android:layout_height="90dp"
+                    android:scaleType="centerCrop"
+                    android:layout_marginEnd="@dimen/bildeto_margxeno"
+                    android:src="@drawable/literoj"/>
+
+                <TextView android:id="@+id/junio9_tago"
+                    style="@style/KalendaroTago.verda"
+                    android:scaleType="centerCrop"
+                    android:text="9"
+                    />
+            </FrameLayout>
 
             <TextView android:id="@+id/junio9_vorto"
                 android:layout_width="90dp"
@@ -329,12 +384,23 @@
             android:layout_marginEnd="@dimen/bildeto_margxeno"
             android:layout_marginBottom="@dimen/bildeto_margxeno" >
 
-            <ImageView android:id="@+id/junio10_bildo"
+            <FrameLayout
                 android:layout_width="90dp"
-                android:layout_height="90dp"
-                android:scaleType="centerCrop"
-                android:layout_marginEnd="@dimen/bildeto_margxeno"
-                android:src="@drawable/sxuoj"/>
+                android:layout_height="90dp">
+
+                <ImageView android:id="@+id/junio10_bildo"
+                    android:layout_width="90dp"
+                    android:layout_height="90dp"
+                    android:scaleType="centerCrop"
+                    android:layout_marginEnd="@dimen/bildeto_margxeno"
+                    android:src="@drawable/sxuoj"/>
+
+                <TextView android:id="@+id/junio10_tago"
+                    style="@style/KalendaroTago.verda"
+                    android:scaleType="centerCrop"
+                    android:text="10"
+                    />
+            </FrameLayout>
 
             <TextView android:id="@+id/junio10_vorto"
                 android:layout_width="90dp"
@@ -351,12 +417,22 @@
             android:layout_marginEnd="@dimen/bildeto_margxeno"
             android:layout_marginBottom="@dimen/bildeto_margxeno" >
 
-            <ImageView android:id="@+id/junio11_bildo"
+            <FrameLayout
                 android:layout_width="90dp"
-                android:layout_height="90dp"
-                android:scaleType="centerCrop"
-                android:layout_marginEnd="@dimen/bildeto_margxeno"
-                android:src="@drawable/auxdi"/>
+                android:layout_height="90dp">
+
+                <ImageView android:id="@+id/junio11_bildo"
+                    android:layout_width="90dp"
+                    android:layout_height="90dp"
+                    android:scaleType="centerCrop"
+                    android:layout_marginEnd="@dimen/bildeto_margxeno"
+                    android:src="@drawable/auxdi"/>
+
+                <TextView android:id="@+id/junio11_tago"
+                    style="@style/KalendaroTago"
+                    android:scaleType="centerCrop"
+                    android:text="11" />
+            </FrameLayout>
 
             <TextView android:id="@+id/junio11_vorto"
                 android:layout_width="90dp"
@@ -373,12 +449,22 @@
             android:layout_marginEnd="@dimen/bildeto_margxeno"
             android:layout_marginBottom="@dimen/bildeto_margxeno" >
 
-            <ImageView android:id="@+id/junio12_bildo"
+            <FrameLayout
                 android:layout_width="90dp"
-                android:layout_height="90dp"
-                android:scaleType="centerCrop"
-                android:layout_marginEnd="@dimen/bildeto_margxeno"
-                android:src="@drawable/revi"/>
+                android:layout_height="90dp">
+
+                <ImageView android:id="@+id/junio12_bildo"
+                    android:layout_width="90dp"
+                    android:layout_height="90dp"
+                    android:scaleType="centerCrop"
+                    android:layout_marginEnd="@dimen/bildeto_margxeno"
+                    android:src="@drawable/revi"/>
+
+                <TextView android:id="@+id/junio11_tago"
+                    style="@style/KalendaroTago"
+                    android:scaleType="centerCrop"
+                    android:text="12" />
+            </FrameLayout>
 
             <TextView android:id="@+id/junio12_vorto"
                 android:layout_width="90dp"
